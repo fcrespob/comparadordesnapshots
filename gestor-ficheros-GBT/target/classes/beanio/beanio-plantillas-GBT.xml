@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+	
+	<template name="errorOrquestador">
+		<field name="basetec" 	type="string" length="8" justify="left" />
+		<field name="ccanal" 	type="int" length="5" justify="right" />
+		<field name="fecCierre" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="kmodalidad" length="5" type="int" padding="0" justify="right" format="00000"/>
+		<field name="kpoliza" length="10" type="int" padding="0" justify="right" format="0000000000"/>
+		<field name="ksubpoliza" length="4" type="int" padding="0" justify="right" format="0000"/>
+		<field name="kcertificado" length="6" type="int" padding="0" justify="right" format="000000"/>
+		<field name="nsuscri" length="7" type="int" padding="0" justify="right" format="0000000"/>
+		<field name="norden" length="3" type="int" padding="0" justify="right" format="000"/>
+		<field name="kgarantia" length="5" type="int" padding="0" justify="right" format="00000"/>
+		<field name="kprestacion" length="6" type="string" />
+		<field name="kajuste" length="7" type="int" padding="0" justify="right" format="0000000"/>
+		<field name="ctipoaport" length="1" type="string" />
+		<field name="nomModulo" length="11" type="string" />
+		<field name="descripcionErr" length="256" type="string" />
+	</template>
+</beanio>

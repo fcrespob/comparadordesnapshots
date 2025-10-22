@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+	
+	<groupId>es.mapfre.solvencia</groupId>
+	<artifactId>modulo-base-tecnica</artifactId>
+	<version>11.0.0-RELEASE</version>
+	<name>Modulo Base Tecnica</name>
+	<description>Modulo para la transformacion de la base tecnica</description>
+	
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+	
+	<dependencies>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>modelo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>excepciones</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>motor-programas</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

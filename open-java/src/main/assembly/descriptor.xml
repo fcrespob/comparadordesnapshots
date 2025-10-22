@@ -1,0 +1,16 @@
+<assembly>
+	<id>distribution</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>3 - IMP Implantacion/Multiplataforma/programas/Solvencia2-Open/lib
+			</outputDirectory>
+			<unpack>false</unpack>
+		</dependencySet>
+	</dependencySets>
+</assembly>

@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+	
+	<artifactId>entregables</artifactId>
+	<packaging>pom</packaging>
+	
+	<name>Generaci�n de entregables de Solvencia</name>
+	<url>http://www.mapfre.es</url>
+
+	<properties>
+	</properties>
+
+	<!--<repositories>
+		<repository>
+			<id>archiva</id>
+			<name>DB02 repository</name>
+			<url>http://skynet.nfoque.as:8085/repository/internal</url>
+		</repository>
+	</repositories>-->
+
+	<dependencies>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>open-java</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<classifier>distribution</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>planificador</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<classifier>distribution</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>dao</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<classifier>sources</classifier>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>com.soebes.maven.plugins</groupId>
+				<artifactId>iterator-maven-plugin</artifactId>
+				<version>0.2</version>
+				<executions>
+					<execution>
+						<id>iterator-sources</id>
+						<goals>
+							<goal>executor</goal>
+						</goals>
+						<configuration>
+							<items>
+								<item>coherence-base</item>
+								<item>dao</item>
+								<item>dao-impl</item>
+								<item>entregables</item>
+								<item>excepciones</item>
+								<item>formulacion</item>
+								<item>generacion-entregables</item>
+								<item>modelo</item>
+								<item>modulo-base-tecnica</item>
+								<item>motor</item>
+								<item>motor-programas</item>
+								<item>open-java</item>
+								<item>planificador</item>
+								<item>servicios</item>
+								<item>servicios-impl</item>
+								<!--<item>solvencia</item>-->
+								<item>utils</item>
+							</items>
+
+							<pluginExecutors>
+								<pluginExecutor>
+									<plugin>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-assembly-plugin</artifactId>
+										<version>2.5.4</version>
+									</plugin>
+									<goal>single</goal>
+									<configuration>
+										<descriptors>
+											<descriptor>src/assembly-sources.xml</descriptor>
+										</descriptors>
+									</configuration>
+								</pluginExecutor>
+							</pluginExecutors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>	
+			
+			<plugin>
+				<groupId>com.soebes.maven.plugins</groupId>
+				<artifactId>iterator-maven-plugin</artifactId>
+				<version>0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>executor</goal>
+						</goals>
+						<configuration>
+							<items>
+								<item>SOLVENCIA</item>
+							</items>
+							<pluginExecutors>
+								<pluginExecutor>
+									<plugin>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-assembly-plugin</artifactId>
+										<version>2.5.4</version>
+									</plugin>
+									<goal>single</goal>
+									<configuration>
+										<descriptors>
+											<descriptor>src/assembly-modules.xml</descriptor>
+										</descriptors>
+									</configuration>
+								</pluginExecutor>
+							</pluginExecutors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>

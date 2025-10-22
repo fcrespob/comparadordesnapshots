@@ -1,0 +1,15 @@
+# Gestor Bases Técnicas
+es.mapfre.solvencia.dao.impl.gbt.AdapTablaExpDao
+es.mapfre.solvencia.dao.impl.gbt.AsigCurvaTipoDao
+es.mapfre.solvencia.dao.impl.gbt.AsigInteresTecnicoDao
+es.mapfre.solvencia.dao.impl.gbt.AsigTasasAnulDao
+es.mapfre.solvencia.dao.impl.gbt.ConversionTablasExpDao
+es.mapfre.solvencia.dao.impl.gbt.ConvTablasExpRealDao
+es.mapfre.solvencia.dao.impl.gbt.DiferencialGastosDao
+es.mapfre.solvencia.dao.impl.gbt.ErrorOrquestadorDao
+es.mapfre.solvencia.dao.impl.gbt.InteresTecnicoDao
+es.mapfre.solvencia.dao.impl.gbt.MetodosAdaptacionDao
+es.mapfre.solvencia.dao.impl.gbt.ObtInteresTecnicoDao
+es.mapfre.solvencia.dao.impl.gbt.PeriodosAdDao
+es.mapfre.solvencia.dao.impl.gbt.RentaGAPDao
+es.mapfre.solvencia.dao.impl.gbt.TasasAnulacionDao

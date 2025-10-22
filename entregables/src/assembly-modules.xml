@@ -1,0 +1,69 @@
+<assembly>
+	<id>${item}</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+  
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>${project.groupId}:*:zip</include>
+			</includes>
+			<useTransitiveDependencies>false</useTransitiveDependencies>
+			<unpack>true</unpack>
+		</dependencySet>
+	</dependencySets>
+	  
+  	<fileSets>
+		<fileSet>
+			<filtered>false</filtered>
+			<directory>1 - DEF Definicion</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+			<outputDirectory>1 - DEF Definicion</outputDirectory>
+		</fileSet>
+		
+		<fileSet>
+			<filtered>false</filtered>
+			<directory>2 - DES Desarrollo</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+			<outputDirectory>2 - DES Desarrollo</outputDirectory>
+		</fileSet>
+		
+		<fileSet>
+			<filtered>false</filtered>
+			<directory>3 - IMP Implantacion</directory>
+			<includes>
+				<include>**/*.*</include>
+				<include>**/*</include>
+			</includes>
+			<excludes>
+				<exclude>*.jar</exclude>
+			</excludes>
+			<outputDirectory>3 - IMP Implantacion</outputDirectory>
+		</fileSet>
+
+		<fileSet>
+			<filtered>false</filtered>
+			<directory>../solvencia</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+			<outputDirectory>2 - DES Desarrollo/3 - Programacion/solvencia</outputDirectory>
+		</fileSet>				
+		
+		<fileSet>
+			<filtered>false</filtered>
+			<directory>target/${artifactId}-${project.version}-sources</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+			<outputDirectory></outputDirectory>
+		</fileSet>
+
+	</fileSets>
+</assembly>

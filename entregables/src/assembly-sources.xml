@@ -1,0 +1,30 @@
+<assembly>
+	<id>sources</id>
+	<formats>
+		<format>dir</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<moduleSets>
+		<moduleSet>
+			<useAllReactorProjects>true</useAllReactorProjects>
+			<includeSubModules>true</includeSubModules>
+			<includes>
+				<include>${project.groupId}:${item}</include>
+			</includes>			
+			<sources>
+				<includeModuleDirectory>false</includeModuleDirectory>
+				<excludeSubModuleDirectories>false</excludeSubModuleDirectories>
+			<fileSets>
+					<fileSet>
+						<outputDirectory>2 - DES Desarrollo/3 - Programacion/${item}</outputDirectory>
+						<excludes>
+							<exclude>target/**</exclude>
+							<exclude>**/target/**</exclude>
+						</excludes>
+					</fileSet>
+				</fileSets>
+			</sources>			
+		</moduleSet>
+	</moduleSets>
+</assembly>

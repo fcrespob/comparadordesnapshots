@@ -1,0 +1,57 @@
+00186;00019;000000;BTI     ;CSP001    ;VZC       ;;ACT001    ;S;CSP051    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZC002    ;VZC       ;;ACT001    ;S;;;;;;;;;;;VBX001    ;VTX002    
+00186;00019;000000;ROSSP   ;LEIDOBTI  ;VZC       ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZC       ;;ACT001    ;S;;;;;;;;;;;;
+00186;00019;000000;BEL     ;LEIDOBTI  ;VZC       ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZC       ;ATC       ;ACTBEL    ;N;COM001    ;VZC       ;ATC       ;ACTBEL    ;N;RT002     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;LEIDOBTI  
+00209;00001;000000;BTI     ;CSP003    ;VZC       ;;ACT001    ;S;CSP064    ;FPTOZC    ;;ACT001    ;S;PRI003    ;VZC       ;;ACT001    ;S;;;;;;GZC002    ;VZC       ;;ACT001    ;S;;;;;;;;;;;VBX001    ;VTX005    
+00209;00019;000000;BTI     ;CSP001    ;VZC       ;;ACT001    ;S;CSP051    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZC002    ;VZC       ;;ACT001    ;S;;;;;;;;;;;VBX001    ;VTX002    
+00209;00001;000000;ROSSP   ;LEIDOBTI  ;VZC       ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;LEIDOBTI  ;VZC       ;;ACT001    ;S;;;;;;LEIDOBTI  ;VZC       ;;ACT001    ;S;;;;;;;;;;;;
+00209;00019;000000;ROSSP   ;LEIDOBTI  ;VZC       ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZC       ;;ACT001    ;S;;;;;;;;;;;;
+00209;00001;000000;BEL     ;LEIDOBTI  ;VZC       ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;PRI007    ;VZC       ;ATC       ;ACTBEL    ;N;;;;;;GZC010    ;VZC       ;ATC       ;ACTBEL    ;N;COM001    ;VZC       ;ATC       ;ACTBEL    ;N;RT008     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;LEIDOBTI  
+00209;00019;000000;BEL     ;LEIDOBTI  ;VZC       ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZC       ;ATC       ;ACTBEL    ;N;COM001    ;VZC       ;ATC       ;ACTBEL    ;N;RT002     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;LEIDOBTI  
+00228;00165;RVR04 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00228;00165;RVR09 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00228;00165;RVR04 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00228;00165;RVR09 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00228;00165;RVR04 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00228;00165;RVR09 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00238;00265;RVD05 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00238;00265;RVD04 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00238;00265;RVD00 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00238;00265;RVD05 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00238;00265;RVD04 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00238;00265;RVD00 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00238;00265;RVD05 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00238;00265;RVD04 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00238;00265;RVD00 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RPB9  ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RTC0  ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RTR0  ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVD0  ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVR9  ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVR14 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVR29 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVR30 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RVR31 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;CSP362    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00362;00273;RPB9  ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RTC0  ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RTR0  ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVD0  ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVR9  ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVR14 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVR29 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVR30 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RVR31 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00362;00273;RPB9  ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RTC0  ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RTR0  ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVD0  ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVR9  ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVR14 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVR29 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVR30 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00362;00273;RVR31 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00546;00265;RVD04 ;BTI     ;CSP238    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;GZCRTA    ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;VBX362    ;
+00546;00265;RVD04 ;ROSSP   ;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;;;;;LEIDOBTI  ;VZREVER   ;;ACT001    ;S;;;;;;;;;;;;
+00546;00265;RVD04 ;BEL     ;LEIDOBTI  ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;;;;;;;;;;;GZC010    ;VZREVER   ;ATC       ;ACTBEL    ;N;;;;;;RT362     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;
+00852;00001;000000;BTI     ;CSP071    ;VZC       ;;ACT001    ;S;CSP037    ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;GZC005    ;VZC       ;;ACT002    ;S;;;;;;;;;;;VBX009    ;VTX009    
+00852;00001;000000;ROSSP   ;LEIDOBTI  ;VZC       ;;ACT001    ;S;LEIDOBTI  ;FPTOZC    ;;ACT001    ;S;;;;;;;;;;;LEIDOBTI  ;VZC       ;;ACT002    ;S;;;;;;;;;;;;
+00852;00001;000000;BEL     ;LEIDOBTI  ;VZC       ;ATC       ;ACTBEL    ;N;LEIDOBTI  ;FPTOZC    ;ATC       ;ACTBEL    ;N;;;;;;;;;;;GZC010    ;VZC       ;ATC       ;ACTBEL    ;N;COM001    ;VZC       ;ATC       ;ACTBEL    ;N;RT022     ;VZC       ;APTOTC    ;ACTBEL    ;N;LEIDOBTI  ;

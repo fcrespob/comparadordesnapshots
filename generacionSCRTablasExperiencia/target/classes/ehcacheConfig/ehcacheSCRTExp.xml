@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcacheSCRTExp.xsd"
+         updateCheck="true" monitoring="autodetect"
+         dynamicConfig="true">
+
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+            maxEntriesLocalHeap="100000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            diskSpoolBufferSizeMB="30"
+            maxEntriesLocalDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            statistics="false">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+	<cache name="R340T000"
+           maxEntriesLocalHeap="10000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+    </cache>
+
+    <cache name="TXP0"
+           maxEntriesLocalHeap="10000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="ktabla" expression="value.getKtabla()"/>
+           <searchAttribute name="fecAnula" expression="value.getFecAnula()"/>
+           <searchAttribute name="fecAlta" expression="value.getFecAlta()"/>
+        </searchable>
+        <persistence strategy="none"/>
+    </cache>
+    
+    <cache name="CTM0"
+           maxEntriesLocalHeap="100000"
+           maxEntriesLocalDisk="10000000"
+           eternal="true"
+           diskSpoolBufferSizeMB="20"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="ktabla" expression="value.getKtabla()"/>
+           <searchAttribute name="k2tipovalor" expression="value.getK2tipovalor()"/>
+           <searchAttribute name="knacimiento" expression="value.getKnacimiento()"/>
+           <searchAttribute name="kinteres" expression="value.getKinteres()"/>
+           <searchAttribute name="ksobremort" expression="value.getKsobremort()"/>
+           <searchAttribute name="ksobreries" expression="value.getKsobreries()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="ATR0"
+           maxEntriesLocalHeap="100000"
+           maxEntriesLocalDisk="1000000"
+           eternal="true"
+           diskSpoolBufferSizeMB="20"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="kbasetec" expression="value.getKbasetec()"/>
+           <searchAttribute name="kcompania" expression="value.getKcompania()"/>
+           <searchAttribute name="knegocio" expression="value.getKnegocio()"/>
+           <searchAttribute name="kriesgo" expression="value.getKriesgo()"/>
+           <searchAttribute name="ksexo" expression="value.getKsexo()"/>
+           <searchAttribute name="kcateg" expression="value.getKcateg()"/>
+           <searchAttribute name="kmodalidad" expression="value.getKmodalidad()"/>
+           <searchAttribute name="kfdesde" expression="value.getKfdesde()"/>
+           <searchAttribute name="kedaddesde" expression="value.getKedaddesde()"/>
+           <searchAttribute name="fhasta" expression="value.getFhasta()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="SCR0"
+           maxEntriesLocalHeap="10000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="feccierre" expression="value.getFeccierre()"/>
+           <searchAttribute name="bt" expression="value.getBt()"/>
+        </searchable>
+        <persistence strategy="none"/>
+    </cache>
+    
+    <cache name="LMI0"
+           maxEntriesLocalHeap="10000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="feccierre" expression="value.getFeccierre()"/>
+           <searchAttribute name="ksexo" expression="value.getKsexo()"/>
+           <searchAttribute name="kedadfija" expression="value.getKedadfija()"/>
+        </searchable>
+        <persistence strategy="none"/>
+    </cache>
+    
+</ehcache>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+	
+	<!-- Imports de las plantillas a emplear en los streams de este fichero -->
+ 	<import resource="classpath:beanio/beanio-plantillas-salidaMensualizador.xml" />
+	
+	<typeHandler name="bigDecimalOutHandler"
+		class="es.mapfre.gbt.mensualizadorTasas.handlers.BigDecimalOutTypeHandler" />	
+	
+	<typeHandler name="dateNullHandler"
+		class="es.mapfre.gbt.mensualizadorTasas.handlers.DateNullTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>	
+	
+	<stream name="tasas-mensualizadas" format="fixedlength">
+		<record name="tasasMensualizadas" template="tasasMensualizadas"
+			class="es.mapfre.gbt.mensualizadorTasas.dominio.TasaMensualizada" />
+	</stream>
+	
+	<stream name="INC0" format="delimited">
+		<record name="incidencias" template="incidencias"
+			class="es.mapfre.gbt.mensualizadorTasas.exception.IncidenciaMens" />
+	</stream>
+	
+	<stream name="R340T003" format="fixedlength">
+		<record name="fichaProcesoR340T003" template="fichaProcesoR340T003"	
+		class="es.mapfre.gbt.mensualizadorTasas.dominio.FichaResultado"/>
+	</stream>
+	
+</beanio>

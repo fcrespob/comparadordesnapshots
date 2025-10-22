@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<pof-config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://xmlns.oracle.com/coherence/coherence-pof-config' xsi:schemaLocation='http://xmlns.oracle.com/coherence/coherence-pof-config coherence-pof-config.xsd'>
+  <user-type-list>
+    <!--
+    Solvencia domain classes
+    -->
+    <include>pof/solvencia-conversionesBel-keys-pof-config.xml</include>
+    <user-type>
+      <type-id>3001</type-id>
+      <class-name>es.mapfre.solvencia.dominio.conversionesBel.GastosReales</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3002</type-id>
+      <class-name>es.mapfre.solvencia.dominio.conversionesBel.ValoresCurvaTipo</class-name>
+    </user-type>
+    <!-- Deprecated A eliminar en 10 dias a partir del 22/04/2014 -->
+    <user-type>
+      <type-id>3003</type-id>
+      <class-name>es.mapfre.solvencia.dominio.conversionesBel.ValoresInterpolacion</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3006</type-id>
+      <class-name>es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3007</type-id>
+      <class-name>es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3008</type-id>
+      <class-name>es.mapfre.solvencia.dominio.scr.ValoresEstres</class-name>
+    </user-type>
+  </user-type-list>
+  <allow-interfaces>true</allow-interfaces>
+  <allow-subclasses>true</allow-subclasses>
+</pof-config>

@@ -1,0 +1,9 @@
+880J880ACT00101XXERROR PRUEBA FLUJOS ACTUALIZADOS                                                ERRORPRUEBFACT                000000000
+880J880FDP00101XXERROR PRUEBA FECHAS PAGO Y DEVENGO                                              ERRORPRUEBAFPAGYDEV           000000000
+880J880GBT00101XXERROR PRUEBA GBT                                                                ERRORPRUEBGBT                 000000000
+880J880NAN00101XXERROR PRUEBA FLUJOS PROBABLES NO ANULADOS                                       ERRORPRUEFPNAN                000000000
+880J880NOM00101XXERROR DE PRUEBA FLUJO NOMINAL                                                   ERROR DE PRUEBAFN             000000000
+880J880PMC00101XXERROR PRUEBA PROV FORMULA CERRADA                                               ERRORPRUEPROV                 000000000
+880J880PPR00101XXERROR PRUEBA PERIODOS DE PROYECCION                                             ERRORPRUEBPERIODOS            000000000
+880J880PRB00101XXERROR PRUEBA FLUJOS PROBABLES                                                   ERRORPRUEBAFP                 000000000
+880J880PVI00101XXERROR PRUEBA PROVI                                                              ERRORPRUEPROVI                000000000

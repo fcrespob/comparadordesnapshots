@@ -1,0 +1,18 @@
+#
+########################################################################################################
+#                                               MAPFRE                                                 #
+########################################################################################################
+#
+# Auto-actualizacion de componentes en instancias de Amazon
+# Indique en este fichero de configuracion las actualizaciones a realizar, con el siguiente formato:
+#
+#<path_absoluto_del_directorio_a_copiar>  <path_absoluto_donde_copiar_los_ficheros>
+#
+# La version ha debido ser copiada del repositorio PLASTIC a la ruta especificada como primer parametro
+#
+
+#
+/mnt/solv2vida/software/lib /u01/oracle/Oracle/Middleware/Oracle_Home/coherence/user_projects/solvencia2/lib 
+/mnt/solv2vida/software/config /u01/oracle/Oracle/Middleware/Oracle_Home/coherence/user_projects/solvencia2/config 
+/mnt/solv2vida/software/optional /u01/oracle/Oracle/Middleware/Oracle_Home/coherence/user_projects/solvencia2/optional 
+/mnt/solv2vida/software/shs/bin /u01/oracle/Oracle/Middleware/Oracle_Home/coherence/bin 

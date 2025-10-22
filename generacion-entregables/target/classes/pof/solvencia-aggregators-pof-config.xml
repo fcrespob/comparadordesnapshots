@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<pof-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.oracle.com/coherence/coherence-pof-config"
+	xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-pof-config coherence-pof-config.xsd">
+	<user-type-list>
+		<!-- coherence POF user types -->
+		<include>coherence-pof-config.xml</include>
+		<include>coherence-common-pof-config.xml</include>
+		<include>coherence-processingpattern-pof-config.xml</include>
+
+		<!-- Solvencia classes -->
+		<include>solvencia-pof-config.xml</include>
+
+		<!-- Solvencia classes for processing -->
+		<user-type>
+			<type-id>9100</type-id>
+			<class-name>es.mapfre.solvencia.entregables.motor.ResumableEntregables</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>9101</type-id>
+			<class-name>es.mapfre.solvencia.entregables.motor.ProgresoEntregables</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>9110</type-id>
+			<class-name>es.mapfre.solvencia.entregables.processors.PrvUmicProcessor</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9120</type-id>
+			<class-name>es.mapfre.solvencia.entregables.processors.PrvBtProcessor</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9130</type-id>
+			<class-name>es.mapfre.solvencia.entregables.processors.PrvBtdurTrCasadoProcessor</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9140</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.BasetecPgastExtAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9150</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.ListBigDecimalMaxAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9160</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.ListBigDecimalMinAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9170</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.ListBigDecimalAverageAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9180</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.BasetecTablaCalc1CurvaTiAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9190</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.NotCeroBigDecimalAverageAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9191</type-id>
+			<class-name>es.mapfre.solvencia.entregables.aggregators.FirstItemAggregator</class-name>
+		</user-type>
+		<user-type>
+			<type-id>9200</type-id>
+			<class-name>es.mapfre.solvencia.entregables.motor.CalcularEntregable</class-name>
+		</user-type>
+	</user-type-list>
+
+	<allow-interfaces>true</allow-interfaces>
+	<allow-subclasses>true</allow-subclasses>
+</pof-config>

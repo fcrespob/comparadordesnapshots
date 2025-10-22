@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+	
+	<template name="incidencias">
+		<field name="feccierre" type="string" length="8" justify="left" />
+		<field name="bt" type="string" length="8" justify="left" />
+		<field name="codigoerror" type="string" length="2" justify="left" />
+		<field name="descerror" type="string" length="200" justify="left" />
+	</template>
+	
+	<template name="fichaProcesoR340T001">
+		<field name="tipoRegistro" type="string" rid="true" length="2" ignore="true" literal="01"  minOccurs="1" maxOccurs="1" />
+		<field name="kejecucion" type="int" length="10" padding="0" justify="right" format="0000000000" />
+		<field name="ksistema" type="string" length="4" justify="left" />
+		<field name="kprotecnico" type="string" length="4" justify="left" />
+		<field name="kuejecucion" type="string" length="4" justify="left" />
+		<field name="ksecuencia" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="fefecto" length="8" format="yyyyMMdd" typeHandler="dateNullHandler"/>
+		<field name="fprevejec" length="8" format="yyyyMMdd" typeHandler="dateNullHandler"/>
+		<field name="finiper" length="8" format="yyyyMMdd" typeHandler="dateNullHandler"/>
+		<field name="cnegocio" length="1" type="string" justify="left" />
+		<field name="ccanal" length="5" type="int" padding="0" justify="right" format="00000"/>
+		<field name="ctipobt" type="string" length="8" justify="left" />
+		<field name="gparametros" type="string" length="200" justify="left" />
+		<field name="csituacion" type="string" length="1" justify="left" />
+		<field name="finireal" length="14" format="yyyyMMddHHmmss" typeHandler="timeoNullHandler"/>
+		<field name="ffinreal" length="14" format="yyyyMMddHHmmss" typeHandler="timeoNullHandler"/>
+		<field name="sokauto" type="string" length="1" justify="left" />
+		<field name="sokusua" type="string" length="1" justify="left" />
+		<field name="gobservacion" type="string" length="200" justify="left" />
+		<field name="ctipoejec" type="string" length="1" justify="left" />
+		<field name="smanual" type="string" length="1" justify="left" />
+		<field name="fgrabacion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler"/>
+		<field name="cusuario" type="string" length="8" justify="left" />
+		<field name="fmodificacion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler"/>
+		<field name="cusuariom" type="string" length="8" justify="left" />
+		<field name="ktipoamb" type="string" length="4" justify="left" />
+		<field name="filler" type="string" length="66" justify="left" ignore="true" />
+	</template>
+	
+	<template name="filtro">
+		<field ignore="true" name="kejecucion" type="int" length="10" padding="0" justify="right" format="0000000000" />
+		<field ignore="true" name="ksistema" type="string" length="4" justify="left" />
+		<field ignore="true" name="kprotecnico" type="string" length="4" justify="left" />
+		<field ignore="true" name="kuejecucion" type="string" length="4" justify="left" />
+		<field ignore="true" name="ksecuencia" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="ksecambito" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="cclaseamb" type="string" length="1" justify="left" />
+		<field name="coperadord" type="string" length="2" justify="left" />
+		<field name="gambitod" type="string" length="200" justify="left" />
+		<field name="coperadorh" type="string" length="2" justify="left" />
+		<field name="gambitoh" type="string" length="200" justify="left" />
+		<field name="smanual" type="string" length="1" justify="left" />
+		<field name="fgrabacion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="cusuario" type="string" length="8" justify="left" />
+		<field name="ktipoamb" type="string" length="4" justify="left" />
+		<field name="filler" type="string" length="144" justify="left" ignore="true" />
+	</template>
+	
+	<template name="filtroAdicional">
+		<field ignore="true" name="kejecucion" type="int" length="10" padding="0" justify="right" format="0000000000" />
+		<field ignore="true" name="ksistema" type="string" length="4" justify="left" />
+		<field ignore="true" name="kprotecnico" type="string" length="4" justify="left" />
+		<field ignore="true" name="kuejecucion" type="string" length="4" justify="left" />
+		<field ignore="true" name="ksecuencia" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="ksecfil" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="ctipofiltro" type="string" length="2" justify="left" />
+		<field name="gclasefil" type="string" length="9" justify="left" />
+		<field name="goperdesde" type="string" length="2" justify="left" />
+		<field name="valordesde" type="string" length="7" justify="left" />
+		<field name="goperhasta" type="string" length="2" justify="left" />
+		<field name="valhasta" type="string" length="7" justify="left" />
+		<field name="gopdesdegar" type="string" length="2" justify="left" />
+		<field name="valdesdegar" type="string" length="6" justify="left" />
+		<field name="gophastagar" type="string" length="2" justify="left" />
+		<field name="valhastagar" type="string" length="6" justify="left" />
+		<field name="smanual" type="string" length="1" justify="left" />
+		<field name="cpoliza" type="long" length="10" justify="left" />
+		<field name="nsubpoliza" type="string" length="4" justify="left" />
+		<field name="scasados" type="string" length="1" justify="left" />
+		<field name="csegmento" type="string" length="4" justify="left" />
+		<field name="criesgoact" type="string" length="4" justify="left" />
+		<field name="gtipinteres" type="bigdecimal" length="9" justify="left" />
+		<field name="fgrabacion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="cusuariog" type="string" length="8" justify="left" />
+		<field name="fmodifica" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="cusuariom" type="string" length="8" justify="left" />
+		<field name="filler" type="string" length="460" justify="left" ignore="true" />
+	</template>
+		
+	<template name="filtroProcesoT2">
+		<field name="tipoRegistro"  type="string" rid="true" length="2" ignore="true" literal="02" />
+		<include template="filtro"/>
+	</template>
+	
+	<template name="filtroProcesoT3">
+		<field name="tipoRegistro"  type="string" rid="true" length="2" ignore="true" literal="03" />
+		<include template="filtroAdicional"/>
+	</template>
+	
+	<template name="registroT4">
+		<field name="tipoRegistro"  type="string" rid="true" length="2" ignore="true" literal="04" />
+		<field ignore="true" name="kejecucion" type="int" length="10" padding="0" justify="right" format="0000000000" />
+		<field ignore="true" name="ksistema" type="string" length="4" justify="left" />
+		<field ignore="true" name="kprotecnico" type="string" length="4" justify="left" />
+		<field ignore="true" name="kuejecucion" type="string" length="4" justify="left" />
+		<field ignore="true" name="ksecuencia" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="indicadormeses" type="string" length="3" justify="left" />
+	</template>
+	
+	<template name="fichaProcesoR340T003">
+		<field name="kejecucion" type="int" length="10" padding="0" justify="right" format="0000000000" />
+		<field name="ksistema" type="string" length="4" justify="left" />
+		<field name="kprotecnico" type="string" length="4" justify="left" />
+		<field name="kuejecucion" type="string" length="4" justify="left" />
+		<field name="ksecuencia" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="ktipores" type="string" length="4" justify="left" />
+		<field name="ksecres" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="gc1Resul" type="string" length="200" justify="left" />
+		<field name="gc2Resul" type="string" length="20" justify="left" />
+		<field name="gc3Resul" type="string" length="20" justify="left" />
+		<field name="gc4Resul" type="string" length="20" justify="left" />
+		<field name="gc5Resul" type="string" length="20" justify="left" />
+		<field name="gc6Resul" type="string" length="20" justify="left" />
+		<field name="gc7Resul" type="string" length="20" justify="left" />
+		<field name="gc8Resul" type="string" length="20" justify="left" />
+		<field name="gc9Resul" type="string" length="20" justify="left" />
+		<field name="gc10Resul" type="string" length="20" justify="left" />
+		<field name="filler" type="string" length="88" justify="left" padding=" " ignore="true" />
+	</template>
+	
+	<template name="valoresEstres">
+		<field name="feccierre" type="string" justify="left" length="8"/>
+		<field name="bt" length="8" type="string" justify="left"/>
+		<field name="variable" type="string" length="10" justify="left" />
+		<field name="valor" type="bigdecimal" length="8" padding="0" justify="right" format="+000.####;-000.####" typeHandler="bigDecimalHostHandler" />
+	</template>
+	
+</beanio>

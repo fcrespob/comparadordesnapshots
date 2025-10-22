@@ -1,0 +1,1 @@
+-Dcatalogo="PTIPO_AUT_20171231_I_BTI" -Xmx8192m -XX:-UseGCOverheadLimit -Dfeccierre="201712" -Dnegocio="I" -Dcanal="1" -Drutabase="C:/Users/sergio.becerro/CIERRES/"

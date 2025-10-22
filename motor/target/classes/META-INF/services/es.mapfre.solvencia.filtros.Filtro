@@ -1,0 +1,14 @@
+#Lista de clases que implementan la interfaz Filtro
+es.mapfre.solvencia.filtros.impl.FiltroActivoPasivo					# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroModalidad					# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroNegocioCanal					# Programa Test
+# JBMARTA - PYAM0025 - INI
+es.mapfre.solvencia.filtros.impl.FiltroRamo         				# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroModalidadGarantia			# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroPolizaSubpolizaCertificado	# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroPolizaSubpolizaSuscripcion	# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroSegmentoRiesgoActuarial		# Programa Test
+es.mapfre.solvencia.filtros.impl.FiltroTipoMaximoDGS				# Programa Test
+# JBMARTA - PYAM0025 - FIN
+# Solvencia - Fase VI
+es.mapfre.solvencia.filtros.impl.FiltroBaseTec	    				# Programa Test

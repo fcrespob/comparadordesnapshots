@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+	xmlns:processing="class:com.oracle.coherence.patterns.processing.config.xml.ProcessingPatternNamespaceHandler"
+	xmlns:element="class://com.oracle.coherence.common.namespace.preprocessing.XmlPreprocessingNamespaceHandler"
+	xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config coherence-cache-config.xsd"
+	element:introduce-cache-config="">
+
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>local-cache</cache-name>
+			<scheme-name>local-scheme</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+		<!-- Esquema empleado en cachés que almacenan información de tipo maestro. 
+			En los test ha de ser distribuido en lugar de replicado -->
+		<distributed-scheme>
+			<scheme-name>replicated-scheme</scheme-name>
+			<service-name>ReplicatedCache</service-name>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>replicated-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+
+		<!-- Esquema empleado para información que ha de estar accesible en todo 
+			el cluster y las claves están asociadas entre sí -->
+		<distributed-scheme>
+			<scheme-name>distributed-associated-scheme</scheme-name>
+			<service-name>DistributedAssociatedCache</service-name>
+			<key-associator>
+				<class-name>es.mapfre.solvencia.coherence.dataaffinity.DataAffinityKeyAssociator
+				</class-name>
+			</key-associator>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>distributed-associated-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+
+		<!-- Esquema empleado para información que ha de estar accesible en todo 
+			el cluster -->
+		<distributed-scheme>
+			<scheme-name>distributed-scheme</scheme-name>
+			<service-name>DistributedCache</service-name>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>distributed-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+
+		<!-- Esquema empleado para información accesible desde todo el cluster, 
+			pero sin la necesidad de estar completamente replicada -->
+		<near-scheme>
+			<scheme-name>near-scheme</scheme-name>
+			<front-scheme>
+				<local-scheme />
+			</front-scheme>
+			<back-scheme>
+				<distributed-scheme>
+					<scheme-name>near-distributed</scheme-name>
+					<service-name>NearDistributedCache</service-name>
+					<backing-map-scheme>
+						<local-scheme />
+					</backing-map-scheme>
+					<autostart>true</autostart>
+				</distributed-scheme>
+			</back-scheme>
+			<autostart>true</autostart>
+		</near-scheme>
+
+		<local-scheme>
+			<scheme-name>distributed-associated-local-scheme</scheme-name>
+			<service-name>DitributedLocalCache</service-name>
+		</local-scheme>
+
+		<local-scheme>
+			<scheme-name>distributed-local-scheme</scheme-name>
+			<service-name>DitributedLocalCache</service-name>
+		</local-scheme>
+
+		<local-scheme>
+			<scheme-name>replicated-local-scheme</scheme-name>
+			<service-name>ReplicatedLocalCache</service-name>
+		</local-scheme>
+	</caching-schemes>
+
+
+</cache-config>

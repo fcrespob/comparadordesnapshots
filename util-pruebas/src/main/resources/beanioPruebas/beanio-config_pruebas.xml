@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Imports de las plantillas a emplear en los streams de este fichero -->
+	<import resource="classpath:beanioPruebas/beanio-plantillas-maestro_pruebas.xml" />
+	<import resource="classpath:beanioPruebas/beanio-plantillas-parametrizacion-general_pruebas.xml" />
+	<import resource="classpath:beanioPruebas/beanio-plantillas-conversiones-bel_pruebas.xml" />
+	<import resource="classpath:beanioPruebas/beanio-plantillas-conversiones-rossp_pruebas.xml" />
+	<import resource="classpath:beanioPruebas/beanio-plantillas-salidaCalculo_pruebas.xml" />
+				
+	<typeHandler name="snHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="S" />
+		<property name="noLiteral" value="N" />
+	</typeHandler>
+	<typeHandler name="vnHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="V" />
+		<property name="noLiteral" value="N" />
+	</typeHandler>
+	<typeHandler name="vinvHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="VI" />
+		<property name="noLiteral" value="NV" />
+	</typeHandler>
+	<typeHandler name="icHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="I" />
+		<property name="noLiteral" value="C" />
+	</typeHandler>
+	<typeHandler name="aiHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="A" />
+		<property name="noLiteral" value="I" />
+	</typeHandler>
+	<typeHandler name="activoHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="A" />
+		<property name="noLiteral" value="" />
+	</typeHandler>
+	
+	<typeHandler name="dateNullHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateNullTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>
+	
+	<typeHandler name="dateRenovacionHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateRenovacionTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>	
+	
+	<typeHandler name="timeoNullHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.TimeNullTypeHandler" >
+		<property name="lastValiedDate" value="99991231" />
+		<property name="lastValiedTime" value="235959" />
+		<property name="datePosition" value="0" />
+		<property name="timeposition" value="8" />
+		<property name="nullTime" value="000000" />
+		<property name="lastTime" value="999999" />
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />
+	</typeHandler>
+	
+	<typeHandler name="dateOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateNullTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>	
+			
+	<!-- <typeHandler name="doubleDecimalHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DoubleDecimalTypeHandler" /> -->
+	<typeHandler name="bigDecimalHostHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalHostInTypeHandler" />
+	
+	<typeHandler name="nullIfEmptyTypeHandler" type="string"
+		class="org.beanio.types.StringTypeHandler">
+		<property name="nullIfEmpty" value="true" />
+	</typeHandler>
+	
+	<typeHandler name="bigDecimalSignOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalSignOutTypeHandler" />
+		
+			
+	<!-- Cada stream representa un fichero -->
+	
+	<!-- INI MAESTRO -->
+	
+	<!-- umics -->
+	<stream name="X880JI01" format="fixedlength">
+		<record name="umic" template="umic"
+			class="es.mapfre.solvencia.dominio.maestro.Umic" />
+	</stream>
+
+	<!-- pagosPlanificados -->
+	<stream name="X880J003" format="fixedlength">
+		<record name="pagoPlanificadoColectivo" template="pagoPlanificadoColectivo"
+			class="es.mapfre.solvencia.dominio.maestro.PagosPlanificados" />
+	</stream>
+
+	<!-- valoresLiquidativos -->
+	<stream name="X880J005" format="fixedlength">
+		<record name="valorLiquidativo" template="valorLiquidativo"
+			class="es.mapfre.solvencia.dominio.maestro.ValoresLiquidativos" />
+	</stream>
+
+	<!-- datosAdicionalesCoaseguro -->
+	<stream name="X880JI03" format="fixedlength">
+		<record name="datosAdicionalesCoaseguro" template="datosAdicionalesCoaseguro"
+			class="es.mapfre.solvencia.dominio.maestro.DatosAdicionalesCoaseguro" />
+	</stream>
+
+	<!-- datosPbTecnica -->
+	<stream name="X880JI04" format="fixedlength">
+		<record name="datosDePbTecnica" template="datosDePbTecnica"
+			class="es.mapfre.solvencia.dominio.maestro.DatosPbTecnica" />
+	</stream>
+	
+	<!-- cuadrosAmortizacion> -->
+	<stream name="X880J009" format="fixedlength">
+		<record name="cuadrosDeAmortizacion" template="cuadrosDeAmortizacion"
+			class="es.mapfre.solvencia.dominio.maestro.CuadrosAmortizacion" />
+	</stream>
+
+	<!-- datosEspecificosColectivos -->
+	<stream name="X880J004" format="fixedlength">
+		<record name="datosEspecificos" template="datosEspecificosColectivos"
+			class="es.mapfre.solvencia.dominio.maestro.DatosEspecificos" />
+	</stream>
+	
+	<!-- tabla2000 -->
+	<stream name="TABLA2000" format="fixedlength">
+		<record name="tabla2000" template="tabla2000"
+			class="es.mapfre.solvencia.dominio.maestro.Tabla2000" />
+	</stream>
+
+	<!-- FIN MAESTRO -->
+	
+	<!-- INI - Parametrizacion General -->
+	
+	<!-- curvasTipo656 -->
+	<stream name="X880JI08" format="fixedlength">
+		<record name="curvasTipoTableGeneral656" template="curvasTipoTableGeneral656"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.CurvasTipo656" />
+	</stream>
+	
+	<!-- disenoDeProcesos -->
+	<stream name="DIP0" format="fixedlength">
+		<record name="disenoProcesos" template="disenoProcesos"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DisenoProcesos" />
+	</stream>
+	
+	<!-- definicionDeProcesos -->
+	<stream name="DPR0" format="fixedlength">
+		<record name="definicionProcesos" template="definicionProcesos"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DefinicionProcesos" />
+	</stream>
+	
+	<!-- definicionDeProgramas -->
+	<stream name="DPG" format="fixedlength">
+		<record name="definicionProgramas" template="definicionProgramas"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DefinicionProgramas" />
+	</stream>
+	
+	<!-- ipcGeneralFuturo -->
+	<stream name="IPC0" format="fixedlength">
+		<record name="ipcGeneralFuturoRecord" template="ipcGeneralFuturoTemplate"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.IPCGeneralFuturo" />
+	</stream>
+	
+	<!-- definicionesSolvencia2 -->
+	<stream name="SOL0" format="fixedlength">
+		<record name="definicionSolvencia2" template="definicionSolvencia2"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DefinicionesSolvencia2" />
+	</stream>
+	
+	<!-- definicionesAuxiliares -->
+	<stream name="AUX0" format="fixedlength">
+		<record name="definicionAuxiliar" template="definicionAuxiliar"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DefinicionesAuxiliares" />
+	</stream>
+	
+	<!--  opcionesGeneracion -->
+	<stream name="OPG0" format="fixedlength">
+		<record name="opcionGeneracion" template="opcionGeneracion"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.OpcionesGeneracion" />
+	</stream>
+	
+	<!-- flujosProbables -->
+	<stream name="FLP0" format="fixedlength">
+		<record name="flujoProbable" template="flujoProbable"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.FlujosProbables" />
+	</stream>
+	
+	<!-- tablasExperiencia -->
+	<stream name="CTM0" format="fixedlength">
+		<record name="tablaExperiencia" template="tablaExperiencia"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.TablaExperiencia" />
+	</stream>
+	
+	<!-- cabecerasTablasExperiencia -->
+	<stream name="TXP0" format="fixedlength">
+		<record name="cabeceraTablaExperiencia" template="cabeceraTablaExperiencia"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.CabeceraTablaExperiencia" />
+	</stream>
+	
+	<!-- definicionesConstantesRescates -->
+	<stream name="CPR0" format="fixedlength">
+		<record name="definicionConstanteRescate" template="definicionConstanteRescate"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.DefinicionesConstantesRescates" />
+	</stream>
+	
+	<!-- valoresConstantesRescates -->
+	<stream name="VCR0" format="fixedlength">
+		<record name="valorConstanteRescate" template="valorConstanteRescate"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.ValoresConstantesRescate" />
+	</stream>
+		
+	<!-- limitesCapital -->
+	<stream name="RW06646" format="fixedlength">
+		<record name="limitesCapital646" template="limitesCapital"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.LimitesCapital" />
+	</stream>
+	
+	<!-- maestroErrores -->
+	<stream name="ERR0" format="fixedlength">
+		<record name="errorSolvencia2" template="errorSolvencia2"
+			class="es.mapfre.solvencia.dominio.maestro.ErrorSolvencia2" />
+	</stream>
+	
+	<!-- PARametrizacion Niif17 -->
+	
+	<stream name="CTU0" format="fixedlength">
+		<record name="asigCurvasTipoUOA" template="asigCurvasTipoUOA"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.AsigCurvasTipoUOA" />
+	</stream>
+	
+	<!-- valoresComisionesParticipadas -->
+	<stream name="COM0" format="fixedlength">
+		<record name="comisionesParticipadasCOM" template="comisionesParticipadasCOM"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.ComisionesParticipadasCOM" />
+	</stream>
+	
+	<!-- Caso especial FichaResultado: Fichero de Log entrante -->
+	
+	<stream name="R340T003" format="fixedlength">
+		<record name="fichaProcesoR340T003" template="fichaProcesoR340T003"	class="es.mapfre.solvencia.dominio.salidaCalculo.FichaResultado"/>
+	</stream>
+	
+	 <!-- Polizas Tipo: Fichero de selección de umics para generar detalles -->
+	
+	<stream name="PTIPO" format="fixedlength">
+		<record name="polizasTipo" template="polizasTipo" class="es.mapfre.solvencia.dominio.parametrizacionGeneral.PolizasTipo"/>
+	</stream>
+	
+	<!-- FIN - Parametrizacion General -->
+
+	<!-- INI - Fichas Proceso -->
+
+	<stream name="R340T000" format="fixedlength">
+		<group name="fichaProceso" class="es.mapfre.solvencia.dominio.parametrizacionGeneral.FichaProceso" minOccurs="0" maxOccurs="unbounded">
+		
+			<record name="cabecera" template="fichaProcesoR340T001" minOccurs="1" maxOccurs="1" />	
+				 		
+			<record name="filtrosAmbito" collection="list" minOccurs="0" maxOccurs="unbounded" 
+				class="es.mapfre.solvencia.dominio.parametrizacionGeneral.FiltroFichaProceso" template="filtroProcesoT2"/>
+
+			<!-- JBMARTA - PYAM0025 - INI -->
+			<!-- <record name="filtrosAdicionales" collection="list" minOccurs="0" maxOccurs="unbounded"
+					class="es.mapfre.solvencia.dominio.parametrizacionGeneral.FiltroFichaProceso" template="filtroProcesoT3"/> -->
+			<record name="filtrosAdicionales" collection="list" minOccurs="0" maxOccurs="unbounded"
+					class="es.mapfre.solvencia.dominio.parametrizacionGeneral.FiltroFichaProcesoAdicional" template="filtroProcesoT3"/>
+			<!-- JBMARTA - PYAM0025 - FIN -->
+			
+			<!-- TODO: Obligar a que siempre esté presente este registro -->
+			
+			<record name="registroParametros" template="registroT4" minOccurs="0" maxOccurs="1"	class="es.mapfre.solvencia.dominio.parametrizacionGeneral.RegistroParametros"/>
+			
+			<!-- <group name="parametrosAdicionales" collection="list" class="es.mapfre.solvencia.dominio.parametrizacionGeneral.fichaProceso.ParametroAdicional" template="fichaProcesoR340T004"/> -->
+	
+		</group>	
+	</stream>
+	
+	<!-- FIN - Fichas Proceso -->
+	
+	<!-- INI - Conversiones BEL -->
+	
+	<stream name="GRE0" format="fixedlength">
+		<record name="gastosReales" template="gastosReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.GastosReales" />
+	</stream>
+	
+	<stream name="VCI0" format="fixedlength">
+		<record name="valoresCurvaTipos" template="valoresCurvaTipos"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresCurvaTipo" />
+	</stream>
+	
+	<stream name="SCRIPC0" format="fixedlength">
+		<record name="ipcGeneralFuturoRecord" template="ipcGeneralFuturoTemplate"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.IPCGeneralFuturo" />
+	</stream>
+	
+	<stream name="SCRGRE0" format="fixedlength">
+		<record name="gastosReales" template="gastosReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.GastosReales" />
+	</stream>
+	
+	<stream name="SCR0" format="fixedlength">
+		<record name="valoresEstresRecord" template="valoresEstres"
+			class="es.mapfre.solvencia.dominio.scr.ValoresEstres" />
+	</stream>
+	
+	<stream name="VMA0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	
+	<stream name="VTR0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRMFE0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRMMI0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRMCF0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRMCI0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRLFE0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="SCRLMI0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+		
+	<stream name="SCRAEP0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	
+	<stream name="SCRAEN0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	
+	<stream name="SCRAIP0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	
+	<stream name="SCRAIN0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	<!-- FIN - Conversiones BEL -->
+	
+</beanio>

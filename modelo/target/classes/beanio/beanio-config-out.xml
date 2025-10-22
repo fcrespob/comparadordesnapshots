@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+
+<!--MODIFICACION:TAR00302248-Contabilidad SolvenciaII en SSAA
+	FECHA: 25/09/2017
+	AUTOR: INDRA
+-->
+
+
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Imports de las plantillas a emplear en los streams de este fichero -->
+	<import resource="classpath:beanio/beanio-plantillas-salidaCalculo.xml" />
+	<import resource="classpath:beanio/beanio-plantillas-entregables.xml" />
+
+	<typeHandler name="snHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="S" />
+		<property name="noLiteral" value="N" />
+	</typeHandler>
+	<typeHandler name="vnHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="V" />
+		<property name="noLiteral" value="N" />
+	</typeHandler>
+	<typeHandler name="vinvHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="VI" />
+		<property name="noLiteral" value="NV" />
+	</typeHandler>
+	<typeHandler name="icHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="I" />
+		<property name="noLiteral" value="C" />
+	</typeHandler>
+	<typeHandler name="aiHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="A" />
+		<property name="noLiteral" value="I" />
+	</typeHandler>
+
+	<typeHandler name="dateOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateNullTypeHandler">
+		<property name="nullDate" value="" />
+		<property name="lastDate" value="99/99/9999" />
+		<property name="lastValiedDate" value="31/12/9999" />
+	</typeHandler>
+	<typeHandler name="DateFPSLHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateFPSLTypeHandler">
+		<property name="nullDate" value="" />
+		<property name="lastDate" value="99/99/9999" />
+		<property name="lastValiedDate" value="31/12/9999" />
+	</typeHandler>
+
+	<typeHandler name="timeoNullHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.TimeNullTypeHandler">
+		<property name="lastValiedDate" value="31129999" />
+		<property name="lastValiedTime" value="235959" />
+		<property name="datePosition" value="0" />
+		<property name="timeposition" value="8" />
+		<property name="nullTime" value="000000" />
+		<property name="lastTime" value="999999" />
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />
+	</typeHandler>
+
+	<typeHandler name="bigDecimalAbsOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalAbsOutTypeHandler" />
+
+	<typeHandler name="bigDecimalSignOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalSignOutTypeHandler" />
+
+	<typeHandler name="bigDecimalCeroWithoutSignOutHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalCeroWithoutSignOutTypeHandler" />
+
+	<typeHandler name="nullIfEmptyTypeHandler" type="string"
+		class="org.beanio.types.StringTypeHandler">
+		<property name="nullIfEmpty" value="true" />
+	</typeHandler>
+
+	<typeHandler name="bigDecimalHostHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalHostInTypeHandler" />
+
+	<!-- Cada stream representa un fichero -->
+
+	<stream name="totales-flujos" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="totalesFlujo" template="totalesFlujos"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.TotalesFlujos" />
+	</stream>
+
+	<stream name="detalle-corriente" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="detalleCorrienteRecord" template="detalleCorrienteTemplate"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.DetalleCorriente" />
+	</stream>
+
+	<!--fichaResultado -->
+
+	<stream name="R340T003" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="fichaProcesoR340T003" template="fichaProcesoR340T003"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.FichaResultado" />
+	</stream>
+
+	<stream name="incidencias" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="incidencia" template="incidencia"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.Incidencia" />
+	</stream>
+
+	<stream name="detalle-basetecnicas" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="detalleBT" template="detalleBT"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.DetalleBaseTecnica" />
+	</stream>
+
+	<stream name="PTIPO" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="polizasTipo" template="polizasTipo"
+			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.PolizasTipo" />
+	</stream>
+
+	<!-- Entregables -->
+
+	<stream name="prvinf1" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvinf1" template="prvinf1"
+			class="es.mapfre.solvencia.dominio.entregables.PrvInf1" />
+	</stream>
+
+	<stream name="prvinf2" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvinf2" template="prvinf2"
+			class="es.mapfre.solvencia.dominio.entregables.PrvInf2" />
+	</stream>
+
+	<stream name="prvumic" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvumic" template="prvumic"
+			class="es.mapfre.solvencia.dominio.entregables.PrvUmic" />
+	</stream>
+
+	<stream name="prvcr" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvcr" template="prvcr"
+			class="es.mapfre.solvencia.dominio.entregables.PrvCr" />
+	</stream>
+
+	<stream name="prvbt" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvbt" template="prvbt"
+			class="es.mapfre.solvencia.dominio.entregables.PrvBt" />
+	</stream>
+
+	<stream name="flujinf1" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujinf1" template="flujinf1"
+			class="es.mapfre.solvencia.dominio.entregables.FlujInf1" />
+	</stream>
+	<stream name="flujinf2" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujinf2" template="flujinf2"
+			class="es.mapfre.solvencia.dominio.entregables.FlujInf2" />
+	</stream>
+
+	<stream name="provcoaseg" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="provcoaseg" template="provcoaseg"
+			class="es.mapfre.solvencia.dominio.entregables.ProvCoaSeg" />
+	</stream>
+
+	<stream name="flujcoaseg" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujcoaseg" template="flujcoaseg"
+			class="es.mapfre.solvencia.dominio.entregables.FlujCoaSeg" />
+	</stream>
+
+	<stream name="basetec" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="basetec" template="basetec"
+			class="es.mapfre.solvencia.dominio.entregables.Basetec" />
+	</stream>
+
+	<stream name="prvfpb" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="prvfpb" template="prvfpb"
+			class="es.mapfre.solvencia.dominio.entregables.PrvFpb" />
+	</stream>
+
+	<stream name="flujtcas" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujtcas" template="flujtcas"
+			class="es.mapfre.solvencia.dominio.entregables.FlujTcas" />
+	</stream>
+	
+	<!-- INI-TAR00302248 -->
+	<stream name="contab" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="contab" template="contab"
+			class="es.mapfre.solvencia.dominio.entregables.Contabilidad" />
+	</stream>
+	<!-- FIN-TAR00302248 -->
+	
+	<stream name="scrvm" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="factoresvolatilidad" template="factoresvolatilidad"
+			class="es.mapfre.solvencia.dominio.scr.entregables.FactoresVolatilidad" />
+	</stream>
+	
+	<stream name="flujostotp" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujostotp" template="flujostotp"
+			class="es.mapfre.solvencia.dominio.entregables.FlujosTotP" />
+	</stream>
+	
+	<stream name="flujinf3" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujinf3" template="flujinf3"
+			class="es.mapfre.solvencia.dominio.entregables.FlujInf3" />
+	</stream>
+	
+	<stream name="flujostn17" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujostn17" template="flujostn17"
+			class="es.mapfre.solvencia.dominio.entregables.FlujosTN17" />
+	</stream>
+	
+	<stream name="fpsl" format="csv">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+			<property name="delimiter" value=";" />
+		</parser>
+		<group name="groupfpsl">
+			<record name="headerfpsl" class="es.mapfre.solvencia.dominio.entregables.FPSL" 
+				order="1" occurs="1" template="headerfpsl"/>
+			<record name="fpsl" template="fpsl"
+				class="es.mapfre.solvencia.dominio.entregables.FPSL" order="2" />
+		</group>
+<!-- 		<record name="fpsl" template="fpsl" -->
+<!-- 			class="es.mapfre.solvencia.dominio.entregables.FPSL" /> -->
+	</stream>
+	
+	<stream name="flujinf4" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujinf4" template="flujinf4"
+			class="es.mapfre.solvencia.dominio.entregables.FlujInf4" />
+	</stream>
+	
+	<stream name="flujototpv" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujototpv" template="flujototpv"
+			class="es.mapfre.solvencia.dominio.entregables.FlujoTotPV" />
+	</stream>
+	
+	<stream name="pesosbt" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="pesosbt" template="pesosbt"
+			class="es.mapfre.solvencia.dominio.entregables.PesosBt" />
+	</stream>
+	
+	<stream name="pesosbtproxy" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="pesosbtproxy" template="pesosbtproxy"
+			class="es.mapfre.solvencia.dominio.entregables.PesosBtProxy" />
+	</stream>
+	
+	<stream name="patroncsm" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="patroncsm" template="patroncsm"
+			class="es.mapfre.solvencia.dominio.entregables.PatronCsm" />
+	</stream>
+	
+	<stream name="swcobrocom" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="swcobrocom" template="swcobrocom"
+			class="es.mapfre.solvencia.dominio.entregables.SwCobroCom" />
+	</stream>
+	
+	<stream name="swcobrocomcsv" format="csv">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+			<property name="delimiter" value=";" />
+		</parser>
+		<group name="groupswcobrocomcsv">
+			<record name="headerswcobrocomcsv" class="es.mapfre.solvencia.dominio.entregables.SwCobroComCsv" 
+				order="1" occurs="1" template="headerswcobrocomcsv"/>
+			<record name="swcobrocomcsv" template="swcobrocomcsv"
+				class="es.mapfre.solvencia.dominio.entregables.SwCobroComCsv" order="2" />
+		</group>
+	</stream>
+	
+	<stream name="totpmacoa" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="totpmacoa" template="totpmacoa"
+			class="es.mapfre.solvencia.dominio.entregables.TotPMaCoa" />
+	</stream>
+	
+	<stream name="flujpmacoa" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujpmacoa" template="flujpmacoa"
+			class="es.mapfre.solvencia.dominio.entregables.FlujPMaCoa" />
+	</stream>
+	
+	<stream name="flujpmdcoa" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujpmdcoa" template="flujpmdcoa"
+			class="es.mapfre.solvencia.dominio.entregables.FlujPMdCoa" />
+	</stream>
+	
+	<stream name="incidenciasmaestro" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="incidenciasmaestro" template="incidenciasmaestro"
+			class="es.mapfre.solvencia.dominio.salidaCalculo.IncidenciasMaestro" />
+	</stream>
+	
+	<stream name="contcerti" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="contcerti" template="contcerti"
+			class="es.mapfre.solvencia.dominio.entregables.ConteoCertificado" />
+	</stream>
+	
+	<stream name="flujinfscr" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujinfscr" template="flujinfscr"
+			class="es.mapfre.solvencia.dominio.entregables.FlujInfSCR" />
+	</stream>
+	
+	<stream name="flujsuscri" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujsuscri" template="flujsuscri"
+			class="es.mapfre.solvencia.dominio.entregables.FlujSuscri" />
+	</stream>
+	
+	<stream name="contabc" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n"/>
+		</parser>
+		<record name="contabc" template="contabc" class="es.mapfre.solvencia.dominio.entregables.ContabilidadCertificado"/>
+	</stream>
+</beanio>

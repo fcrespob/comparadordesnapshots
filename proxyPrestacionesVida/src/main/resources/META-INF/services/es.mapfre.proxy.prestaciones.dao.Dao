@@ -1,0 +1,5 @@
+es.mapfre.proxy.prestaciones.dao.entidades.FlujosRealesDao
+es.mapfre.proxy.prestaciones.dao.entidades.FichaProcesoDao
+es.mapfre.proxy.prestaciones.dao.entidades.FlujosRealesSalidaDao
+es.mapfre.proxy.prestaciones.dao.entidades.PesosBtColDao
+es.mapfre.proxy.prestaciones.dao.entidades.PesosBtIndDao

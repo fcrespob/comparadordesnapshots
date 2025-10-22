@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcacheSCRGTO.xsd"
+         updateCheck="true" monitoring="autodetect"
+         dynamicConfig="true">
+
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+            maxEntriesLocalHeap="100000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            diskSpoolBufferSizeMB="30"
+            maxEntriesLocalDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            statistics="false">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+	<cache name="FIC0"
+           maxEntriesLocalHeap="10000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+
+    <cache name="REA0"
+           maxEntriesLocalHeap="100000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+
+    <cache name="PESIND0"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="kmodalidad" expression="value.getKmodalidad()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpoliza()"/>
+           <searchAttribute name="kcertificado" expression="value.getKcertificado()"/>
+        </searchable>
+    </cache>
+
+    <cache name="PESCOL0"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="kmodalidad" expression="value.getKmodalidad()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpoliza()"/>
+           <searchAttribute name="kcertificado" expression="value.getKcertificado()"/>
+        </searchable>
+        <persistence strategy="none"/>
+    </cache>
+    
+</ehcache>

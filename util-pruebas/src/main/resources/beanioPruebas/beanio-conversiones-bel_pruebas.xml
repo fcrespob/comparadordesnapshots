@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Plantillas de conjuntos de campos. Cada plantilla representa un bloque 
+		dentro de un fichero. -->
+	
+	<!-- Tabla de asignación de curvas tipo TB340ACI0 -->
+	<template name="asignacionCurvasTipo">
+		<field name="kbasetec" type="string" length="8" justify="left" />
+		<field name="kriesgo" type="string" length="4" justify="left" />
+		<field name="kriesgorescate" type="string" length="1" justify="left" />
+		<field name="kpagounico" type="string" length="1" justify="left" />
+		<field name="kcarterainv" type="string" length="4" justify="left" />
+		<field name="kpb" type="string" length="1" justify="left" />
+		<field name="kapbel" type="string" length="1" justify="left" />
+		<field name="kfdesdeconver" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="fhastaconver" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="kcurva" type="string" length="7" justify="left" />
+		<field name="speriodotrans" type="string" length="1" justify="left" />
+		<field name="kmadaptac" type="string" length="5" justify="left" />
+	</template>
+	
+	<!-- Tabla de valores métodos de adaptación TB340MVI0 -->
+	<template name="valoresMetAdaptacion">
+		<field name="kmadaptac" type="string" length="5" justify="left" />
+		<field name="kfinicio" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="cperadaptac" type="int" length="4" padding="0" justify="right" format="0000" />
+		<field name="cperpend" type="int" length="4" padding="0" justify="right" format="0000" />
+		<field name="cperutil" type="int" length="4" padding="0" justify="right" format="0000" />
+	</template>
+	
+	<!-- Tabla de asignación tasas anulación TB340ATA0 -->
+	<template name="asignacionTasasAnul">
+		<field name="kbasetec" type="string" length="8" justify="left" />
+		<field name="kcompania" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="knegocio" type="string" length="1" justify="left" />
+		<field name="kramo" type="string" length="3" justify="left" />
+		<field name="kpinteresdesde" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="5" padding="0" justify="right" format="000.##"/>
+ 		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="kfiniconversion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="pintereshasta" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="5" padding="0" justify="right" format="000.##"/>
+ 		<field name="ffinconversion" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ktablaanu" type="string" length="7" justify="left" />
+	</template>
+	
+	<!-- Tabla de valores tasas anulación TB340VTA0 -->
+	<template name="valoresTasasAnul">
+		<field name="ktablaanu" type="string" length="7" justify="left" />
+		<field name="kfcierre" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="kaniosdesde" type="bigdecimal" length="7" padding="0" justify="right" format="000.####" typeHandler="bigDecimalHostHandler"/>
+		<field name="nanioshasta" type="bigdecimal" length="7" padding="0" justify="right" format="000.####" typeHandler="bigDecimalHostHandler" />
+		<field name="pprobanu" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+	</template>
+	
+	<!-- Tabla Criterios Conversión Tablas de Experiencia Reales TB340ATR0 -->
+	<template name="convTablasExperienciaReales">
+		<field name="kbasetec" type="string" length="8" justify="left" />
+		<field name="kcompania" type="int" length="5" justify="left" />
+		<field name="knegocio" length="1" type="string" justify="left" />
+		<field name="kriesgo" type="string" length="4" justify="left" />
+		<field name="ksexo" type="string" length="1" justify="left" />
+		<field name="kcateg" type="string" length="2" justify="left" />
+		<field name="kedaddesde" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="kfdesde" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="edadhasta" type="int" length="3" padding="0" justify="right" format="000" />
+		<field name="fhasta" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ctabbase" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="pfactor1" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2a" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2b" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2c" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2d" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2e" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2f" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2g" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2h" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2i" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 		<field name="pfactor2j" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="6" padding="0" justify="right" format="000.###"/>
+ 	</template>
+
+</beanio>

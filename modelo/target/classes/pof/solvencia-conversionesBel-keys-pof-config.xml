@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<pof-config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://xmlns.oracle.com/coherence/coherence-pof-config' xsi:schemaLocation='http://xmlns.oracle.com/coherence/coherence-pof-config coherence-pof-config.xsd'>
+  <user-type-list>
+    <!--
+    Solvencia key classes
+    -->
+    <user-type>
+      <type-id>3501</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.conversionesBel.GastosRealesKey</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3502</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.conversionesBel.ValoresCurvaTipoKey</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3504</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.conversionesBel.ValoresAnulacionKey</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3505</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.conversionesBel.TablasExperienciaRealesKey</class-name>
+    </user-type>
+    
+    <!-- Deprecated A eliminar en 10 dias a partir del 22/04/2014 -->
+    <user-type>
+      <type-id>3506</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.conversionesBel.ValoresInterpolacionKey</class-name>
+    </user-type>
+    <user-type>
+      <type-id>3507</type-id>
+      <class-name>es.mapfre.solvencia.coherence.keys.scr.ValoresEstresKey</class-name>
+    </user-type>
+  </user-type-list>
+  <allow-interfaces>true</allow-interfaces>
+  <allow-subclasses>true</allow-subclasses>
+</pof-config>

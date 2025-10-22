@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+	xmlns:processing="class:com.oracle.coherence.patterns.processing.config.xml.ProcessingPatternNamespaceHandler"
+	xmlns:element="class://com.oracle.coherence.common.namespace.preprocessing.XmlPreprocessingNamespaceHandler"
+	xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config coherence-cache-config.xsd"
+	element:introduce-cache-config="">
+
+	<defaults>
+		<serializer system-property="tangosol.coherence.serializer">pof</serializer>
+		<socket-provider system-property="tangosol.coherence.socketprovider" />
+	</defaults>
+
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>monitorizacionCache</cache-name>
+			<scheme-name>distributed-scheme</scheme-name>
+		</cache-mapping>
+
+		<cache-mapping>
+			<cache-name>local-cache</cache-name>
+			<scheme-name>local-scheme</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+		<!-- Esquemas locales empleados como base para el resto de configuraciones -->
+		<local-scheme>
+			<scheme-name>distributed-associated-local-scheme</scheme-name>
+			<service-name>DistributedLocalAssociatedCacheForSolvencia</service-name>
+		</local-scheme>
+
+		<local-scheme>
+			<scheme-name>distributed-local-scheme</scheme-name>
+			<service-name>DistributedLocalCacheForSolvencia</service-name>
+		</local-scheme>
+
+		<local-scheme>
+			<scheme-name>replicated-local-scheme</scheme-name>
+			<service-name>ReplicatedLocalCacheForSolvencia</service-name>
+		</local-scheme>
+
+
+		<!-- Esquema empleado en cachés que almacenan información de tipo maestro, 
+			con un tamaño reducido y con un ratio lectura/escritura muy alto -->
+		<replicated-scheme>
+			<scheme-name>replicated-scheme</scheme-name>
+			<service-name>ReplicatedCacheForSolvencia</service-name>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>replicated-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</replicated-scheme>
+
+		<!-- Esquema empleado para información que ha de estar accesible en todo 
+			el cluster y las claves están asociadas entre sí (cartera y salida) -->
+		<distributed-scheme>
+			<scheme-name>distributed-associated-scheme</scheme-name>
+			<service-name>DistributedCacheForAssociatedObjectsSolvencia
+			</service-name>
+			<thread-count
+				system-property="solvencia.coherence.distributed.associated.thread.count">4</thread-count>
+			<partition-count
+				system-property="solvencia.coherence.distributed.associated.partition.count">601</partition-count>
+			<key-associator>
+				<class-name>es.mapfre.solvencia.coherence.dataaffinity.DataAffinityKeyAssociator
+				</class-name>
+			</key-associator>
+			<key-partitioning>
+				<class-name
+					system-property="solvencia.coherence.distributed.associated.partition.strategy">com.tangosol.net.partition.DefaultKeyPartitioningStrategy
+				</class-name>
+			</key-partitioning>
+			<guardian-timeout>1200000</guardian-timeout>
+			<service-failure-policy>logging</service-failure-policy>
+			<backing-map-scheme>
+				<!-- <external-scheme>
+					<scheme-name>distributed-associated-external-scheme</scheme-name>
+					<nio-memory-manager />
+				</external-scheme> -->
+				<local-scheme>
+					<scheme-ref>distributed-associated-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+
+		<!-- Esquema empleado para información que ha de estar accesible en todo 
+			el cluster, pero no es crítico el acceso a la misma -->
+		<distributed-scheme>
+			<scheme-name>distributed-scheme</scheme-name>
+			<service-name>DistributedCacheForSolvencia</service-name>
+			<thread-count system-property="solvencia.coherence.distributed.thread.count">1</thread-count>
+			<partition-count system-property="solvencia.coherence.distributed.partition.count">257
+			</partition-count>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>distributed-local-scheme</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+
+		<!-- Esquema empleado en cachés que almacenan información de tipo maestro, 
+			con un tamaño muy grande y con un ratio lectura/escritura muy alto -->
+		<near-scheme>
+			<scheme-name>near-scheme</scheme-name>
+			<front-scheme>
+				<local-scheme>
+					<high-units>100000</high-units>
+					<unit-calculator>FIXED</unit-calculator>
+					<expiry-delay>6h</expiry-delay>
+				</local-scheme>
+			</front-scheme>
+			<back-scheme>
+				<distributed-scheme>
+					<scheme-name>near-distributed</scheme-name>
+					<service-name>NearDistributedCacheForSolvencia</service-name>
+					<thread-count system-property="solvencia.coherence.near.distributed.thread.count">2</thread-count>
+					<partition-count
+						system-property="solvencia.coherence.near.distributed.partition.count">661</partition-count>
+					<backing-map-scheme>
+						<external-scheme>
+							<scheme-name>near-external</scheme-name>
+							<nio-memory-manager />
+						</external-scheme>
+					</backing-map-scheme>
+					<autostart>true</autostart>
+				</distributed-scheme>
+			</back-scheme>
+			<invalidation-strategy>none</invalidation-strategy>
+			<autostart>true</autostart>
+		</near-scheme>
+		
+		<invocation-scheme>
+			<scheme-name>InvocationService</scheme-name>
+			<service-name>InvocationService</service-name>
+			<thread-count>5</thread-count>
+			<autostart>true</autostart>
+		</invocation-scheme>
+	</caching-schemes>
+
+
+</cache-config>

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>es.mapfre.solvencia</groupId>
+  <artifactId>generacion-entregables</artifactId>
+  <version>11.0.0-RELEASE</version>
+  <packaging>jar</packaging>
+  
+  <parent>
+    <groupId>es.mapfre.solvencia</groupId>
+    <artifactId>solvencia</artifactId>
+    <version>11.0.0-RELEASE</version>
+    <relativePath>../solvencia</relativePath>
+  </parent>
+  
+  <name>Generacion de entregables</name>
+  <url>http://www.mapfre.es</url>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.7</java.version.source>
+		<java.version.target>1.7</java.version.target>
+	</properties>
+
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+
+	<dependencies>
+		<!-- Coherence -->
+		<dependency>
+			<groupId>com.oracle.coherence</groupId>
+			<artifactId>coherence</artifactId>
+			<version>12.1.2-0-0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.incubator</groupId>
+			<artifactId>coherence-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.incubator</groupId>
+			<artifactId>coherence-processingpattern</artifactId>
+		</dependency>
+
+		<!-- Mapfre Solvencia -->
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>coherence-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>modelo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>dao-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>motor-programas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>servicios</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>servicios-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>formulacion-Funciones</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>formulacion-Modulos</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>gestor-ficheros-GBT</artifactId>
+		</dependency>
+	</dependencies>
+</project>

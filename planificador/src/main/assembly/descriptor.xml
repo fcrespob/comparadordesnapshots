@@ -1,0 +1,38 @@
+<assembly>
+	<id>distribution</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>${project.groupId}:*:jar</include>
+			</includes>
+			<excludes>
+				<exclude>${project.groupId}:gestor-*:jar</exclude>
+			</excludes>
+			<outputDirectory>3 - IMP Implantacion/Multiplataforma/programas/Solvencia2-Amazon/lib
+			</outputDirectory>
+		</dependencySet>
+		<dependencySet>
+			<outputDirectory>3 - IMP Implantacion/Multiplataforma/programas/Solvencia2-Amazon/optional
+			</outputDirectory>
+			<includes>
+				<include>*:*:jar</include>
+			</includes>
+			<excludes>
+				<exclude>${project.groupId}:*:jar</exclude>
+			</excludes>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>${project.groupId}:gestor-*:jar</include>
+			</includes>
+			<outputDirectory>3 - IMP Implantacion/Multiplataforma/programas/Solvencia2-Amazon/optional
+			</outputDirectory>
+		</dependencySet>
+	</dependencySets>
+</assembly>

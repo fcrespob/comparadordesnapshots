@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>excepciones</artifactId>
+
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+
+	<name>Jerarquía de Excepciones</name>
+	<url>http://www.mapfre.es</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.7</java.version.source>
+		<java.version.target>1.7</java.version.target>
+	</properties>
+	
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+	
+	<dependencies>
+		<!-- Mapfre Solvencia -->
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>modelo</artifactId>
+		</dependency>
+		<!-- Coherence -->
+		<dependency>
+			<groupId>com.oracle.coherence</groupId>
+			<artifactId>coherence</artifactId>
+			<version>12.1.2-0-0</version>
+		</dependency>
+	</dependencies>
+
+</project>

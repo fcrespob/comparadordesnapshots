@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>es.mapfre.solvencia</groupId>
+	<artifactId>coherence-base</artifactId>
+	<version>11.0.0-RELEASE</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+
+	<name>Elementos Comunes de Coherence</name>
+	<url>http://www.mapfre.es</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.7</java.version.source><java.version.target>1.7</java.version.target>
+	</properties>
+
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+
+	<dependencies>
+		<!-- Coherence -->
+		<dependency>
+			<groupId>com.oracle.coherence</groupId>
+			<artifactId>coherence</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.incubator</groupId>
+			<artifactId>coherence-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.incubator</groupId>
+			<artifactId>coherence-processingpattern</artifactId>
+		</dependency>
+		
+		<!-- Commons lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		
+		<!-- HTTP Client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+  
+		<!-- Amazon AWS -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<!-- Azure -->
+		<dependency>
+		    <groupId>com.microsoft.azure</groupId>
+		    <artifactId>azure-serviceruntime</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+		    <artifactId>azure-management-network</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Google Cloud Compute Engine -->
+    	<dependency>
+    		<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-compute</artifactId>
+			<optional>true</optional>
+	    </dependency>
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-java6</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-jetty</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<!-- Softlayer -->
+		<dependency>
+			<groupId>com.softlayer.api</groupId>
+			<artifactId>softlayer-api-client</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>amazon</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>cloud</name>
+					<value>amazon</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Amazon AWS -->
+				<dependency>
+					<groupId>com.amazonaws</groupId>
+					<artifactId>aws-java-sdk</artifactId>
+					<optional>false</optional>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>azure</id>
+			<activation>
+				<property>
+					<name>cloud</name>
+					<value>azure</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Azure -->
+				<dependency>
+				    <groupId>com.microsoft.azure</groupId>
+				    <artifactId>azure-serviceruntime</artifactId>
+					<optional>false</optional>
+					<scope>compile</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.microsoft.azure</groupId>
+				    <artifactId>azure-management-network</artifactId>
+					<optional>false</optional>
+					<scope>compile</scope>				
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>google</id>
+			<activation>
+				<property>
+					<name>cloud</name>
+					<value>google</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Google Cloud Compute Engine -->
+		    	<dependency>
+		    		<groupId>com.google.apis</groupId>
+					<artifactId>google-api-services-compute</artifactId>
+					<version>v1-rev62-1.20.0</version>
+					<optional>false</optional>
+					<scope>compile</scope>
+			    </dependency>
+				<dependency>
+					<groupId>com.google.oauth-client</groupId>
+					<artifactId>google-oauth-client-java6</artifactId>
+					<version>1.20.0</version>
+					<optional>false</optional>
+					<scope>compile</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.google.oauth-client</groupId>
+					<artifactId>google-oauth-client-jetty</artifactId>
+					<version>1.20.0</version>
+					<optional>false</optional>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>softlayer</id>
+			<activation>
+				<property>
+					<name>cloud</name>
+					<value>softlayer</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Azure -->
+				<dependency>
+				    <groupId>com.softlayer.api</groupId>
+					<artifactId>softlayer-api-client</artifactId>
+					<optional>false</optional>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+</project>

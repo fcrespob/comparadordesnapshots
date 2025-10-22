@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>es.mapfre.solvencia</groupId>
+	<artifactId>planificador</artifactId>
+	<version>11.0.0-RELEASE</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+
+	<name>Planificador de Solvencia</name>
+	<url>http://www.mapfre.es</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.7</java.version.source><java.version.target>1.7</java.version.target>
+	</properties>
+
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+	<dependencies>
+		<!-- Coherence -->
+		<dependency>
+			<groupId>com.oracle.coherence</groupId>
+			<artifactId>coherence</artifactId>
+			<version>12.1.2-0-0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.incubator</groupId>
+			<artifactId>coherence-processingpattern</artifactId>
+		</dependency>
+
+		<!-- BeanIO -->
+		<dependency>
+			<groupId>org.beanio</groupId>
+			<artifactId>beanio</artifactId>
+		</dependency>
+			
+		<!-- Mapfre Solvencia -->
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>modelo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>coherence-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>motor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>motor-programas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>formulacion-Procesos</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>generacion-entregables</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.4</version>
+	
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+	
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+	
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/descriptor.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>amazon</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>cloud</name>
+					<value>amazon</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Amazon AWS -->
+				<dependency>
+					<groupId>com.amazonaws</groupId>
+					<artifactId>aws-java-sdk</artifactId>
+					<optional>false</optional>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>azure</id>
+			<activation>
+				<property>
+					<name>cloud</name>
+					<value>azure</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Azure -->
+				<dependency>
+				    <groupId>com.microsoft.azure</groupId>
+				    <artifactId>azure-serviceruntime</artifactId>
+					<optional>false</optional>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>google</id>
+			<activation>
+				<property>
+					<name>cloud</name>
+					<value>google</value>
+				</property>
+			</activation>
+			<dependencies>
+				<!-- Google Cloud Compute Engine -->
+		    	<dependency>
+		    		<groupId>com.google.apis</groupId>
+					<artifactId>google-api-services-compute</artifactId>
+					<version>v1-rev62-1.20.0</version>
+					<optional>false</optional>
+					<scope>runtime</scope>
+			    </dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+</project>

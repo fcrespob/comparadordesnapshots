@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Plantillas de conjuntos de campos. Cada plantilla representa un bloque 
+		dentro de un fichero. -->
+		
+	 <!-- Criterios conversión Tablas Exp. TB340CTE0 -->
+	 <template name="conversionTablasExperiencia" >
+		<field name="ktipobt" type="string" length="8" justify="left"/>
+		<field name="ktablaexp" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="kgarantia" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ctablaini" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="ctablafin" type="int" length="5" padding="0" justify="right" format="00000" />
+	</template>
+	
+	<!-- Periodos Adaptación TB340MAD0 -->
+	<template name="periodosAdaptacion" >
+		<field name="kmadaptac" type="string" length="4" justify="left"/>
+		<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ndotacion" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="npendiente" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="ndivisor" type="int" length="5" padding="0" justify="right" format="00000" />
+	</template>
+	
+	<!-- Adaptación Tabla de experiencia por Base Técnica TB340ATE0 --> 
+	<template name="adaptacionTablasExpPorBT" >
+		<field name="ktipobt" type="string" length="8" justify="left"/>
+		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="kmadaptac" type="string" length="4" justify="left"/>
+	</template>
+
+	<!-- Interés técnico DGS TB340ITR0 --> 
+	<template name="interesTecnico" >
+	 	<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="pitref" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="9" padding="0" justify="right" format="+000.#####;-000.#####" />
+	</template>
+	 
+	<!-- Rentabilidades por GAP TB340GAR0 -->
+	<template name="rentabilidadesPorGAP" >
+	 	<field name="kgap" type="string" length="4" justify="left"/>
+	 	<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="prentabil" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+		<field name="ffincasado" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+	</template>
+	
+	<!-- Criterios de obtención de interés técnico TB340AIT0 -->
+	<template name="critObtencionIntTecnico" >
+	 	<field name="kcriterioit" type="string" length="4" justify="left"/>
+		<field name="gcriterioit" type="string" length="80" justify="left"/>
+		<field name="kliteral" type="int" length="9" padding="0" justify="right" format="000000000" />
+		<field name="glink" type="string" length="255" justify="left"/>
+	 </template>
+	 
+	 <!-- Criterios de asignación de interés técnico TB340ITG0 -->
+	 <template name="critAsigIntTecnico" >
+	 	<field name="fcierre" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ktipobt" type="string" length="8" justify="left"/>
+	 	<field name="kgap" type="string" length="4" justify="left"/>
+	 	<field name="kaprossp" type="string" length="1" justify="left"/>
+	 	<field name="kcasado" type="string" length="1" justify="left"/>
+		<field name="kcriterioit" type="string" length="4" justify="left"/>
+		<field name="pitmedio" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+		<field name="pitmaxcalc" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+		<field name="ccurva" type="int" length="5" padding="0" justify="right" format="00000" />
+	 </template>
+	 
+	 <!-- Tabla de diferenciales de gastos TB340DGI0 -->
+	 <template name="diferencialesGastos" >
+	 	<field name="ktipobt" type="string" length="8" justify="left"/>
+	 	<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="kgarantia" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="fini" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="ffin" length="8" format="yyyyMMdd" typeHandler="dateNullHandler" />
+		<field name="pdifegap" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifegac" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifegar" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifeprp" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifeprc" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifeprr" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifersp" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifersc" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 	<field name="pdifersr" type="bigdecimal" typeHandler="bigDecimalHostHandler" length="8" padding="0" justify="right" format="000.#####" />
+	 </template>
+	 
+</beanio>

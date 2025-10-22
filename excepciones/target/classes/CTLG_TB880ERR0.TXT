@@ -1,0 +1,276 @@
+880J880ACT00101XXERROR PRUEBA FLUJOS ACTUALIZADOS                                                ERRORPRUEBFACT                000000000
+880J880FDP00101XXERROR PRUEBA FECHAS PAGO Y DEVENGO                                              ERRORPRUEBAFPAGYDEV           000000000
+880J880GBT00101XXERROR PRUEBA GBT                                                                ERRORPRUEBGBT                 000000000
+880J880NAN00101XXERROR PRUEBA FLUJOS PROBABLES NO ANULADOS                                       ERRORPRUEFPNAN                000000000
+880J880NOM00101XXERROR DE PRUEBA FLUJO NOMINAL                                                   ERROR DE PRUEBAFN             000000000
+880J880PMC00101XXERROR PRUEBA PROV FORMULA CERRADA                                               ERRORPRUEPROV                 000000000
+880J880PPR00101XXERROR PRUEBA PERIODOS DE PROYECCION                                             ERRORPRUEBPERIODOS            000000000
+880J880PRB00101XXERROR PRUEBA FLUJOS PROBABLES                                                   ERRORPRUEBAFP                 000000000
+880J880PVI00101XXERROR PRUEBA PROVI                                                              ERRORPRUEPROVI                000000000
+880          A1AAParámetro obligatorio no informado {0}.                                         Parámetro no informado        000000000
+880          A2AAValor {0} incorrecto para {1}.                                                  Valor incorrecto              000000000
+880          A3AAValor {0} para {1} no contemplado en alcance actual.                            Valor fuera de alcance        000000000
+880          A4AANo hay datos de la proyección de vida en BTI para la umic {0}.                  No hay datos                  000000000
+880          A5AANo se ha encontrado la Variable de Apoyo {0}.                                   No variable auxiliar          000000000
+880          A6AANo se ha encontrado la Variable de Apoyo {0}, fin proceso.                      No variable auxiliar->FIN     000000000
+880          A7AAUmic en estado Anulado {0}.                                                     Umic anulada                  000000000
+880          A8AANo se ha encontrado la Constante de Rescate {0}, fin proceso.                   No constante rescate          000000000
+880          A9AAFecha de nacimiento mayor que fecha actual.                                     Fec nacimiento > Fec actual   000000000
+880          AAAAEn situación de reducción no se permiten Primas Periódicas.                     Primas periodicas en reducción000000000
+880          ABAANo existe el código de la Constante de Rescate para la UMIC.                    Constante de Rescate no existe000000000
+880          ACXXValor {0} incorrecto para {1}.                                                  Valor incorrecto              000000000
+880          ADXXCódigo de tabla de mortalidad ({0}) incorrecto para {1}.                        Valor incorrecto tab mort     000000000
+880          AEXXFecha de vencimiento nula.                                                      Fecha vencimiento nula        000000000
+880          AFXXCriterio de generación de fecha {0} incorrecto ({1}) para {2}.                  Err criterio fec pago/dev     000000000
+880          AGXXFecha de vencimiento {0} menor que fecha de calculo {1}.                        Err fecVcto menor que fcalc   000000000
+880          AHXXNo se han encontrado datos para la tabla de experiencia {0}.                    No tabla experiencia          000000000
+880          AIXXFecha efecto ({0}) posterior a fecha de calculo ({1}).                          Fecefec posterior fcalc       000000000
+880          CCXXFecha efecto ({0}) mayor o igual a fecha de calculo ({1}).                      Fecefec mayor igual  fcalc    000000000
+880          CZXXFecha vencimiento ({0}) anterior a fecha de calculo ({1}).                      Fecefec anterior fcalc        000000000
+880          AJAANo se puede recuperar la clave de la garantía principal, umic marcada como P    No clave garan. principal     000000000
+880          AKXXLa Anualidad de cálculo no puede ser anterior a la anualidad en curso.          Anual. cálculo < anual. curso 000000000
+880          ALXXExiste porcentaje de interes con fecha de inicio de tramo interes nulo          Fec ini tramo interes nulo    000000000
+880          AMXXNo UMIC principal para mod {0} poliza {1} subpoliza {2} cert. {3} nsus. {4}.    No UMIC principal             000000000
+880          ANXXNo existen constantes de rescate para código {0} y duración {1}.                No constantes rescate         000000000
+880          AOXXDuración {0} incorrecta para la umic.                                           Duración incorrecta           000000000
+880          APXXLa fecha de vencimiento {0} no cumple con el formato {1}.                       Formato fecha incorrecto      000000000
+880          AQXXValor ({0}) no permitido de forma de pago de la renta.                          Forma pago renta incorrecta   000000000
+880          ARXXValor ({0}) no permitido para la Variable de Apoyo MODBETA.                     Valor incorrecto MODBETA      000000000
+880          ASXXVLa segunda cabeza no puede ser nula.                                           Segunda cabeza nula           000000000
+880          ATXXNo existe fecha de reducción para UMIC reducida.                                Fecha reduccion nula          000000000
+880          AUXXValor ({0}) no permitido de forma de pago de la prima.                          Forma pago prima incorrecta   000000000
+880          AVXXNo se encuentra UMIC mod {0} poliza {1} subpoliza {2} cert. {3} nsus. {4}.      No se encuentra UMIC          000000000
+880          AWXXNo se ha encontrado el cuadro de amortización para la Umic                      No se encuentra CuadroAmort   000000000
+880          AXXX  F.vcto {0} < F.calc {1} con saldo {2}                                         Err fecVcto < fcalc univ      000000000
+880          AYXX  Capital actual no informado para la umic                                      Capital actual no informado   000000000
+880          00AAExcepción no controlada.                                                                                      999999999
+880          01AANo puede devolver más de un {0}.                                                                              999999999
+880          02AAEl proceso {0} está INACTIVO.                                                                                 999999999
+880          03AAError al devolver el Diseno de Proceso del proceso {0}.                                                       999999999
+880          04AAEjecución cíclica producida por {0}.                                                                          999999999
+880          05AANo existe el programa {0}.                                                                                    999999999
+880          ZZAANo se han encontrado Fichas de Proceso en el fichero {0}.                                                     999999999
+880          ZXAANo se ha encontrado el literal de BT {0}.                                                                     999999999
+880          ZYIINo se han encontrado UMIC en el fichero del maestro.                                                          999999999
+880          D1AANo criterio de fechas para modalidad({0}), garantía({1}), prestacion ({2}).     No criterio fechas            000000000
+880          D2AANo criterio de edad para modalidad({0}), garantía({1}).                         No criterio edad              000000000
+880          D3AANo edad máxima para modalidad({0}), garantía({1}).                              No edad máxima                000000000
+880          D4AANo opciones de generación para modalidad({0}), garantía({1}).                   No opciones generación        000000000
+880          D5AANo límites capital para mod({0}), gar({1}), fecinisus({2}), x({3}), k({4}).     No límites capital            000000000
+880          D6AANo flujos probables para modalidad({0}), gar({1}), prestación({2}), bt({3}).    No flujos probables           000000000
+880          D7AANo valores exp. para tabIni({0}), tabFin({1}), año({2}), sexo({3}), edad({4}).  No valores experiencia        000000000
+880          D8AANo tasas anulación mensuales para tablaTanul({0}), fechaCurvaAn({1}).           No tasas anulación mensuales  000000000
+880          D9AANo gastos reales para mod({0}), bt({1}), c({2}), neg({3}), ramo({4}), fec({5}). No gastos reales              000000000
+880          DAAANo valores curva tipo para codCurvaTipo({0}), fecCierre({1}).                   No valores curva tipo         000000000
+880          DBAANo ipc futuro para varIpc({0}), fecha({1}).                                     No ipc futuro                 000000000
+880          DCAANo valores exp. reales para tabla({0}), año({1}), sexo({2}), edad({3})          No valores exp. real          000000000
+880          DDAANo se ha calculado la provisión, no es posible recuperar los terminales.        No terminales ant. y post.    000000000
+880          DEAAUmic principal no procesada.                                                    Umic principal no procesada.  000000000
+880          DFAAImporte nominal de {0} no calculado.                                            Nominal no calculado.         000000000
+880          DGAANo valores exp. para tabla tradic.({0}), sobremortalidad({1}), sobreriesgo({2}).No valores experiencia        000000000
+880          DHAANo valores exp. para tabla generacional({0}), año de nacimiento({1}).           No valores experiencia        000000000
+880          DIAANo valores exp. para tabla complementaria({0}).                                 No valores experiencia        000000000
+880          DJAANo se ha encontrado el dato especifico para la variable {0}                     No existe el dato especifico  000000000
+880			 DKAANo Forma de pago de la renta no informada										 Forma de pago no informada    000000000
+880          DLXXNo UMIC titular mod {0} poliza {1} subpoliza {2} cert. {3} nsus. {4}.           No UMIC titular               000000000
+880          DMXXNo Proyección UMIC titular.                                                     No Proyección UMIC titular    000000000
+880          DLXXNo UMIC titular mod {0} poliza {1} subpoliza {2} cert. {3} nsus. {4}.           No UMIC titular               000000000
+880          DMXXNo Proyección UMIC titular.                                                     No Proyección UMIC titular    000000000
+880          DNIIValor del dato espec. {0} no informado, se toma valor 0 para el calculo         Dato especifico no informado  000000000
+880          DPIIValor del dato espec. {0} no informado, se toma valor 0 para el calculo         Dato especifico no informado  000000000
+880          DQIIValor del dato espec. {0} no informado, se toma valor 0 para el calculo         Dato especifico no informado  000000000
+880          DOAADato especifico incorrecto para la variable {0}                                 Dato especifico incorrecto    000000000
+880          DSXXNo se han encontrado datos en el catálogo Comisiones participadas               No valores comisiones         000000000
+880          F0AAÁmbito no homogéneo entre los filtros de ámbito de una ficha de proceso {0}.                                  999999999
+880          F1AAÁmbito no homogéneo entre los filtros adicionales de una ficha de proceso {0}.                                999999999
+880          F2AAValor nulo en los atributos cnegocio o ccanal de una ficha de proceso {0}.                                    999999999
+880          F3AAError en los valores de un filtro de modalidad de una ficha de proceso {0}.                                   999999999
+880          F4AAError en el valor de un filtro activo/pasivo de una ficha de proceso {0}.                                     999999999
+880          F5AAOperador desde con valor nulo en un filtro de una ficha de proceso {0}.                                       999999999
+880          F6AAOperador desde {0} no permitido en un filtro de tipo String.                                                  999999999
+880          F7AAOperador desde {0} no permite el operador hasta {1}.                                                          999999999
+880          F8AATipo de filtro esperado: {0}, tipo recibido: {1}.                                                             999999999
+880          F9AAError en el valor de alguno de los operadores del filtro {0}.                                                 999999999
+880          FAAAOperador hasta {0} no permitido en filtro tipo String.                                                        999999999
+880          FBAAFSegmentoRiesgo: Al menos uno de los parámetors ha de ir informado.             Ningún parámetro informado    999999999
+880          FCAAFModGarantia: Al menos uno de los parámetors ha de ir informado.                Ningún parámetro informado    999999999
+880          FDAAFPolizaSubpolizaCert: Todos los parámetros han de ir informados.                Algún parámetro no informado  999999999
+880          FEAAFPolizaSubpolizaSusc: Todos los parámetros han de ir informados.                Algún parámetro no informado  999999999
+880          FFAAFModGarantia: Modalidad esperada: {0}, modalidad recibida: {1}.                 Algún parámetro no informado  999999999
+880          G1AAValor {0} para {1} no contemplado en alcance actual para {2}.                   Valor fuera de alcance corr   000000000
+880          G2XXDatos del Hijo no informados                                                    Datos del Hijo no informados  000000000
+880          G3XXDatos del Beneficiario no informados                                            Datos del bnc no informados   000000000
+880          G4XXEstado del asegurado no informado                                               Estado del asegurado no infor 000000000
+880          G5XXClave de beneficiario del contrato no informado                                 Clave beneficiario no infor   000000000
+880          G6XXEstado del hijo incorrecto o nulo                                               Estado hijo incorrecto/nulo   000000000
+880          G7XXEstado del hijo incorrecto (no minusvalido)                                     Estado hijo incorrecto(no M)  000000000
+880          G8XXAsegurado 2 anulado                                                             Asegurado 2 anulado           000000000
+880          G9XXAsegurado 3 anulado                                                             Asegurado 3 anulado           000000000
+880          GAXXAsegurado 4 anulado                                                             Asegurado 4 anulado           000000000
+880          GBXXAsegurado 5 anulado                                                             Asegurado 5 anulado           000000000
+880          GCXXBase Técnica no es BTI                                                          Base Técnica no es BTI        000000000
+880          GEXXNo se ha encontrado renta anual para el asegurado                               No renta anual                000000000
+880          GFXXExiste mas de una renta anual para el asegurado                                 Mas de una renta anual        000000000
+880          GHXXAsegurado 1 es igual al asegurado 2                                             Aseg1 = Aseg2                 000000000
+880          GIXXAsegurado 3 no informado                                                        Aseg3 no informado            000000000
+880          GJXXAsegurado 4 no informado                                                        Aseg4 no informado            000000000
+880          GKXXAsegurado 5 no informado                                                        Aseg5 no informado            000000000
+880          GLXXEl asegurado nivel 1 está anulado                                               Aseg nivel 2 anunlado         000000000
+880          GDXXFecha inicio tramo 1 mayor que fecha inicio umic                                FeciniTramo1 > FecIniUmi      000000000
+880          GMXXNo existen hijos menores de edad o minusvalidos informados                      No hijos informados           000000000
+880          GNXXNo existe valor de Curva tipo que cumpla los requisitos                         No valor curva tipo           000000000
+880          GOXXLa umic está marcada como garantía secuandria, finalizado proceso para la UMIC  Umic secundaria               000000000
+880          GPXXNumero de asegurados incorrecto                                                 Numero asegurados incorrecto  000000000
+880          GQXXEl asegurado debe ser de nivel 1 o 2, finalizando el proceso para la UMIC.      Aseg no nivle 1 o nivel 2     000000000
+880          GRXXRenta loca, no es posible generar los pagos                                     Renta loca, no genera pagos   000000000
+880          GSXXLa umic no es temporal ni vitalicia                                             Umic no temporal ni vitalicia 000000000
+880          GTXXLa fecha de fin de financia es nula                                             Aviso fecha fin financia nula 000000000
+880          GUXX No existen hijos minusválidos, finalizando el proceso para la UMIC.            No hijo minusvalido -> FIN    000000000
+880          GVXX La base tecnica en ejecucion no pertence a las bases tecnicas NIIF17.          No proceso NIIF17             000000000
+880          GWXX Provisión nula para la umic                                                    Provision  nula               000000000
+880          GZXX Fecha de calculo es superior a la fecha fin de periodos                        Fec calculo > Fec Fin Periodo 000000000
+880          HAXX Sexto asegurado no informado en la Umic                                        Sexto asegurado Umic          000000000
+880          HBXX Fecha de jubilacion no informada                                               No Fec Jubilacion             000000000
+880          I1IILa fecha de inicio de la renta es nula.                                         Aviso fecha inicio renta nula 000000000
+880          I4IILa fecha de fin de la renta es nula.                                            Aviso fecha fin renta nula    000000000
+880          I2IIConstante de rescate 1 nula para la UMIC                                        Aviso constante rescate nula  000000000
+880          I3IINo se han encontrado flujos para la prestacion generica de la UMIC.             Aviso flujos kprestcal        000000000
+880          I7II{0}                                                                             Info Error Cambio Base Tecnica000000000
+880          I8IINo existe fecha de recasamiento para el GAP {0}, no se generara el tercer tramo Info No Fecha De Recasamiento 000000000
+880          I9IIGap recasado a fecha {0} sin criterio IT04, no se generara el tercer tramo.     Info No Criterio IT04         000000000
+880          IBIIPcorrector mayor que el 100%                                                    Pcorrector mayor que el 100%  000000000
+880          ICIIUmic exlcuida: FecInisus menor que fecEfecto menos Nmeses ({0})                 FecInisus < FecEfecto - NMeses000000000
+880          IDIIUmic exlcuida: No es de nueva producción                                        No es de nueva producción     000000000
+880          IEIIUmic exlcuida: FecInisus mayor que fcalc menos mesesCierreN17 ({0})             FecInisus > fcalc+mesesN17    000000000
+880          IFIIUmic exlcuida: FecInisus menor que fechaNB ({0})                                FecInisus < fechaNB           000000000
+880          IGIIUmic exlcuida: FecInisus mayor que fechaAnterior ({0})                          FecInisus > fechaAnterior     000000000
+880          IHIIUmic exlcuida: Para SCR por no cumplir criterios establecidos                   SCR no cumple criterios       000000000
+880          IIIIUmic exlcuida: Ejecución de SCR y Indicrescate del maestro es igual a N         Indicrescate igual a N        000000000
+880          IJIIUmic exlcuida: Ejecución de SCRAEP o SCRANM menor que Prov BEL                  TotNomRte < TotProvision      000000000
+880          IKIIUmic exlcuida: Ejecución de SCRAEN menor que Prov BEL                           TotNomRte < TotProvision      000000000
+880          ILIIUmic exlcuida: Ejecución de SCRINC y tiposubriesgo no es INCA                   TipoSubRiesgo != INCA         000000000
+880          IMIIUmic exlcuida: Ejecución de SCRMCF y tiposubriesgo es AHOR                      TipoSubRiesgo == AHOR         000000000
+880          INIIUmic exlcuida: Ejecución de SCRMCI-SCRVM y tiposubriesgo es AHOR                TipoSubRiesgo == AHOR         000000000
+880          IOIIUmic exlcuida: Ejecución de SCRMMI-SCRMCI-SCRMCF-SCRVM y tiposubriesgo LONG-INCATipoSubRiesgo == LONG o INCA  000000000
+880          IPIIUmic exlcuida: Ejecución de SCR y eliminamos totales y detalle corriente        Eliminamos totales y detalle  000000000
+880          S1XXError en el arranque de instancias Amazon.                                      Error en arranque instancias  000000000
+880          S2XXError en el arranque aplicacion Solvencia en Amazon.                            Error en arranque Solvencia   000000000
+880          S3XXError en la ejecución de los calculos de Solvencia en Amazon.                   Error en ejecucion calculos   000000000
+880          S4AAError en la copia de logs de Amazon.                                            Error en copia logs Amazon    000000000
+880          S5AAError parando las instancias de Amazon.                                         Error en parada Amazon        000000000
+880          S6AAError en el script de carga de resultados.                                      Error en carga de resultados  000000000
+880          06XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880          07XXNo se ha encontrado ningún registro en la tabla Diseño Procesos                 Ningún registro en T880DIP    000000000
+880          08XXSe ha encontrado más de un registro en la tabla Diseño Procesos                 Solapamiento en T880DIP       000000000
+880          09XXNo se han econtrado subprocesos para el registro de diseño procesos             Ningún subproceso encontrado  000000000
+880          10XXAlguno de los módulos parametrizados para el proceso BASE_TEC no existe         Subproceso inexistente        000000000
+880          11XXSe ha encontrado BASE_TEC entre los módulos a ejecutar, se produciría un bucle  Módulo BASE_TEC parametrizado 000000000
+880          AZXXProvisión de Gastos nula para la umic                                           Provision gastos nula         000000000
+880          BAXXConyuge no informado, finalizando el subproceso para la umic                    Conyuge no informado          000000000
+880          BBXXEstado del asegurado no informado, finalizando el subproceso para la umic       Estado asegurado no informado 000000000
+880          BCXXNo se ha encontrado el modulo parametrizado                                     Modulo inexistente            000000000
+880J880GBT00200XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00300XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00400XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00500XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00501XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT00502XXNo se ha informado el campo modalidad                                           Modalidad no informada        000000000
+880J880GBT00503XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT00504XXNo se ha informado el campo garantía                                            Garantía no informada         000000000
+880J880GBT00510XXNo se ha informado el campo tabla asegurado                                     Tabla asegurado no informada  000000000
+880J880GBT00511XXRegistro no encontrado en tabla Criterios de conversión tablas de experiencia   Ningún registro en T340CTE    000000000
+880J880GBT00512XXSolapamiento encontrado en tabla Criterios de conversión tablas de experiencia  Solapamiento en T340CTE       000000000
+880J880GBT00513XXLa tabla fin no viene informada en el registro                                  La tabla fin no informada     000000000
+880J880GBT00514XXSolapamiento encontrado en tabla Adaptación tabla de experiencia                Solapamiento en T340ATE       000000000
+880J880GBT00515XXRegistro no encontrado en tabla Períodos de adaptación                          Ningún registro en T340MAD    000000000
+880J880GBT00516XXSolapamiento encontrado en tabla Períodos de adaptación                         Solapamiento en T340MAD       000000000
+880J880GBT00517XXEl número de períodos totales no viene informado en el registro                 Periodos totales no informado 000000000
+880J880GBT00518XXEl factor de interpolación no puede ser mayor que 1                             Factor de interpol. mayor a 1 000000000
+880J880GBT00600XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00601XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT00603XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT00610XXNo se ha informado el campo grupo activo/pasivo                                 Grupo act/pas no informado    000000000
+880J880GBT00611XXNo se ha informado el campo reglamento                                          Reglamento no informado       000000000
+880J880GBT00612XXNo se ha informado el campo swcasado                                            Swcasado no informado         000000000
+880J880GBT00613XXNo se han informado el campo casado                                             Campo casado no informado     000000000
+880J880GBT00614XXRegistro no encontrado en tabla Criterios de asignación de interés técnico      Ningún registro en T340ITG    000000000
+880J880GBT00615XXNo se ha encontrado ningún registro en la tabla Rensabilidad por GAP            Ningún registro en T340GAR    000000000
+880J880GBT00616XXSolapamiento encontrado en tabla Rensabilidad por GAP                           Solapamiento en T340GAR       000000000
+880J880GBT00617XXNo se han informado los campos grupo activo/pasivo y casado                     Act/pas y casado obligatorios 000000000
+880J880GBT00618XXEl criterio de interés técnico no viene informado en el registro                Criterio int téc no informado 000000000
+880J880GBT00619XXNo se ha encontrado ningún registro en la tabla Interés técnico DGS             Ningún registro en T340ITR    000000000
+880J880GBT00620XXSe ha encontrado más de un registro en la tabla Interés técnico DGS             Solapamiento en T340ITR       000000000
+880J880GBT00621XXEl criterio de interés técnico no existe                                        Criterio int. téc. no existe  000000000
+880J880GBT00700XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00702XXNo se ha informado el campo modalidad                                           Modalidad no informada        000000000
+880J880GBT00703XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT00704XXNo se ha informado el campo garantía                                            Garantía no informada         000000000
+880J880GBT00710XXExisten varios registros en la tabla Diferencial de Gastos                      Solapamiento en T340DGI       000000000
+880J880GBT00711XXEl valor del campo Gastos Capital es mayor al valor máximo permitido            Gastos Capital mayor a máximo 000000000
+880J880GBT00712XXEl valor del campo Gastos Prima es mayor al valor máximo permitido              Gastos Prima mayor a máximo   000000000
+880J880GBT00713XXEl valor del campo Gastos Provisión es mayor al valor máximo permitido          Gastos Provis. mayor a máximo 000000000
+880J880GBT00714XXCampo Porcentaje Gastos Capital no informado                                    Porc. Gastos Capital no infor 000000000
+880J880GBT00715XXCampo Porcentaje Gastos Prima no informado                                      Porc. Gastos Prima no infor   000000000
+880J880GBT00716XXCampo Porcentaje Gastos Provisión no informado                                  Porc. Gastos Provis. no infor 000000000
+880J880GBT00717XXCampo Diferencial Gastos Capital no informado                                   Dife. Gastos Capital no infor 000000000
+880J880GBT00718XXCampo Diferencial Gastos Prima no informado                                     Dife. Gastos Prima no infor   000000000
+880J880GBT00719XXCampo Diferencial Gastos Provisión no informado                                 Dife. Gastos Provis. no infor 000000000
+880J880GBT00800XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00801XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT00802XXNo se ha informado el campo modalidad                                           Modalidad no informada        000000000
+880J880GBT00803XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT00805XXNo se ha informado el campo canal                                               Canal no informado            000000000
+880J880GBT00806XXNo se ha informado el campo negocio                                             Negocio no informado          000000000
+880J880GBT00807XXNo se ha informado el campo subriesgo                                           Subriesgo no informado        000000000
+880J880GBT00810XXNo se ha informado el campo sexo                                                Sexo no informado             000000000
+880J880GBT00811XXNo se ha informado el campo categoría                                           Categoría no informada        000000000
+880J880GBT00812XXNo se ha informado el campo edad                                                Edad no informada             000000000
+880J880GBT00813XXSe ha informado distinto número de sexo que de edad                             Diferencia entre sexo y edad  000000000
+880J880GBT00814XXSolapamiento en tabla Criterios conversión tablas de experiencia real           Solapamiento en T340ATR       000000000
+880J880GBT00815XXRegistro no encontrado en tabla Criterios conversión tablas de experiencia real Ningún registro en T340ATR    000000000
+880J880GBT00900XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT00901XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT00903XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT00907XXNo se ha informado el campo subriesgo                                           Subriesgo no informado        000000000
+880J880GBT00908XXNo se ha informado el campo cartera                                             Cartera no informada          000000000
+880J880GBT00910XXNo se ha informado el campo PB                                                  PB no informado               000000000
+880J880GBT00911XXNo se ha informado el campo riesgo rescate                                      Riesgo rescate  no informado  000000000
+880J880GBT00912XXNo se ha informado el campo forma de pago                                       Forma de pago  no informada   000000000
+880J880GBT00913XXRegistro no encontrado en tabla Asignación de curvas tipo                       Ningún registro en T340ACI    000000000
+880J880GBT00914XXSolapamiento en tabla Asignación de curvas tipo                                 Solapamiento en T340ACI       000000000
+880J880GBT00915XXEl código de curva no viene informado en el registro                            Código de curva no informado  000000000
+880J880GBT00916XXEl período no viene informado en el registro                                    Período no informado          000000000
+880J880GBT00917XXRegistro no encontrado en tabla Valores de curvas de tipo de interés            Ningún registro en T340VCI    000000000
+880J880GBT00918XXExiste período transitorio pero no se ha informado el método                    Período informado sin método  000000000
+880J880GBT00919XXExiste período transitorio sin método en la tabla Valores métodos de adaptación Ningún registro en T340MVI    000000000
+880J880GBT00920XXSolapamiento en tabla Valores métodos de adaptación                             Solapamiento en T340MVI       000000000
+880J880GBT00921XXEl número de períodos pendientes no viene informado en el registro              Períodos ptes no informados   000000000
+880J880GBT00922XXEl número de períodos útiles no viene informado en el registro                  Períodos útiles no informados 000000000
+880J880GBT00923XXEl factor de interpolación no puede ser mayor que 1                             Factor de interpol. mayor a 1 000000000
+880J880GBT00924XXError al calcular el indicador KAPBEL                                           Error al calcular KAPBEL      000000000
+880J880GBT01000XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT01001XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT01002XXNo se ha informado el campo modalidad                                           Modalidad no informada        000000000
+880J880GBT01003XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT01006XXNo se ha informado el campo negocio                                             Negocio no informado          000000000
+880J880GBT01009XXNo se ha informado el campo compañía                                            Compañía no informada         000000000
+880J880GBT01010XXCampo Ramo no informado                                                         Ramo no informado             000000000
+880J880GBT01011XXNo existe tramo en la tabla Gastos Reales                                       Ningún registro en T340GRE    000000000
+880J880GBT01012XXExisten varios registros en la tabla Gastos Reales                              Solapamiento en T340GRE       000000000
+880J880GBT01100XXSe ha generado un error no controlado en el módulo                              Error no controlado           000000000
+880J880GBT01101XXNo se ha informado el campo base técnica                                        Base técnica no informada     000000000
+880J880GBT01102XXNo se ha informado el campo modalidad                                           Modalidad no informada        000000000
+880J880GBT01103XXNo se ha informado el campo fecha cierre                                        Fecha cierre no informada     000000000
+880J880GBT01106XXNo se ha informado el campo negocio                                             Negocio no informado          000000000
+880J880GBT01109XXNo se ha informado el campo compañía                                            Compañía no informada         000000000
+880J880GBT01110XXCampo Ramo no informado                                                         Ramo no informado             000000000
+880J880GBT01111XXCampo Tabla de Anulación no informado                                           Tabla Anulación no informada  000000000
+880J880GBT01112XXCampo fecha inicio tramo no informado                                           Fecha ini tramo no informada  000000000
+880J880GBT01113XXCampo fecha fin tramo no informado                                              Fecha fin tramo no informada  000000000
+880J880GBT01114XXNo existe tramo en la tabla Asignación de Tasas de Anulación                    Ningún registro en T340ATA    000000000
+880J880GBT01115XXExisten varios registros en la tabla Asignación de Tasas de Anulación           Solapamiento en T340ATA       000000000
+880J880GBT01116XXTabla de asignaciones no informada en tabla Asignación de Tasas de Anulación    Tabla anulación no informada  000000000
+880J880GBT01117XXNo existe tramo en la tabla de Tasas de Anulación                               Ningún registro en T340VTA    000000000
+880J880GBT01118XXNo existe Tramo para la Fecha Cierre introducida                                Ningún tramo para la f cierre 000000000
+880J880GBT01119XXExisten varios Tramos para la Fecha Cierre introducida                          Solapamiento en T340VTA       000000000
+880J880GBT01120XXNo existe Porcentaje de Interes Técnico para este tramo                         Porc interés no informado     000000000

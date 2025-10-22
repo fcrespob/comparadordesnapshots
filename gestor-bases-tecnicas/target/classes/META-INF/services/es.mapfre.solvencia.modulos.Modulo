@@ -1,0 +1,14 @@
+# GBT
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT010GastosAdministracionBEL	# J880GBT010
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT007GastosAdministracionROSSP	# J880GBT007
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT011TasasAnulacionBEL	# J880GBT011
+es.mapfre.solvencia.formulacion.modulos.impl.Orquestador	# BASE_TEC
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT002ModuloBaseTecnicaInicial	# J880GBT002
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT005TablasExperienciaROSSP	# J880GBT005
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT008TablasExperienciaBEL	# J880GBT008
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT006TiposInteresROSSP	# J880GBT006
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT009CurvasInteresBEL	# J880GBT009
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT999OrdenesProceso	# J880GBT999
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT003ModuloTablaRealista	# J880GBT003
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT004ModuloTablaTradicional	# J880GBT004
+es.mapfre.solvencia.formulacion.modulos.impl.J880GBT012CurvasCINIIF17 # J880GBT012

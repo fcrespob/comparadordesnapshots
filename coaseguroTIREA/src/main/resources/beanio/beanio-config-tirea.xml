@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Imports de las plantillas a emplear en los streams de este fichero -->
+	<import resource="classpath:beanio/beanio-plantillas-entrada.xml" />
+	<import resource="classpath:beanio/beanio-plantillas-salida.xml" />
+	
+	<typeHandler name="dateNullHandler"
+		class="es.mapfre.coaseguro.tirea.utils.beanio.handlers.DateNullTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>
+	
+	<typeHandler name="timeoNullHandler"
+		class="es.mapfre.coaseguro.tirea.utils.beanio.handlers.TimeNullTypeHandler" >
+		<property name="lastValiedDate" value="99991231" />
+		<property name="lastValiedTime" value="235959" />
+		<property name="datePosition" value="0" />
+		<property name="timeposition" value="8" />
+		<property name="nullTime" value="000000" />
+		<property name="lastTime" value="999999" />
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />
+	</typeHandler>
+	
+	<typeHandler name="bigDecimalHostHandler"
+		class="es.mapfre.coaseguro.tirea.utils.beanio.handlers.BigDecimalHostInTypeHandler" />
+		
+	<typeHandler name="stringOutHandler"
+		class="es.mapfre.coaseguro.tirea.utils.beanio.handlers.StringTypeHandler" />
+		
+	<!--  incidencias -->
+	<stream name="INC0" format="fixedlength">
+		<record name="incidencias" template="incidencias"
+			class="es.mapfre.coaseguro.tirea.dominio.entidades.Incidencias" />
+	</stream>
+	<!-- ficha de proceso -->
+	<stream name="FIC0" format="fixedlength">
+		<record name="fichaproceso" template="fichaproceso"
+			class="es.mapfre.coaseguro.tirea.dominio.entidades.FichaProceso" />
+	</stream>
+	
+	<stream name="FLUJPMACOA" format="fixedlength">
+		<record name="flujpmacoa" template="flujpmacoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPMaCoa"/>
+	</stream>
+	
+	<stream name="TOTPMACOA" format="fixedlength">
+		<record name="totpmacoa" template="totpmacoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.TotPMaCoa"/>
+	</stream>
+	
+	<stream name="FLUJPMDCOA" format="fixedlength">
+		<record name="flujpmdcoa" template="flujpmdcoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPMdCoa"/>
+	</stream>
+	
+	<stream name="DATOSCOA" format="fixedlength">
+		<record name="datosCoa" template="datosCoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.DatosCoa"/>
+	</stream>
+	
+	<stream name="TAB35012" format="fixedlength">
+		<record name="tablaMapfre" template="tablaMapfre"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.Tab35012"/>
+	</stream>
+	
+	<stream name="LOG0" format="fixedlength">
+		<record name="log" template="log"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FichaResultado"/>
+	</stream>
+	
+</beanio>

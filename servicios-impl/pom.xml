@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>servicios-impl</artifactId>
+
+	<parent>
+		<groupId>es.mapfre.solvencia</groupId>
+		<artifactId>solvencia</artifactId>
+		<version>11.0.0-RELEASE</version>
+		<relativePath>../solvencia</relativePath>
+	</parent>
+
+	<name>Capa de servicios - Implementación</name>
+	<url>http://www.mapfre.es</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.7</java.version.source>
+		<java.version.target>1.7</java.version.target>
+	</properties>
+	
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>archiva</id> -->
+<!-- 			<name>DB02 repository</name> -->
+<!-- 			<url>http://skynet.nfoque.as:8085/repository/internal</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+	
+	<dependencies>
+		<!-- Coherence -->
+		<dependency>
+			<groupId>com.oracle.coherence</groupId>
+			<artifactId>coherence</artifactId>
+			</dependency>
+		
+		<!-- Mapfre Solvencia -->
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>coherence-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>modelo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>dao-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>servicios</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>excepciones</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.mapfre.solvencia</groupId>
+			<artifactId>gestor-ficheros-GBT</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.16</version>
+					<configuration>
+						<argLine>-Dtangosol.coherence.cacheconfig=coherence-cache-solvencia-test-config.xml
+							-Dtangosol.pof.config=solvencia-pof-services-test-config.xml
+							-Dtangosol.coherence.localhost=127.0.0.1
+							-Dtangosol.coherence.wka=127.0.0.1
+							-Dtangosol.coherence.wka.port=8088</argLine>
+						<parallel>classes</parallel>
+						<threadCount>2</threadCount>
+					</configuration>
+				</plugin>
+		</plugins>
+	</build>
+</project>

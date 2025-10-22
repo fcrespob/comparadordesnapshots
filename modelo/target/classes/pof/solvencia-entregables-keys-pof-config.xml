@@ -1,0 +1,184 @@
+<?xml version='1.0'?>
+
+<!--MODIFICACION:TAR00302248-Contabilidad SolvenciaII en SSAA
+	FECHA: 25/09/2017
+	AUTOR: INDRA
+-->
+
+
+<pof-config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xmlns='http://xmlns.oracle.com/coherence/coherence-pof-config'
+	xsi:schemaLocation='http://xmlns.oracle.com/coherence/coherence-pof-config coherence-pof-config.xsd'>
+	<user-type-list>
+		<!-- Solvencia key classes -->
+		<user-type>
+			<type-id>1600</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvInf1Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1605</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvInf2Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1610</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvUmicKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1615</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvBtKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1620</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvCrKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1625</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInf1Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1630</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInf2Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1635</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.ProvCoaSegKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1640</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujCoaSegKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1645</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.BasetecKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1650</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.DetalleCorrienteEntregablesKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1655</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PrvFpbKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1660</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujTcasKey
+			</class-name>
+		</user-type>
+<!--INI-TAR00302248-->
+		<user-type>
+			<type-id>1665</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.ContabilidadKey
+			</class-name>
+		</user-type>
+<!--FIN-TAR00302248-->
+		<user-type>
+			<type-id>1666</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.scr.entregables.FactoresVolatilidadKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1667</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujosTotPKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1668</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInf3Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1669</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FlujosTN17Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1670</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FPSLKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1671</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInf4Key
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1672</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujoTotPVKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1673</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.PesosBtKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1674</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.PesosBtProxyKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1675</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.PatronCsmKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1676</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.SwCobroComKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1677</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.SwCobroComCsvKey
+			</class-name>
+		</user-type>		
+		<user-type>
+			<type-id>1678</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.TotPMaCoaKey
+			</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1679</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FlujPMaCoaKey
+			</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1680</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FlujPMdCoaKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1681</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.ConteoCertificadoKey
+			</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1682</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujSuscriKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1683</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInfSCRKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1684</type-id>
+			<class-name>es.mapfre.solvencia.coherence.keys.entregables.ContabilidadCertificadoKey
+			</class-name>
+		</user-type>
+	</user-type-list>
+	<allow-interfaces>true</allow-interfaces>
+	<allow-subclasses>true</allow-subclasses>
+</pof-config>

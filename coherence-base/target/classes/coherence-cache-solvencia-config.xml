@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+	xmlns:processing="class:com.oracle.coherence.patterns.processing.config.xml.ProcessingPatternNamespaceHandler"
+	xmlns:element="class://es.mapfre.solvencia.coherence.namespace.preprocessor.MultiXMLPreprocessingNamespaceHandler"
+	xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config coherence-cache-config.xsd"
+	element:introduce-cache-config="coherence-processingpattern-cache-config.xml
+									,solvencia-schemes-config.xml
+									,{solvencia.cache.config.files}
+									,cache/solvencia-maestro-cache-config.xml
+									,cache/solvencia-conversionesBel-cache-config.xml
+									,cache/solvencia-parametrizacionGeneral-cache-config.xml
+									,cache/solvencia-conversionesRossp-cache-config.xml
+									,cache/solvencia-parametrizacionGeneral-cache-config.xml
+									,cache/solvencia-formulacion-cache-config.xml 
+									,cache/solvencia-salidaCalculo-cache-config.xml
+									,cache/solvencia-entregables-cache-config.xml">
+
+	<processing:cluster-config pof="true">
+		<processing:dispatchers>
+			<processing:logging-dispatcher
+				displayname="Logging Dispatcher" />
+
+			<processing:task-dispatcher displayname="Task Dispatcher">
+					<instance>
+						<class-name>es.mapfre.solvencia.coherence.patterns.processing.dispatchers.task.RoundRobinDistributedTaskDispatchPolicy</class-name>
+					</instance>
+				<!-- <processing:composite-policy>
+					<processing:attribute-match-policy />
+					<processing:round-robin-policy />
+				</processing:composite-policy> -->
+			</processing:task-dispatcher>
+
+			<processing:local-executor-dispatcher
+				displayname="Local Dispatcher" />
+		</processing:dispatchers>
+
+		<processing:taskprocessors>
+			<processing:taskprocessordefinition
+				id="GridTaskProcessor" displayname="Grid Task Processor" type="GRID">
+
+				<processing:default-taskprocessor
+					id="GridTaskProcessor" threadpoolsize="10" />
+
+				<processing:attribute name="type">grid
+				</processing:attribute>
+			</processing:taskprocessordefinition>
+		</processing:taskprocessors>
+	</processing:cluster-config>
+
+	<defaults>
+		<serializer system-property="tangosol.coherence.serializer">pof</serializer>
+		<socket-provider system-property="tangosol.coherence.socketprovider" />
+	</defaults>
+
+
+	<caching-scheme-mapping>
+
+		<cache-mapping>
+			<cache-name>propiedades</cache-name>
+			<scheme-name>distributed-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<param-value>1MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>
+
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+		<local-scheme>
+			<scheme-name>local-scheme</scheme-name>
+		</local-scheme>
+	</caching-schemes>
+</cache-config>

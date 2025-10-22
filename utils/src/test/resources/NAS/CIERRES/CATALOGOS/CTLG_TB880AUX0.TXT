@@ -1,0 +1,252 @@
+01101N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01101N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01101N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01101N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01101N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+01101N0020900001FUT               PRIMAS FUTURAS                0                             FRANBER 20140331FRANBER 20140331
+01101N0020900001PAS               PRIMAS PAGADAS                1                             FRANBER 20140331FRANBER 20140331
+01101N0020900001IFAL              CAP.PRIM.PAG. 1BTI 2FIJO      1                             FRANBER 20140331FRANBER 20140331
+01101N0020900001IANT              TIP. CAPITALIZA               0                             FRANBER 20140331FRANBER 20140331
+01101N0047500001ID-BASECAL1       BASE DE CÁLCULO 1             PR                            CARGA   20130311IIZQUIE 20140127
+01101N0047500001ID-BASECAL2       BASE DE CÁLCULO 2             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0047500001ID-BASECAL3       BASE DE CÁLCULO 3             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0047500001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01101N0047600001ID-BASECAL1       BASE DE CÁLCULO 1             PR                            CARGA   20130311IIZQUIE 20140127
+01101N0047600001ID-BASECAL2       BASE DE CÁLCULO 2             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0047600001ID-BASECAL3       BASE DE CÁLCULO 3             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0047600001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01101N0048600010ID-BASECAL1       BASE DE CÁLCULO 1             PR                            CARGA   20130311IIZQUIE 20140127
+01101N0048600010ID-BASECAL2       BASE DE CÁLCULO 2             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0048600010ID-BASECAL3       BASE DE CÁLCULO 3             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0048600010ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01101N0048600024ID-BASECAL1       BASE DE CÁLCULO 1             PR                            CARGA   20130311IIZQUIE 20140127
+01101N0048600024ID-BASECAL2       BASE DE CÁLCULO 2             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0048600024ID-BASECAL3       BASE DE CÁLCULO 3             PV                            CARGA   20130311IIZQUIE 20140127
+01101N0048600024ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01104N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01104N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01104N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01104N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01104N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01104N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+01201N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01201N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01201N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01201N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01201N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+01201N0020500265MODBETA           FALLEC. EN DIFERIDOS          SR                            IIZQUIE 20140210IIZQUIE 20140210
+01201N0020500266MODBETA           FALLEC. EN DIFERIDOS          SR                            IIZQUIE 20140210IIZQUIE 20140210
+01201N0022800165MODBETA           FALLEC. EN DIFERIDOS          CRP                           IIZQUIE 20140129IIZQUIE 20140129
+01201N0022900165MODBETA           FALLEC. EN DIFERIDOS          CRP                           IIZQUIE 20140129IIZQUIE 20140129
+01201N0023800265MODBETA           FALLEC. EN DIFERIDOS          SR                            IIZQUIE 20140210IIZQUIE 20140210
+01201N0033800266MODBETA           FALLEC. EN DIFERIDOS          SR                            IIZQUIE 20140210IIZQUIE 20140210
+01201N0036200273MODBETA           FALLEC. EN DIFERIDOS          CRPI                          IIZQUIE 20140129IIZQUIE 20140129
+01201N0037000273MODBETA           FALLEC. EN DIFERIDOS          CRPI                          IIZQUIE 20140129IIZQUIE 20140129
+01201N0054600265MODBETA           FALLEC. EN DIFERIDOS          SR                            IIZQUIE 20140331IIZQUIE 20140331
+01202N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01202N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01202N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01202N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01202N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01202N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+01203N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01203N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01203N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01203N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01203N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01203N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+01204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+01204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+01204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+01204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+01204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+01204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+20101N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+20101N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+20101N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+20101N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+20101N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+20101N0081100200ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081100200ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081100200ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081100200ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0081100201ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081100201ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081100201ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081100201ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0081100202ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081100202ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081100202ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081100202ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0081100310ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081100310ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081100310ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081100310ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0081800001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081800001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081800001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081800001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0081800310ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0081800310ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0081800310ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0081800310ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0082100001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0082100001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0082100001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0082100001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0082700001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0082700001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0082700001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0082700001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0082700310ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0082700310ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0082700310ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0082700310ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0085200001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0085200001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0085200001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0086000001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0086000001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0086000001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0086000001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20101N0086500001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20101N0086500001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20101N0086500001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20101N0086500001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+20104N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+20104N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+20104N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+20104N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140314
+20104N0076600001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0076600001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0076600001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0076600001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0076700001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0076700001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0076700001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0076700001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0078200001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0078200001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0078200001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0078200001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0078400001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0078400001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0078400001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0078400001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0078500001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0078500001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0078500001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0078500001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0079100001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0079100001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0079100001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0079100001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20104N0079600001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20104N0079600001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20104N0079600001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20104N0079600001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20201N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+20201N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+20201N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+20201N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20201N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+20201N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311SANC333 20140313
+20201N0083500273ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20201N0083500273ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20201N0083500273ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20201N0083500273ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20201N0084100096ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20201N0084100096ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20201N0084100096ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20201N0084100096ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20201N0086800273MODBETA           FALLEC. EN DIFERIDOS          CRPI                          IIZQUIE 20140331IIZQUIE 20140331
+20204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+20204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+20204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+20204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+20204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+20204N0076800001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0076800001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0076800001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0076800001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0078300001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0078300001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0078300001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0078300001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0078700001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0078700001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0078700001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0078700001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0078800001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0078800001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0078800001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0078800001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0079200001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0079200001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0079200001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0079200001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0080300001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0080300001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0080300001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0080300001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+20204N0081300001ID-BASECAL1       Base de cálculo 1             PV                            CARGA   20130311CARGA   20130311
+20204N0081300001ID-BASECAL2       Base de cálculo 2             PV                            CARGA   20130311CARGA   20130311
+20204N0081300001ID-BASECAL3       Base de cálculo 3             PV                            CARGA   20130311CARGA   20130311
+20204N0081300001ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+60101N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+60101N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+60101N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+60101N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+60101N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+60101N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+60201N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+60201N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+60201N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+60201N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+60201N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+60201N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+60204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+60204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+60204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+60204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+60204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+60204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+70104N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+70104N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+70104N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+70104N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+70104N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+70104N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+70204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+70204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+70204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+70204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+70204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+70204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+72101N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+72101N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+72101N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+72101N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+72101N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+72101N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+72204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+72204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+72204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+72204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+72204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+72204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+73104N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+73104N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+73104N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+73104N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+73104N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+73104N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313
+73204N0000000000ID-BASECAL1       Base de cálculo 1             PR                            CARGA   20130311CARGA   20130311
+73204N0000000000ID-BASECAL2       Base de cálculo 2             PR                            CARGA   20130311CARGA   20130311
+73204N0000000000ID-BASECAL3       Base de cálculo 3             PR                            CARGA   20130311CARGA   20130311
+73204N0000000000ID-MESPAGO        Mes de Pago Com.              3112                          CARGA   20130311CARGA   20130311
+73204N0000000000ID-CRITERIO       Criter. Edades                03                            CARGA   20130311CARGA   20130311
+73204N0000000000ID-TEMPORAL       CRITER. TEMPORALID            01                            CARGA   20130311FRANBER 20140313

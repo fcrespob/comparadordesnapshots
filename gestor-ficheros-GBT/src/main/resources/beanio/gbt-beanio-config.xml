@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Imports de las plantillas a emplear en los streams de este fichero -->
+	<import resource="classpath:beanio/beanio-conversiones-bel.xml" />
+	<import resource="classpath:beanio/beanio-conversiones-rossp.xml" />
+				
+	<typeHandler name="snHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="S" />
+		<property name="noLiteral" value="N" />
+	</typeHandler>
+	
+	<typeHandler name="activoHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.YNTypeHandler">
+		<property name="yesLiteral" value="A" />
+		<property name="noLiteral" value="" />
+	</typeHandler>
+	
+	<typeHandler name="dateNullHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DateNullTypeHandler" >
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />	
+		<property name="lastValiedDate" value="99991231"/>
+	</typeHandler>	
+	
+	<typeHandler name="timeoNullHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.TimeNullTypeHandler" >
+		<property name="lastValiedDate" value="99991231" />
+		<property name="lastValiedTime" value="235959" />
+		<property name="datePosition" value="0" />
+		<property name="timeposition" value="8" />
+		<property name="nullTime" value="000000" />
+		<property name="lastTime" value="999999" />
+		<property name="nullDate" value="00000000" />
+		<property name="lastDate" value="99999999" />
+	</typeHandler>
+			
+	<typeHandler name="doubleDecimalHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.DoubleDecimalsTypeHandler" />
+		
+	<typeHandler name="bigDecimalHostHandler"
+		class="es.mapfre.solvencia.utils.beanio.handlers.BigDecimalHostInTypeHandler" />
+	
+	<!-- tablasExperiencia -->
+	<stream name="CTE0" format="fixedlength">
+		<record name="conversionTablasExperiencia" template="conversionTablasExperiencia"
+			class="es.mapfre.solvencia.dominio.gbt.ConversionTablasExp" />
+	</stream>
+	
+	<!-- metodosAdaptacion -->
+	<stream name="MAD0" format="fixedlength">
+		<record name="periodosAdaptacion" template="periodosAdaptacion"
+			class="es.mapfre.solvencia.dominio.gbt.PeriodosAd" />
+	</stream>
+	
+	<!-- metodosAdaptacion -->
+	<stream name="ATE0" format="fixedlength">
+		<record name="adaptacionTablasExpPorBT" template="adaptacionTablasExpPorBT"
+			class="es.mapfre.solvencia.dominio.gbt.AdapTablaExp" />
+	</stream>
+	
+	<!-- interesTecnico -->
+	<stream name="ITR0" format="fixedlength">
+		<record name="interesTecnico" template="interesTecnico"
+			class="es.mapfre.solvencia.dominio.gbt.InteresTecnico" />
+	</stream>
+	
+	<!-- rentaGAP -->
+	<stream name="GAR0" format="fixedlength">
+		<record name="rentabilidadesPorGAP" template="rentabilidadesPorGAP"
+			class="es.mapfre.solvencia.dominio.gbt.RentaGAP" />
+	</stream>
+	
+	<!-- obtInteresTecnico -->
+	<stream name="AIT0" format="fixedlength">
+		<record name="critObtencionIntTecnico" template="critObtencionIntTecnico"
+			class="es.mapfre.solvencia.dominio.gbt.ObtInteresTecnico" />
+	</stream>
+	
+	<!-- asigInteresTecnico -->
+	<stream name="ITG0" format="fixedlength">
+		<record name="critAsigIntTecnico" template="critAsigIntTecnico"
+			class="es.mapfre.solvencia.dominio.gbt.AsigInteresTecnico" />
+	</stream>
+	
+	<!-- diferencialGastos -->
+	<stream name="DGI0" format="fixedlength">
+		<record name="diferencialesGastos" template="diferencialesGastos"
+			class="es.mapfre.solvencia.dominio.gbt.DiferencialGastos" />
+	</stream>
+	
+	<!-- asigCurvasTipo -->
+	<stream name="ACI0" format="fixedlength">
+		<record name="asignacionCurvasTipo" template="asignacionCurvasTipo"
+			class="es.mapfre.solvencia.dominio.gbt.AsigCurvaTipo" />
+	</stream>
+	
+	<!-- metodosAdap -->
+	<stream name="MVI0" format="fixedlength">
+		<record name="valoresMetAdaptacion" template="valoresMetAdaptacion"
+			class="es.mapfre.solvencia.dominio.gbt.MetodosAdaptacion" />
+	</stream>
+	
+	<!-- asigTasasAnul -->
+	<stream name="ATA0" format="fixedlength">
+		<record name="asignacionTasasAnul" template="asignacionTasasAnul"
+			class="es.mapfre.solvencia.dominio.gbt.AsigTasasAnul" />
+	</stream>
+	
+	<!-- tasasAnul -->
+	<stream name="VTA0" format="fixedlength">
+		<record name="valoresTasasAnul" template="valoresTasasAnul"
+			class="es.mapfre.solvencia.dominio.gbt.TasasAnulacion" />
+	</stream>
+	
+	<!-- convTablasExp -->
+	<stream name="ATR0" format="fixedlength">
+		<record name="convTablasExperienciaReales" template="convTablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.gbt.ConvTablasExpReal" />
+	</stream>
+	
+</beanio>

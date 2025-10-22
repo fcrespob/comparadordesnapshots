@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+	
+	<template name="gastosReales">
+		<field name="ktipobt" type="string" length="8" justify="left" />
+		<field name="ccanal" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="cnegocio" length="1" type="string" justify="left" />
+		<field name="kramo" type="string" length="3" justify="left" />
+		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="fecDesde" length="8" type="string" justify="left"/>
+		<field name="fecHasta" length="8" type="string" justify="left"/>
+		<field name="gastoPorUmic" type="bigdecimal" length="7" padding="0" justify="right" format="00000.##" typeHandler="bigDecimalHostHandler" />
+		<field name="pctGastoProv" type="bigdecimal" length="7" padding="0" justify="right" format="00.#####" typeHandler="bigDecimalHostHandler" />
+	</template>
+	
+	<template name="salidaGRE">
+		<field name="ktipobt" type="string" length="8" justify="left" />
+		<field name="ccanal" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="cnegocio" length="1" type="string" justify="left" />
+		<field name="kramo" type="string" length="3" justify="left" />
+		<field name="kmodalidad" type="int" length="5" padding="0" justify="right" format="00000" />
+		<field name="fecDesde" length="8" type="string" justify="left"/>
+		<field name="fecHasta" length="8" type="string" justify="left"/>
+		<field name="gastoPorUmic" type="string" length="7" justify="left"/>
+		<field name="pctGastoProv" type="string" length="7" justify="left"/>
+	</template>
+</beanio>
