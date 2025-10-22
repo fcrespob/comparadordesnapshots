@@ -1,3 +1,0 @@
-KC000VALOR CONSTANTE=0                                           20140311FRANBER   20140311FRANBER   
-KC001VALOR CONSTANTE=1                                           20140311FRANBER   20140311FRANBER   
-KT000PARA T=1 VALOR=0 RESTO VALOR=1                              20140311FRANBER   20140311FRANBER   

@@ -313,7 +313,7 @@ public class EntregableFPSL extends EntregableGenerico {
 		
 		fpsl.setTotfpnarte((BigDecimal) values.get(ConstantsFunciones.CTE_2));
 		//Corriente de siniestros
-		fpsl.setTotfpnafall(totFall.subtract(totCompl));
+		fpsl.setTotfpnafall(totFall.add(totCompl));
 		
 		//Rentas
 		fpsl.setTotfpnavida((BigDecimal) values.get(ConstantsFunciones.CTE_4));

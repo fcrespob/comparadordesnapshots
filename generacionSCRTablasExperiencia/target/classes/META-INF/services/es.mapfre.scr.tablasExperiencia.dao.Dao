@@ -1,7 +1,0 @@
-#TablasExperiencia
-es.mapfre.scr.tablasExperiencia.dao.entidades.CabeceraTablaExperienciaDao
-es.mapfre.scr.tablasExperiencia.dao.entidades.ConvTablasExpRealDao
-es.mapfre.scr.tablasExperiencia.dao.entidades.TablaExperienciaDao
-es.mapfre.scr.tablasExperiencia.dao.entidades.FichaProcesoDao
-es.mapfre.scr.tablasExperiencia.dao.entidades.ValoresEstresDao
-es.mapfre.scr.tablasExperiencia.dao.entidades.LongevidadModInternoDao
