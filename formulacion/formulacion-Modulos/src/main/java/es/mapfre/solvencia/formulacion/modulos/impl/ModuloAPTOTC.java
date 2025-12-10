@@ -13,6 +13,7 @@ import es.mapfre.solvencia.dominio.maestro.Umic;
 import es.mapfre.solvencia.dominio.salidaCalculo.BloqueCorriente;
 import es.mapfre.solvencia.dominio.salidaCalculo.DetalleBaseTecnica;
 import es.mapfre.solvencia.dominio.salidaCalculo.DetalleCorriente;
+import es.mapfre.solvencia.dominio.scr.ValoresEstres;
 import es.mapfre.solvencia.excepcion.Solvencia2Excepcion;
 import es.mapfre.solvencia.excepcion.helper.Solvencia2ExcepcionHelper;
 import es.mapfre.solvencia.formulacion.util.ConstantsFunciones;
@@ -47,6 +48,7 @@ public class ModuloAPTOTC implements Modulo {
 	private static final String CLAVE_FEC_EFEC = ConstantsModulos.CTE_FEC_EFEC; 
 	private static final String CLAVE_VAR_POLIZAS_ANO1 = ConstantsModulos.CTE_VAR_VAL_POLIZA_ANO1.concat(CLAVE_MODULO);
 	private static final String CLAVE_VAR_ANULACION_ANM = ConstantsModulos.CTE_VAR_ANULACION_ANM.concat(CLAVE_MODULO);
+	private static final String CLAVE_VAR_ESTRESES = ConstantsModulos.CTE_VAR_ESTRESES.concat(CLAVE_MODULO);
 	// Fin de las variables estáticas usadas para agilizar operaciones.
 	
 	@Override
@@ -123,6 +125,10 @@ public class ModuloAPTOTC implements Modulo {
 		String varCriFec = ConstantsFunciones.CTE_CADENA_VACIA;
 		List<ValoresAnulacion> lstValorAnul, lstValorAnulANM = null;
 		Timestamp varFechaEfecto;
+		Integer it = (Integer) mapVariables.get("IT_APTOTC");
+		if (null == it) {
+			it = 1;
+		}
 		//Fin variables locales
 		
 		if (ModuloAPTOTC.LOG.isTraceEnabled()) {
@@ -198,31 +204,10 @@ public class ModuloAPTOTC implements Modulo {
 		Timestamp fecDevengo = bloqueCorriente.getFechaDevengo(); 
 		varNAnosJ = FuncionesAuxiliares.nAnnos(fecDevengo, varFechaEfecto, varCriFec);
 		
-		if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
-			varPolizasAno1 = UtilModulos.getValPolizasAnuAno1SCRANM(mapVariables, CLAVE_VAR_POLIZAS_ANO1, umic, btcUmic, varLaJ0);
-			lstValorAnulANM = UtilModulos.getValEstresSCRANM(mapVariables, CLAVE_VAR_ANULACION_ANM, umic.getDatosGenerales().getCnegocio(), btcUmic, varNanos0, varPolizasAno1);
-			if (varNAnosJ.subtract(varNanos0).compareTo(BigDecimal.ONE) <= 0){
-				// Se calculan las pólizas del primer año
-				varNAnosJDecimal = varNAnosJ.subtract(varNanos0);
-				varLaJ = varLaJ0.add(varNAnosJDecimal.multiply(varPolizasAno1.subtract(varLaJ0)));
-			} else if (varNanos0.add(BigDecimal.ONE).compareTo(varNAnosJ) == -1 &&
-					varNanos0.add(BigDecimal.ONE).intValue() == varNAnosJ.intValue()) {
-				// Se calculan las pólizas en el rango entre el final del primer año y el comienzo del siguiente año entero
-				varPolDespuesAno1 = lstValorAnulANM.get(varNanos0.intValue() + 2).getPolizaVigentes().subtract(varPolizasAno1);
-				varLaJ = varPolizasAno1.add(varNAnosJ.subtract(varNanos0.add(BigDecimal.ONE)).divide(BigDecimal.ONE.subtract(varNanos0Decimal),ConstantsFunciones.MATH_CONTEXT).multiply(varPolDespuesAno1));
-			} else {
-				// Se calculan las pólizas después del año entero después del primero.
-				varLaJ00 = lstValorAnulANM.get(varNAnosJ.intValue()).getPolizaVigentes();
-				varLaJ01 = lstValorAnulANM.get(varNAnosJ.intValue()+1).getPolizaVigentes();
-				varNAnosJDecimal = varNAnosJ.subtract(new BigDecimal(varNAnosJ.intValue()));
-				varLaJ = varLaJ00.add(varNAnosJDecimal.multiply(varLaJ01.subtract(varLaJ00)));
-			}
-		} else {
-			varLaJ00 = lstValorAnul.get(varNAnosJ.intValue()).getPolizaVigentes();
-			varLaJ01 = lstValorAnul.get(varNAnosJ.intValue()+1).getPolizaVigentes();
-			varNAnosJDecimal = varNAnosJ.subtract(new BigDecimal(varNAnosJ.intValue()));
-			varLaJ = varLaJ00.add(varNAnosJDecimal.multiply(varLaJ01.subtract(varLaJ00)));
-		}
+		varLaJ00 = lstValorAnul.get(varNAnosJ.intValue()).getPolizaVigentes();
+		varLaJ01 = lstValorAnul.get(varNAnosJ.intValue()+1).getPolizaVigentes();
+		varNAnosJDecimal = varNAnosJ.subtract(new BigDecimal(varNAnosJ.intValue()));
+		varLaJ = varLaJ00.add(varNAnosJDecimal.multiply(varLaJ01.subtract(varLaJ00)));
 		
 		if (ConstantsModulos.CTE_FIRST_ITER.equals(iteracion)) {
 			aptotc = (varLaJ0.subtract(varLaJ)).divide(varLaJ0, ConstantsFunciones.MATH_CONTEXT);
@@ -260,31 +245,40 @@ public class ModuloAPTOTC implements Modulo {
 				} else {
 					mapVariables.put("FEC_DEVENGO_APTOTC", bloqueCorriente.getFechaDevengo());
 				}
-			
+			 
 			varNAnosJant = FuncionesAuxiliares.nAnnos(fecDevAnterior, varFechaEfecto, varCriFec);
 			
-			if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
-				if (varNAnosJant.subtract(varNanos0).compareTo(BigDecimal.ONE) <= 0){
-					varNanosJantDecimal = varNAnosJant.subtract(varNanos0);
-					varLaJant = varLaJ0.add(varNanosJantDecimal.multiply(varPolizasAno1.subtract(varLaJ0)));
-				} else if (varNanos0.add(BigDecimal.ONE).compareTo(varNAnosJant) == -1 &&
-						varNanos0.add(BigDecimal.ONE).intValue() == varNAnosJant.intValue()) {
-					varPolDespuesAno1 = lstValorAnulANM.get(varNanos0.intValue() + 2).getPolizaVigentes().subtract(varPolizasAno1);
-					varLaJant = varPolizasAno1.add(varNAnosJant.subtract(varNanos0.add(BigDecimal.ONE)).divide(BigDecimal.ONE.subtract(varNanos0Decimal),ConstantsFunciones.MATH_CONTEXT).multiply(varPolDespuesAno1));
-				} else {
-					varLaJant00 = lstValorAnulANM.get(varNAnosJant.intValue()).getPolizaVigentes();
-					varLaJant01 = lstValorAnulANM.get(varNAnosJant.intValue()+1).getPolizaVigentes();
-					varNanosJantDecimal = varNAnosJant.subtract(new BigDecimal(varNAnosJant.intValue()));
-					varLaJant = varLaJant00.add(varNanosJantDecimal.multiply(varLaJant01.subtract(varLaJant00)));
-				}
-			} else {
-				varLaJant00 = lstValorAnul.get(varNAnosJant.intValue()).getPolizaVigentes();
-				varLaJant01 = lstValorAnul.get(varNAnosJant.intValue()+1).getPolizaVigentes();
-				varNanosJantDecimal = varNAnosJant.subtract(new BigDecimal(varNAnosJant.intValue()));
-				varLaJant = varLaJant00.add(varNanosJantDecimal.multiply(varLaJant01.subtract(varLaJant00)));
-			}
+			varLaJant00 = lstValorAnul.get(varNAnosJant.intValue()).getPolizaVigentes();
+			varLaJant01 = lstValorAnul.get(varNAnosJant.intValue()+1).getPolizaVigentes();
+			varNanosJantDecimal = varNAnosJant.subtract(new BigDecimal(varNAnosJant.intValue()));
+			varLaJant = varLaJant00.add(varNanosJantDecimal.multiply(varLaJant01.subtract(varLaJant00)));
 			
 			aptotc = (varLaJant.subtract(varLaJ)).divide(varLaJ0, ConstantsFunciones.MATH_CONTEXT);
+		}
+		
+		if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
+			BigDecimal varSCR = BigDecimal.ZERO;;
+			List<ValoresEstres> varSCRS = UtilModulos.getValoresEstres(mapVariables, CLAVE_VAR_ESTRESES, umic.getDatosGenerales().getFecCierre(), btcUmic.getBaseTec());
+			if (umic.getDatosGenerales().getCnegocio().equals("C")) {
+				if (varSCRS.get(0).getVariable().equals("ANPMC")) {
+					varSCR = varSCRS.get(0).getValor().divide(new BigDecimal(100), ConstantsFunciones.MATH_CONTEXT);
+				} else {
+					varSCR = varSCRS.get(1).getValor().divide(new BigDecimal(100), ConstantsFunciones.MATH_CONTEXT);
+				}
+			} else {
+				if (varSCRS.get(0).getVariable().equals("ANPMI")) {
+					varSCR = varSCRS.get(0).getValor().divide(new BigDecimal(100), ConstantsFunciones.MATH_CONTEXT);
+				} else {
+					varSCR = varSCRS.get(1).getValor().divide(new BigDecimal(100), ConstantsFunciones.MATH_CONTEXT);
+				}
+			}
+			
+			if (ConstantsModulos.CTE_FIRST_ITER.equals(it)) {
+				aptotc = varSCR;
+				mapVariables.put("IT_APTOTC", it + 1);
+			} else {
+				aptotc = aptotc.multiply(BigDecimal.ONE.subtract(varSCR));
+			}
 		}
 
 		if (ModuloAPTOTC.LOG.isTraceEnabled()) {

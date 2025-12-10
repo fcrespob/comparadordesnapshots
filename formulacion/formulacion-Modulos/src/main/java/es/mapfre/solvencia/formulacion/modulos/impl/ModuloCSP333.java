@@ -335,7 +335,10 @@ public class ModuloCSP333 implements Modulo {
 							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAEN))  
 							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAIP))  
 							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAIN))  
-							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM))){
+							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM))
+							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE))
+							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN))
+							&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO))){
 						if (btcUmic.getTablasConversionAsegurado() == null || btcUmic.getTablasConversionAsegurado().isEmpty()){
 							throw Solvencia2ExcepcionHelper.crearExcepcion(ConstantsFunciones.CTE_COD_ERROR_AC, new String[]{null, "tablasConversionAsegurado"});
 						}

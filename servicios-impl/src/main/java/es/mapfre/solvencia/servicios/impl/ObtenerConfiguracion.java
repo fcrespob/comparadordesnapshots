@@ -60,14 +60,17 @@ import es.mapfre.solvencia.dao.impl.parametrizacionGeneral.TablaExperienciaDao;
 import es.mapfre.solvencia.dao.impl.parametrizacionGeneral.TablaHibridaDao;
 import es.mapfre.solvencia.dao.impl.parametrizacionGeneral.ValoresConstantesRescatesDao;
 import es.mapfre.solvencia.dao.impl.salidaCalculo.TotalesFlujosDao;
+import es.mapfre.solvencia.dao.impl.scr.GastosRealesNF17GTODao;
 import es.mapfre.solvencia.dao.impl.scr.GastosRealesSCRGTODao;
 import es.mapfre.solvencia.dao.impl.scr.IPCGeneralFuturoSCRGTODao;
+import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesNF17MFEDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRLFEDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRLMIDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRMCFDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRMCIDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRMFEDao;
 import es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesSCRMMIDao;
+import es.mapfre.solvencia.dao.impl.scr.ValoresAnulacionNF17AENDao;
 import es.mapfre.solvencia.dao.impl.scr.ValoresAnulacionSCRAENDao;
 import es.mapfre.solvencia.dao.impl.scr.ValoresAnulacionSCRAEPDao;
 import es.mapfre.solvencia.dao.impl.scr.ValoresAnulacionSCRAINDao;
@@ -176,6 +179,9 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 	private FlujInfSCRDao flujInfSCRDao = new FlujInfSCRDao();
 	private FlujSuscriDao flujSuscriDao = new FlujSuscriDao();
 	private TabOGADao tabOGADao = new TabOGADao();
+	private ValoresAnulacionNF17AENDao valoresAnulacionNF17AENDao = new ValoresAnulacionNF17AENDao();
+	private TablasExperienciaRealesNF17MFEDao tablasExperienciaRealesNF17MFEDao = new TablasExperienciaRealesNF17MFEDao();
+	private GastosRealesNF17GTODao gastosRealesNF17GTODao = new GastosRealesNF17GTODao();
 	
 	/* (non-Javadoc)
 	 * @see es.mapfre.solvencia.servicios.IObtenerConfiguracion#recuperarEdadMax(java.sql.Timestamp, java.lang.Integer, java.lang.String, java.math.BigDecimal, java.math.BigDecimal, java.math.BigDecimal)
@@ -223,7 +229,10 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 		
 		if (ktipobt.equals(ConstantesSolvencia.BASE_SCRGTO)){
 			gastos = gastosRealesSCRGTODao.obtenerGastosReales(ccanal,
-					cnegocio, fecCierre, kmodalidad, kramo, ktipobt);
+					cnegocio, fecCierre, kmodalidad, kramo, ktipobt, matching);
+		}  else if (ktipobt.equals(ConstantesSolvencia.BASE_NF17GTO)){
+			gastos = gastosRealesNF17GTODao.obtenerGastosReales(ccanal,
+					cnegocio, fecCierre, kmodalidad, kramo, ktipobt, matching);
 		} else if (ktipobt.equals(ConstantesSolvencia.BASE_SCRTIU) ||
 				ktipobt.equals(ConstantesSolvencia.BASE_SCRTID) ||
 				ktipobt.equals(ConstantesSolvencia.BASE_SCRINC) ||
@@ -246,7 +255,9 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 				ktipobt.equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				ktipobt.equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				ktipobt.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				ktipobt.equals(ConstantesSolvencia.BASE_N17CLIR)){
+				ktipobt.equals(ConstantesSolvencia.BASE_N17CLIR) ||
+				ktipobt.equals(ConstantesSolvencia.BASE_NF17AEN) ||
+				ktipobt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 			gastos = gastosRealesDao.obtenerGastosReales(ccanal,
 					cnegocio, fecCierre, kmodalidad, kramo, ConstantesSolvencia.BASE_BEL, matching);		 
 		}else {
@@ -385,7 +396,7 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 			break;
 		}
 		
-		if(btc.getIndTabExp() == ConstantesSolvencia.CTE_TABLA_REALISTA /*&& !tipoValores.equals(ConstantesSolvencia.CTE_TABMORT_I)*/){
+		if(btc.getIndTabExp() == ConstantesSolvencia.CTE_TABLA_REALISTA && btc.getTablaBaseExpList() != null/*&& !tipoValores.equals(ConstantesSolvencia.CTE_TABMORT_I)*/){
 			Integer tabla = Integer.valueOf(btc.getTablaBaseExpList().get(asegurado).get(0));
 			if (tipoValores.equals(ConstantesSolvencia.CTE_TABMORT_I)){
 				tabla = Integer.valueOf(btc.getTablaBaseExpList().get(asegurado).get(2));
@@ -566,6 +577,13 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 			break;
 		case ConstantesSolvencia.BASE_SCRMCI:
 			tablasExperiencia = tablasExperienciaRealesSCRMCIDao.getValues(umic.getDatosGenerales().getFecCierre(), 
+					bt, umic.getDatosGenerales().getCcanal(), umic.getDatosGenerales().getCnegocio(), 
+					umic.getDatosGenerales().getTipoSubriesgo(), sexAseg, umic.getDatosGenerales().getKcategoria(), 
+					edadAseg, modalidad, ktabla, generacion, umic.getFechas().getTc(), umic.getBti().getPriesgo(), 
+					umic.getBti().getPsobremort());	
+			break;
+		case ConstantesSolvencia.BASE_NF17MFE:
+			tablasExperiencia = tablasExperienciaRealesNF17MFEDao.getValues(umic.getDatosGenerales().getFecCierre(), 
 					bt, umic.getDatosGenerales().getCcanal(), umic.getDatosGenerales().getCnegocio(), 
 					umic.getDatosGenerales().getTipoSubriesgo(), sexAseg, umic.getDatosGenerales().getKcategoria(), 
 					edadAseg, modalidad, ktabla, generacion, umic.getFechas().getTc(), umic.getBti().getPriesgo(), 
@@ -779,7 +797,8 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 		
 		if (basetec.equals(ConstantesSolvencia.BASE_NIF17LIR) || basetec.equals(ConstantesSolvencia.BASE_N17LIRIN) 
 				|| basetec.equals(ConstantesSolvencia.BASE_NIFF17OCI) || basetec.equals(ConstantesSolvencia.BASE_NIIF17IF)
-				|| basetec.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| basetec.equals(ConstantesSolvencia.BASE_N17CLIR) || basetec.equals(ConstantesSolvencia.BASE_NF17MFE)
+				|| basetec.equals(ConstantesSolvencia.BASE_NF17AEN) || basetec.equals(ConstantesSolvencia.BASE_NF17GTO)) {
 			basetec = ConstantesSolvencia.BASE_NIIF17;
 		}
 		
@@ -990,7 +1009,10 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 				baseTecnica.equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				baseTecnica.equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				baseTecnica.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				baseTecnica.equals(ConstantesSolvencia.BASE_N17CLIR)){
+				baseTecnica.equals(ConstantesSolvencia.BASE_N17CLIR) ||
+				baseTecnica.equals(ConstantesSolvencia.BASE_NF17GTO) ||
+				baseTecnica.equals(ConstantesSolvencia.BASE_NF17MFE) ||
+				baseTecnica.equals(ConstantesSolvencia.BASE_NF17AEN)){
 			key = new FlujosProbablesKey(modalidad, garantia,
 					prestacion, ConstantesSolvencia.BASE_NIIF17);		 
 		}else {
@@ -1218,6 +1240,8 @@ public class ObtenerConfiguracion implements IObtenerConfiguracion {
 			return valoresAnulacionSCRAIPDao.getValues(ktabla, fecCierre);
 		} else if (bt.equals(ConstantesSolvencia.BASE_SCRAIN)){
 			return valoresAnulacionSCRAINDao.getValues(ktabla, fecCierre);
+		} else if (bt.equals(ConstantesSolvencia.BASE_NF17AEN)){
+			return valoresAnulacionNF17AENDao.getValues(ktabla, fecCierre);
 		} else {
 			return valoresAnulacionDao.getValues(ktabla, fecCierre);
 		}

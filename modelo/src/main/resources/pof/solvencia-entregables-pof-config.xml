@@ -148,14 +148,26 @@
 		</user-type>
 		<user-type>
 			<type-id>1782</type-id>
+			<class-name>es.mapfre.solvencia.dominio.entregables.TotPMaCoaM </class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1783</type-id>
+			<class-name>es.mapfre.solvencia.dominio.entregables.FlujPMaCoaM </class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1784</type-id>
+			<class-name>es.mapfre.solvencia.dominio.entregables.FlujPMdCoaM </class-name>
+		</user-type>
+		<user-type>
+			<type-id>1785</type-id>
 			<class-name>es.mapfre.solvencia.dominio.entregables.FlujSuscri </class-name>
 		</user-type>
 		<user-type>
-			<type-id>1783</type-id>
+			<type-id>1786</type-id>
 			<class-name>es.mapfre.solvencia.dominio.entregables.ContabilidadCertificado</class-name>
 		</user-type>
 		<user-type>
-			<type-id>1784</type-id>
+			<type-id>1787</type-id>
 			<class-name>es.mapfre.solvencia.dominio.entregables.FlujInfSCR </class-name>
 		</user-type>
 	</user-type-list>

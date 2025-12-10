@@ -31,7 +31,8 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 	private final ValueExtractor ccanalExtractor;
 
 	private final ValueExtractor fecHastaExtractor; 
-	private final ValueExtractor fecDesdeExtractor; 
+	private final ValueExtractor fecDesdeExtractor;
+	private final ValueExtractor matchingExtractor;
 
 	public GastosRealesSCRGTODao() {
 		super();
@@ -45,6 +46,7 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 
 		fecHastaExtractor  = createExtractor("getFecHasta",Timestamp.class, GastosReales.IND_FECHASTA);
 		fecDesdeExtractor  = createExtractor("getFecDesde",Timestamp.class, GastosReales.IND_FECDESDE);
+		matchingExtractor  = createExtractor("getMatching",String.class, GastosReales.IND_MATCHING);
 
 		super.getCache().addIndex(cnegocioExtractor, true, null);
 		super.getCache().addIndex(kmodalidadExtractor, true, null);
@@ -54,6 +56,7 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 		
 		super.getCache().addIndex(fecHastaExtractor, true, null);
 		super.getCache().addIndex(fecDesdeExtractor, true, null);
+		super.getCache().addIndex(matchingExtractor, true, null);
 	}
 
 	@Override
@@ -64,20 +67,20 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 
 	public List<GastosReales> obtenerGastosReales(Integer ccanal, String cnegocio,
 			Timestamp fecCierre, Integer kmodalidad,
-			String kramo, String ktipobt)  {
+			String kramo, String ktipobt, String matching)  {
 		
 		List<GastosReales> value = getGastosReales(ccanal, cnegocio, fecCierre, 
-				kmodalidad, kramo, ktipobt, true);
+				kmodalidad, kramo, ktipobt, true, matching);
 		if (value.isEmpty()) {
 			value = getGastosReales(ccanal, cnegocio, fecCierre, 
-					kmodalidad, kramo, ktipobt, false);
+					kmodalidad, kramo, ktipobt, false, matching);
 		}
 		return value;
 	}
 
 	public List<GastosReales> getGastosReales(Integer ccanal, String cnegocio,
 			Timestamp fecCierre, Integer kmodalidad,
-			String kramo, String ktipobt, Boolean conModalidad)
+			String kramo, String ktipobt, Boolean conModalidad, String matching)
 			 {
 
 		Filter cnegocioFilter = new EqualsFilter(cnegocioExtractor, cnegocio);
@@ -87,6 +90,7 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 		
 		Filter fecHastaFilter = new GreaterEqualsFilter(fecHastaExtractor,	fecCierre.getTime());
 		Filter fecDesdeFilter = new LessEqualsFilter(fecDesdeExtractor, fecCierre.getTime());
+		Filter matchingFilter = new EqualsFilter(matchingExtractor, matching);
 
 		Filter allFilter = null;
 		
@@ -95,12 +99,12 @@ public class GastosRealesSCRGTODao extends DaoBase implements
 					kmodalidad);
 			allFilter = new AllFilter(new Filter[] { cnegocioFilter,
 					kmodalidadFilter, kramoFilter, ktipobtFilter, ccanalFilter,
-					fecHastaFilter, fecDesdeFilter });
+					fecHastaFilter, fecDesdeFilter, matchingFilter });
 		}
 		else {
 			allFilter = new AllFilter(new Filter[] { cnegocioFilter,
 					kramoFilter, ktipobtFilter, ccanalFilter, fecHastaFilter,
-					fecDesdeFilter });
+					fecDesdeFilter, matchingFilter });
 		}
 
 		Set lista = this.getCache().entrySet(allFilter);

@@ -325,6 +325,39 @@
 		</cache-mapping>
 		
 		<cache-mapping>
+			<cache-name>totpmacoam</cache-name>
+			<scheme-name>distributed-associated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<param-value>116MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>		
+		
+		<cache-mapping>
+			<cache-name>flujpmacoam</cache-name>
+			<scheme-name>distributed-associated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<param-value>116MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>	
+		
+		<cache-mapping>
+			<cache-name>flujpmdcoam</cache-name>
+			<scheme-name>distributed-associated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<param-value>116MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>
+		
+		<cache-mapping>
 			<cache-name>contcerti</cache-name>
 			<scheme-name>distributed-associated-scheme</scheme-name>
 			<init-params>

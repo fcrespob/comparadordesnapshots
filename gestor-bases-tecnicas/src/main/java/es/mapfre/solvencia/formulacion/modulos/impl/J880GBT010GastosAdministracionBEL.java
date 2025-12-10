@@ -18,6 +18,7 @@ import es.mapfre.solvencia.dao.impl.conversionesBel.GastosRealesDao;
 import es.mapfre.solvencia.dao.impl.gbt.AsigCurvaTipoDao;
 import es.mapfre.solvencia.dao.impl.parametrizacionGeneral.AsigCurvasTipoUOADao;
 import es.mapfre.solvencia.dao.impl.parametrizacionGeneral.FlujosProbablesDao;
+import es.mapfre.solvencia.dao.impl.scr.GastosRealesNF17GTODao;
 import es.mapfre.solvencia.dao.impl.scr.GastosRealesSCRGTODao;
 import es.mapfre.solvencia.dominio.ConstantesSolvencia;
 import es.mapfre.solvencia.dominio.conversionesBel.GastosReales;
@@ -132,7 +133,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
 		} else {
@@ -151,7 +154,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BEL);
 			} else {
@@ -171,7 +176,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 				|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 			keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 					ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -186,7 +193,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 
 			}else{
@@ -207,7 +216,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fall.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -232,7 +243,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				vida.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -257,7 +270,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				anul.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -284,7 +299,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				comi.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -309,7 +326,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				gast.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -334,7 +353,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				inv.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -359,7 +380,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				prim.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -380,7 +403,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -393,7 +418,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -416,6 +443,7 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 
 		GastosRealesDao grDao = new GastosRealesDao();
 		GastosRealesSCRGTODao grSCRGTODao = new GastosRealesSCRGTODao();
+		GastosRealesNF17GTODao grNF17GTODao = new GastosRealesNF17GTODao();
 
 		List<GastosReales> gr;
 		String kcurva = null;
@@ -430,7 +458,19 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 			
 		
 		if (baseTec.equals(ConstantsModulos.CTE_VAL_SCRGTO)) {
-			gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, baseTec, true);
+			if (kcurva != null 
+					&& kcurva.equals("CLR_MA0")) {
+				gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, baseTec, true, "S");
+			} else {
+				gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, baseTec, true, "N");
+			}
+		} else if (baseTec.equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
+			if (kcurva != null 
+					&& kcurva.equals("CLR_MA0")) {
+				gr = grNF17GTODao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, baseTec, true, "S");
+			} else {
+				gr = grNF17GTODao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, baseTec, true, "N");
+			}
 		} else if (baseTec.equals(ConstantsModulos.CTE_VAL_SCRMFE) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRMMI)
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRMCF) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRMCI)
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRLFE) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRLMI)
@@ -439,10 +479,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRAIN) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRAIP)
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRANM) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRTIU)
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRTID) || baseTec.equals(ConstantesSolvencia.BASE_NIIF17)
-				|| baseTec.equals(ConstantesSolvencia.BASE_NIF17LIR)
-				|| baseTec.equals(ConstantesSolvencia.BASE_N17LIRIN)
-				|| baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| baseTec.equals(ConstantesSolvencia.BASE_NIF17LIR) || baseTec.equals(ConstantesSolvencia.BASE_N17LIRIN)
+				|| baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI) || baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17AEN) || baseTec.equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
 			if (kcurva != null 
 					&& kcurva.equals("CLR_MA0")) {
 				gr = grDao.getGastosReales(compania, negocio, fchCierre, modalidad, ramo, ConstantsModulos.CTE_BT_BEL,
@@ -473,13 +512,26 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 		GastosReales elementGR = null;
 		if (gr == null || gr.isEmpty()) {
 			if (baseTec.equals(ConstantsModulos.CTE_VAL_SCRGTO)) {
-				gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, 0, ramo, baseTec, true);
+				if (kcurva != null 
+						&& kcurva.equals("CLR_MA0")) {
+					gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, 0, ramo, baseTec, true, "S");
+				} else {
+					gr = grSCRGTODao.getGastosReales(compania, negocio, fchCierre, 0, ramo, baseTec, true, "N");
+				}
+			} else if (baseTec.equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
+				if (kcurva != null 
+						&& kcurva.equals("CLR_MA0")) {
+					gr = grNF17GTODao.getGastosReales(compania, negocio, fchCierre, 0, ramo, baseTec, true, "S");
+				} else {
+					gr = grNF17GTODao.getGastosReales(compania, negocio, fchCierre, 0, ramo, baseTec, true, "N");
+				}
 			} else if (baseTec.equals(ConstantsModulos.CTE_VAL_SCRMFE)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRMMI)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRMCF)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRMCI)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRLFE)
-					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRLMI) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRVM)
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRLMI) 
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRVM)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRINC)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRAEN)
 					|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRAEP)
@@ -491,7 +543,9 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| baseTec.equals(ConstantesSolvencia.BASE_NIIF17)
 					|| baseTec.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17AEN)
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
 				if (kcurva != null 
 						&& kcurva.equals("CLR_MA0")) {
 					gr = grDao.getGastosReales(compania, negocio, fchCierre, 0, ramo, ConstantsModulos.CTE_BT_BEL, true, "S");
@@ -667,7 +721,10 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
 
 				result = dao.obtenerCurvaTipo(ConstantsModulos.CTE_BT_BEL, umic.getDatosGenerales().getTipoSubriesgo(),
 						umic.getRescates().getRiesgrescI(), pagoU, umic.getDatosGenerales().getKcarterainv(),
@@ -724,7 +781,10 @@ public class J880GBT010GastosAdministracionBEL implements Modulo {
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR))))
+											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE))))
 							&& result.get(i).getKriesgo().equals(umic.getDatosGenerales().getTipoSubriesgo())
 							&& result.get(i).getKriesgorescate().equals(umic.getRescates().getRiesgrescI())
 							&& result.get(i).getKpagounico().equals(pagoU)

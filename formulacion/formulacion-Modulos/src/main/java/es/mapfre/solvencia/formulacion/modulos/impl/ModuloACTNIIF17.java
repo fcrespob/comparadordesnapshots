@@ -297,7 +297,11 @@ public class ModuloACTNIIF17 implements Modulo {
 		AsigCurvasTipoUOADao dao = new AsigCurvasTipoUOADao();
 		//int meses = Integer.parseInt(mesesCierre);
 
-		if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17) || btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN)) {
+		if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17) 
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
 			result = dao.obtenerCurvaTipoCINIIF17(ConstantsModulos.CTE_BT_NIIF17, umic.getDatosNiif17().getuoa(),
 					umic.getDatosNiif17().getkcarinv17());
 		} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIF17LIR)

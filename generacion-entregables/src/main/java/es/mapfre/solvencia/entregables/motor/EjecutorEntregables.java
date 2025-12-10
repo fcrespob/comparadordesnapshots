@@ -243,7 +243,10 @@ public class EjecutorEntregables {
 									elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_FLUJINFSCR)) && 
 							 	(kbasetec.equals(ConstantesSolvencia.BASE_NIIF17) || 
 							 			kbasetec.equals(ConstantesSolvencia.BASE_N17LIRIN) || 
-							 			kbasetec.equals(ConstantesSolvencia.BASE_NIIF17IF)))
+							 			kbasetec.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
+							 			kbasetec.equals(ConstantesSolvencia.BASE_NF17MFE)  ||
+							 			kbasetec.equals(ConstantesSolvencia.BASE_NF17GTO)  ||
+							 			kbasetec.equals(ConstantesSolvencia.BASE_NF17AEN)))
 							||((elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_FLUJINF4)
 								|| elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_FLUJINFSCR)) && 
 							 	(kbasetec.equals(ConstantesSolvencia.BASE_BEL) || 
@@ -290,6 +293,16 @@ public class EjecutorEntregables {
 						if (elementoSubproceso.getCelement().equals(ConstantesSolvencia.CTE_PROC_PESOSBT) && 
 								fp.getCtipobt().equals(ConstantesSolvencia.MULTI7)) {
 							calcularEntregable.add(new CalcularEntregable(ConstantsFactorias.ENTREGABLE_PESOSBTPROXY, kbasetec));
+						}
+						
+						if (elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_TOTPMACOA)) {
+							calcularEntregable.add(new CalcularEntregable(ConstantsFactorias.ENTREGABLE_TOTPMACOAM, kbasetec));
+						}
+						if (elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_FLUJPMACOA)) {
+							calcularEntregable.add(new CalcularEntregable(ConstantsFactorias.ENTREGABLE_FLUJPMACOAM, kbasetec));
+						}
+						if (elementoSubproceso.getCelement().equals(ConstantsFactorias.ENTREGABLE_FLUJPMDCOA)) {
+							calcularEntregable.add(new CalcularEntregable(ConstantsFactorias.ENTREGABLE_FLUJPMDCOAM, kbasetec));
 						}
 					}
 				}

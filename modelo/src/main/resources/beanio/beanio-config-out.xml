@@ -372,6 +372,30 @@
 			class="es.mapfre.solvencia.dominio.entregables.FlujPMdCoa" />
 	</stream>
 	
+	<stream name="totpmacoam" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="totpmacoam" template="totpmacoam"
+			class="es.mapfre.solvencia.dominio.entregables.TotPMaCoaM" />
+	</stream>
+	
+	<stream name="flujpmacoam" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujpmacoam" template="flujpmacoam"
+			class="es.mapfre.solvencia.dominio.entregables.FlujPMaCoaM" />
+	</stream>
+	
+	<stream name="flujpmdcoam" format="fixedlength">
+		<parser>
+			<property name="recordTerminator" value="\r\n" />
+		</parser>
+		<record name="flujpmdcoam" template="flujpmdcoam"
+			class="es.mapfre.solvencia.dominio.entregables.FlujPMdCoaM" />
+	</stream>
+	
 	<stream name="incidenciasmaestro" format="fixedlength">
 		<parser>
 			<property name="recordTerminator" value="\r\n" />

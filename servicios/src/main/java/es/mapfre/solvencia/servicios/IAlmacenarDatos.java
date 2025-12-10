@@ -24,7 +24,9 @@ import es.mapfre.solvencia.dominio.entregables.FlujInf3;
 import es.mapfre.solvencia.dominio.entregables.FlujInf4;
 import es.mapfre.solvencia.dominio.entregables.FlujInfSCR;
 import es.mapfre.solvencia.dominio.entregables.FlujPMaCoa;
+import es.mapfre.solvencia.dominio.entregables.FlujPMaCoaM;
 import es.mapfre.solvencia.dominio.entregables.FlujPMdCoa;
+import es.mapfre.solvencia.dominio.entregables.FlujPMdCoaM;
 import es.mapfre.solvencia.dominio.entregables.FlujSuscri;
 import es.mapfre.solvencia.dominio.entregables.FlujTcas;
 import es.mapfre.solvencia.dominio.entregables.FlujoTotPV;
@@ -42,6 +44,7 @@ import es.mapfre.solvencia.dominio.entregables.PrvUmic;
 import es.mapfre.solvencia.dominio.entregables.SwCobroCom;
 import es.mapfre.solvencia.dominio.entregables.SwCobroComCsv;
 import es.mapfre.solvencia.dominio.entregables.TotPMaCoa;
+import es.mapfre.solvencia.dominio.entregables.TotPMaCoaM;
 import es.mapfre.solvencia.dominio.formulacion.Periodo;
 import es.mapfre.solvencia.dominio.formulacion.PlanPagos;
 import es.mapfre.solvencia.dominio.maestro.Umic;
@@ -334,6 +337,12 @@ public interface IAlmacenarDatos {
 	void almacenarEntregableFlujPMaCoa(List<FlujPMaCoa> flujPMaCoa);
 	
 	void almacenarEntregableFlujPMdCoa(List<FlujPMdCoa> flujPMdCoa);
+	
+	void almacenarEntregableTotPMaCoaM(List<TotPMaCoaM> totPMaCoaM);
+	
+	void almacenarEntregableFlujPMaCoaM(List<FlujPMaCoaM> flujPMaCoaM);
+	
+	void almacenarEntregableFlujPMdCoaM(List<FlujPMdCoaM> flujPMdCoaM);
 	
 	void almacenarEntregablesTirea(Umic umic, DetalleBaseTecnica detalleBaseTecnica,
 			List<DetalleCorriente> detallesCorriente, FichaProceso fichaproceso, TotalesFlujos totales);

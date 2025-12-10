@@ -157,7 +157,10 @@ public class ModuloCSPANETO implements Modulo {
 				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_BT_NIIF17) 
 				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_BT_NIF17LIR) 
 				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_BT_N17LIRIN)
-				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_BT_BEL)){
+				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_BT_BEL)
+				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_VAL_NF17MFE) 
+				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_VAL_NF17AEN) 
+				|| btcUmic.getBt().equalsIgnoreCase(ConstantsModulos.CTE_VAL_NF17GTO)){
 			listaCorrienteUmic = UtilModulos.getListaCorrienteUmic(mapVariables, CLAVELISTACORRUMIC,
 					ConstantsModulos.CTE_BTI_PROY, btcUmic.getFecCierre(),
 					umic.getKey());

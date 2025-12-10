@@ -234,11 +234,8 @@ public class ModuloFPTOZC implements Modulo {
 		Integer varEdifer = umic.getDatosGenerales().getEdifer();
 		varEdadCalc = UtilModulos.getVarEdadCalc(mapVariables, CLAVE_VAR_EDAD_CAL, varFechaEfecto, umic.getAsegurados().getFnacAseg1(), varCriterioEdad, umic.getRentas().getFecIni(), varEdifer);
 		
+		varZc = UtilModulos.getVarZc(mapVariables, CLAVE_VAR_ZC, varEdadCalc, varFechaEfecto, fcalc, varCriterFec,varCriterioEdad);
 		
-			varZc = UtilModulos.getVarZc(mapVariables, CLAVE_VAR_ZC, varEdadCalc, varFechaEfecto, fcalc, varCriterFec,varCriterioEdad);
-		
-		
-//		varZc = UtilModulos.getVarZc(mapVariables, CLAVE_VAR_ZC, varEdadCalc, varFechaEfecto, fcalc, varCriterFec);
 		varFracc1 = FuncionesAuxiliares.nAnnos(fcalc, bloqueCorriente.getFechaDevengo(), varCriterFec);
 		// Cambio Fase VIII
 		if (bloqueCorriente.getFechaDevengo() != null) {
@@ -265,8 +262,23 @@ public class ModuloFPTOZC implements Modulo {
 		if (UtilModulos.getVarFecDevengoAnterior(mapVariables, CLAVE_VAR_FD_ANT, iteracion - 1) == null) {
 			
 			// Recuperación de variables auxiliares adicionales.
-			varLzcEntero = lstValoresTabMort.get(varZc.intValue());
-			varLzcEntero1 = lstValoresTabMort.get(varZc.intValue() + 1);
+			if (umic.getDatosGenerales().getKramo().equals("159")){
+				if(varZc == null || varZc.intValue() > lstValoresTabMort.size()-1 ){
+					varLzcEntero = BigDecimal.ZERO;
+				}else{
+					varLzcEntero = lstValoresTabMort.get(varZc.intValue());
+				}
+				
+				if(varZc == null || varZc.intValue() > lstValoresTabMort.size()-1 ){
+					varLzcEntero1 = BigDecimal.ZERO;
+				}else{
+					varLzcEntero1 = lstValoresTabMort.get(varZc.intValue() + 1);
+				}
+			} else {
+				varLzcEntero = lstValoresTabMort.get(varZc.intValue());
+				varLzcEntero1 = lstValoresTabMort.get(varZc.intValue() + 1);
+			}
+			
 			varLzc = Util.interpolaPorEdad(varLzcEntero, varLzcEntero1, varZc);
 			varLzc = UtilModulos.setVarLzcFPTOZC(mapVariables, CLAVE_VAR_LZC, varLzc);
 		}
@@ -275,16 +287,49 @@ public class ModuloFPTOZC implements Modulo {
 				|| auxIter == null){
 			mapVariables.put("FPTOZC_Iteracion" + codSubproceso, iteracion);
 			mapVariables.put("FPTOZC_FecDevAnt" + codSubproceso, bloqueCorriente.getFechaDevengo());
-			varLjEntero = lstValoresTabMort.get(varEdadNJ.intValue());
-			varLjEntero1 = lstValoresTabMort.get(varEdadNJ.intValue() + 1);
+			if (umic.getDatosGenerales().getKramo().equals("159")){
+				if(varEdadNJ == null || varEdadNJ.intValue() > lstValoresTabMort.size()-1 ){
+					varLjEntero = BigDecimal.ZERO;
+				}else{
+					varLjEntero = lstValoresTabMort.get(varZc.intValue());
+				}
+				
+				if(varEdadNJ == null || varEdadNJ.intValue() + 1 > lstValoresTabMort.size()-1 ){
+					varLjEntero = BigDecimal.ZERO;
+				}else{
+					varLjEntero = lstValoresTabMort.get(varZc.intValue() + 1);
+				}
+			} else {
+				String VZREVER2_PMRR = (String) mapVariables.get("VZREVER2_PMRR");
+				if (VZREVER2_PMRR != null) {
+					if (varEdadNJ.intValue() > lstValoresTabMort.size() - 1) {
+						varLjEntero = BigDecimal.ZERO;
+					} else {
+						varLjEntero = lstValoresTabMort.get(varEdadNJ.intValue());
+					}
+					if (varEdadNJ.intValue() + 1 > lstValoresTabMort.size() - 1) {
+						varLjEntero = BigDecimal.ZERO;
+					} else {
+						varLjEntero1 = lstValoresTabMort.get(varEdadNJ.intValue() + 1);
+					}
+				} else {
+					varLjEntero = lstValoresTabMort.get(varEdadNJ.intValue());
+					varLjEntero1 = lstValoresTabMort.get(varEdadNJ.intValue() + 1);
+				}
+				
+				
+			}
+			
 			varLj = Util.interpolaPorEdad(varLjEntero, varLjEntero1, varEdadNJ);
 			
 			varLzc = UtilModulos.getVarLzcFPTOZC(mapVariables, CLAVE_VAR_LZC);
-
 			//Se calculará la probabilidad en el periodo j como
 			//j=1 --> fptozc = ( varLzc - varLj)/ varLzc
-			fptozc = (varLzc.subtract(varLj)).divide(varLzc, ConstantsFunciones.MATH_CONTEXT);
-			
+			if (varLzc.intValue() == 0) {
+				fptozc = BigDecimal.ZERO;
+			} else {
+				fptozc = (varLzc.subtract(varLj)).divide(varLzc, ConstantsFunciones.MATH_CONTEXT);
+			}
 		} else {
 			
 			// Se puede recuperar el varFracc2 si lo guardamos en el mapVariables al final de cada periodo
@@ -303,7 +348,20 @@ public class ModuloFPTOZC implements Modulo {
 					if((umic.getDatosGenerales().getKprestacion() != null) && (umic.getDatosGenerales().getKprestacion().equals("RS901"))){
 						varFracc2 = FuncionesAuxiliares.nAnnos(fcalc, proyUmic.get(iteracion - 2).getFechaDesde(), varCriterFec);
 					}else{
-						fecDevAnt = proyUmic.get(iteracion-2).getBloqueBySubproceso(codSubproceso).getFechaDevengo();		
+						if (umic.getDatosGenerales().getKramo().equals("159")) {
+							if(null == proyUmic.get(iteracion-2).getBloqueBySubproceso(codSubproceso)){
+								fecDevAnt = proyUmic.get(iteracion-2).getBloqueBySubproceso("PROY_FALL").getFechaDevengo();	
+							}else{
+								fecDevAnt = proyUmic.get(iteracion-2).getBloqueBySubproceso(codSubproceso).getFechaDevengo();	
+							}
+						} else {
+							if (codSubproceso.equals("PROY_PMRR")) {
+								fecDevAnt = proyUmic.get(iteracion-2).getBloqueBySubproceso("PROY_FALL").getFechaDevengo();	
+							} else {
+								fecDevAnt = proyUmic.get(iteracion-2).getBloqueBySubproceso(codSubproceso).getFechaDevengo();	
+							}
+								
+						}
 						Timestamp auxFecha = (Timestamp) mapVariables.get("FEC_AUX_FPTOZC");
 						
 						if (auxFecha == null ) {
@@ -369,8 +427,11 @@ public class ModuloFPTOZC implements Modulo {
 			
 			//Se calculará la probabilidad en el periodo j como
 			//j>1 --> fptozc <-- ( varLjant - varLj)/ varLzc
-			fptozc = (varLJant.subtract(varLj)).divide(varLzc, ConstantsFunciones.MATH_CONTEXT);
-			
+			if (varLzc.intValue() == 0) {
+				fptozc = BigDecimal.ZERO;
+			} else {
+				fptozc = (varLJant.subtract(varLj)).divide(varLzc, ConstantsFunciones.MATH_CONTEXT);
+			}
 		}
 		// Se guarda la fecha devengo del periodo actual para usarlo en las siguientes iteraciones
 		if((umic.getDatosGenerales().getKprestacion() != null) && (umic.getDatosGenerales().getKprestacion().equals("RS901"))){

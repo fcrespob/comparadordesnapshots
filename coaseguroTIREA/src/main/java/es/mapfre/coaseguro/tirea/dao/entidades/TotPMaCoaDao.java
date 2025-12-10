@@ -87,7 +87,7 @@ public class TotPMaCoaDao extends DaoBase{
 		if(fr == null || fr.isEmpty()){
 			es.mapfre.coaseguro.tirea.dominio.entidades.Incidencia inci = new Incidencia();
 			inci.setCodigoRetorno("10");
-			inci.setInfAmpliada("No se han encontrado prestaciones reales en el fichero correspondiente.");
+			inci.setInfAmpliada("No se han encontrado registros para el fichero TotPmaCoa.");
 			throw new Solvencia2Excepcion(inci);
 		}
 		

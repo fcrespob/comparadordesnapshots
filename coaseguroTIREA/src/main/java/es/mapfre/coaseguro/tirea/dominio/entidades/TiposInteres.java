@@ -9,25 +9,25 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {    
-    "intereses"
+    "interes"
 })
 @XmlRootElement(name = "TiposInteres")
 public class TiposInteres {
 
 	
-	private List<Interes> Intereses;
+	private List<Interes> Interes;
 
 	public TiposInteres() {
 		super();
 	}
 	
-	public List<Interes> getIntereses() {
-		return Intereses;
+	public List<Interes> getInteres() {
+		return Interes;
 	}
 
-	@XmlElement(name = "Intereses")
-	public void setIntereses(List<Interes> intereses) {
-		Intereses = intereses;
+	@XmlElement(name = "Interes")
+	public void setInteres(List<Interes> interes) {
+		Interes = interes;
 	}
 
 	

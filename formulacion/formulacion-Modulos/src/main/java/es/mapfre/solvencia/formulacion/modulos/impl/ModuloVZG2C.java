@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -122,6 +123,13 @@ public class ModuloVZG2C implements Modulo {
 		Modulo moduloVZC;
 		Umic varUmic2;
 		DetalleBaseTecnica varBtcUmic2;
+		Integer varIndAsegOrigen = 0;
+		Integer varIndAsegDestino = 0;
+		
+		String tablaOrigen;
+		Timestamp fNacAsegOrigen;
+		String sexAsegOrigen;
+		Integer edadAsegOrigen;
 		//Fin variables locales
 		
 		if (ModuloVZG2C.LOG.isTraceEnabled()) {
@@ -153,9 +161,44 @@ public class ModuloVZG2C implements Modulo {
 			varBtcUmic2 = (DetalleBaseTecnica) mapVariables.get(CLAVE_BTC_UMIC2);
 			if (varUmic2 == null) {
 				//Se clona la Umic y la btcUmic para asignar los datos del asegurado2 al asegurado1 de la nueva Umic y btcUmic 
-				UtilModulos.clonarUmicBtcumic(mapVariables, CLAVE_UMIC2, CLAVE_BTC_UMIC2, umic, btcUmic);
+				//UtilModulos.clonarUmicBtcumic(mapVariables, CLAVE_UMIC2, CLAVE_BTC_UMIC2, umic, btcUmic);
 				varUmic2 = (Umic) mapVariables.get(CLAVE_UMIC2);
+				if(null == varUmic2){
+					varUmic2 = new Umic();
+					try {
+						PropertyUtils.copyProperties(varUmic2, umic);
+					} catch (Exception e) {
+						ModuloVZG2C.LOG.error(e.getMessage());
+					}
+					mapVariables.put(CLAVE_UMIC2, varUmic2);
+				}
+				varUmic2 = (Umic) mapVariables.get(CLAVE_UMIC2);
+				
 				varBtcUmic2 = (DetalleBaseTecnica) mapVariables.get(CLAVE_BTC_UMIC2);
+				if(null == varBtcUmic2){
+					try {
+						varBtcUmic2 = new DetalleBaseTecnica();
+						PropertyUtils.copyProperties(varBtcUmic2, btcUmic);
+					} catch (Exception e) {
+						ModuloVZG2C.LOG.error(e.getMessage());
+					}
+					mapVariables.put(CLAVE_BTC_UMIC2, varBtcUmic2);
+
+				}
+				varBtcUmic2 = (DetalleBaseTecnica) mapVariables.get(CLAVE_BTC_UMIC2);
+				varIndAsegOrigen = 2;
+				varIndAsegDestino = 1;
+				tablaOrigen = btcUmic.getTablacalc1aseg2();
+				fNacAsegOrigen = umic.getAsegurados().getFnacAseg2();
+				sexAsegOrigen = umic.getAsegurados().getCsexAseg2();
+				edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
+//				varUmic2.getAsegurados().setCsexAseg1(sexAsegOrigen);
+//				varUmic2.getAsegurados().setFnacAseg1(fNacAsegOrigen);
+//				varUmic2.getAsegurados().setEdadAseg1(edadAsegOrigen);
+//				varBtcUmic2.setTablacalc1aseg1(tablaOrigen);
+				UtilModulos.fSobreescribirAsegurado(varUmic2, varBtcUmic2, tablaOrigen,
+					varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+				varBtcUmic2.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 			}
 			
 			mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);

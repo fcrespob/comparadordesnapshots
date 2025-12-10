@@ -25,16 +25,17 @@ public class GestorIncidenciasGen {
 	private GestorIncidenciasGen(){
 		try {
 						
-			NOMBRE_FICH_INCIDENCIAS = "/mnt/solv2vida/" +  "CIERRES" + File.separator + "FICHATIREA" + File.separator + ConstantesSolvencia.RUTA_FICHAS + btUtils.getCargaFicherosProperty(ConstantesSolvencia.CATALOGO_INC);
+			NOMBRE_FICH_INCIDENCIAS = "CIERRES" + File.separator + "FICHATIREA" + File.separator + ConstantesSolvencia.RUTA_FICHAS + btUtils.getCargaFicherosProperty(ConstantesSolvencia.CATALOGO_INC);
 			FileWriter fwErr = new FileWriter(NOMBRE_FICH_INCIDENCIAS);
 			fwErr.close();
 			
-			//writer = new BeanIOWriter(ConstantesSolvencia.BEANIO_CONFIG_XML, NOMBRE_FICH_INCIDENCIAS, ConstantesSolvencia.STREAM_INCIDENCIAS);
+			writer = new BeanIOWriter(ConstantesSolvencia.BEANIO_CONFIG_XML, NOMBRE_FICH_INCIDENCIAS, ConstantesSolvencia.STREAM_INCIDENCIAS);
 			NUM_INCI = 0;
 		} catch (Exception e) {
 			Incidencia incidencia = new Incidencia();
 			incidencia.setCodigoRetorno("10");
 			incidencia.setInfAmpliada("Se ha producido un error al cargar el gestor de incidencias. - Error: " + e.getMessage());
+			incidencia.setCcanal("01");
 			Solvencia2Excepcion solv = new Solvencia2Excepcion(incidencia);
 			throw solv;
 		}

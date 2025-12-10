@@ -28,5 +28,8 @@ es.mapfre.solvencia.entregables.impl.EntregableTOTPMACOA 		# TOTPMACOA
 es.mapfre.solvencia.entregables.impl.EntregableFLUJPMACOA 		# FLUJPMACOA
 es.mapfre.solvencia.entregables.impl.EntregableFLUJPMDCOA 		# FLUJPMDCOA
 es.mapfre.solvencia.entregables.impl.EntregableCONTEOCERTIFICADO# CONTCERTI
+es.mapfre.solvencia.entregables.impl.EntregableTOTPMACOAM 		# TOTPMACOAM
+es.mapfre.solvencia.entregables.impl.EntregableFLUJPMACOAM 		# FLUJPMACOAM
+es.mapfre.solvencia.entregables.impl.EntregableFLUJPMDCOAM 		# FLUJPMDCOAM
 es.mapfre.solvencia.entregables.impl.EntregableFLUJSUSCRI   	# FLUJSUSCRI
 es.mapfre.solvencia.entregables.impl.EntregableCONTABC          # CONTABC

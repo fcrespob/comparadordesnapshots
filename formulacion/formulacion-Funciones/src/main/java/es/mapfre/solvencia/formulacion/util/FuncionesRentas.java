@@ -675,7 +675,10 @@ public class FuncionesRentas {
 				btcUmic.getBt().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				btcUmic.getBt().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				btcUmic.getBt().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				btcUmic.getBt().equals(ConstantesSolvencia.BASE_N17CLIR)){
+				btcUmic.getBt().equals(ConstantesSolvencia.BASE_N17CLIR) ||
+				btcUmic.getBt().equals(ConstantesSolvencia.BASE_NF17MFE) ||
+				btcUmic.getBt().equals(ConstantesSolvencia.BASE_NF17GTO) ||
+				btcUmic.getBt().equals(ConstantesSolvencia.BASE_NF17AEN)){
 		varModProb = servicio.recuperarModulo(umic.getDatosGenerales().getKmodalidad(), umic.getDatosGenerales().getKgarantia(), umic.getDatosAdicionales().getPrestCal(), btcUmic.getBt(), "PROY_VIDA", "02");
 		}else{
 			varModProb = servicio.recuperarModulo(umic.getDatosGenerales().getKmodalidad(), umic.getDatosGenerales().getKgarantia(), umic.getDatosAdicionales().getPrestCal(), btcUmic.getBt(), "PROY_VIDA", "02");

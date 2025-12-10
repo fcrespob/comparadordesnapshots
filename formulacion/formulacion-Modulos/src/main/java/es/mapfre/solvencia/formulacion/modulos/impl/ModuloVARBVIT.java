@@ -151,9 +151,6 @@ public class ModuloVARBVIT implements Modulo {
 		// Validamos los parametros de entrada 
 		ValidacionesComunesModulos.validarParamEntrada(proyUmic, bloqueCorriente, fcalc, umic, btcUmic);
 		
-		if (umic.getDatosGenerales().getNorden().equals(311)) {
-			System.out.println();
-		}
 		
 		if(bloqueCorriente.getFechaDevengo() == null){
 			return varbVIT;
@@ -239,6 +236,7 @@ public class ModuloVARBVIT implements Modulo {
 							edadAsegOrigen = umic.getAsegurados().getEdadAseg4();
 							UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen,
 								varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+							varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 							mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG4);
@@ -253,6 +251,7 @@ public class ModuloVARBVIT implements Modulo {
 							edadAsegOrigen = umic.getAsegurados().getEdadAseg3();
 							UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen,
 								varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+							varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 							mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG3);
@@ -265,6 +264,7 @@ public class ModuloVARBVIT implements Modulo {
 							edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
 							UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen,
 								varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+							varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 							mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);
@@ -306,6 +306,7 @@ public class ModuloVARBVIT implements Modulo {
 							edadAsegOrigen = umic.getAsegurados().getEdadAseg3();
 							UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen,
 									fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+							varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 							mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG3);
@@ -319,6 +320,7 @@ public class ModuloVARBVIT implements Modulo {
 							edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
 							UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen,
 									fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+							varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 							mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 							mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);
@@ -351,6 +353,7 @@ public class ModuloVARBVIT implements Modulo {
 						edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
 						UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen,
 								fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+						varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 						mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);
@@ -421,6 +424,7 @@ public class ModuloVARBVIT implements Modulo {
 					
 					
 					UtilModulos.fSobreescribirAsegurado(varUmicCopia2, varbtcUmicCopia2, tablaOrigen, varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+					varbtcUmicCopia2.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 					mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA2, varbtcUmicCopia2);
 					mapVariables.put(CLAVE_VAR_BTCUMIC2_COPIADA, "S");
 				}
@@ -479,6 +483,7 @@ public class ModuloVARBVIT implements Modulo {
 						sexAsegOrigen = umic.getAsegurados().getCsexAseg2();
 						edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
 						UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+						varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 						mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);
@@ -502,6 +507,7 @@ public class ModuloVARBVIT implements Modulo {
 						sexAsegOrigen = umic.getAsegurados().getCsexAseg2();
 						edadAsegOrigen = umic.getAsegurados().getEdadAseg2();
 						UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen, fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
+						varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIA, varbtcUmicCopia);
 						mapVariables.put(CLAVE_VAR_BTCUMIC_COPIADA, "S");
 						mapVariables.put("VZCASEG", IObtenerConfiguracion.OrdenAsegurado.ASEG2);

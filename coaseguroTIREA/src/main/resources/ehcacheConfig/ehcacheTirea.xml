@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="ehcacheSCRGTO.xsd"
+         xsi:noNamespaceSchemaLocation="ehcacheTirea.xsd"
          updateCheck="true" monitoring="autodetect"
          dynamicConfig="true">
 
@@ -45,6 +45,38 @@
         </searchable>
     </cache>
     
+    <cache name="FLUJPMACOABTCOA"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpoliza()"/>
+           <searchAttribute name="nsuscri" expression="value.getNsuscri()"/>
+           <searchAttribute name="bt" expression="value.getBt()"/>
+           <searchAttribute name="fcierre" expression="value.getFcierre()"/>
+           <searchAttribute name="fdesde" expression="value.getFdesde()"/>     
+        </searchable>
+    </cache>
+    
+    <cache name="FLUJPMACOABTCOATF"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpoliza()"/>
+           <searchAttribute name="nsuscri" expression="value.getNsuscri()"/>
+           <searchAttribute name="bt" expression="value.getBt()"/>
+           <searchAttribute name="fcierre" expression="value.getFcierre()"/>
+           <searchAttribute name="fdesde" expression="value.getFdesde()"/>     
+        </searchable>
+    </cache>
+    
     <cache name="TOTPMACOA"
            maxEntriesLocalHeap="10000000"
            eternal="true"
@@ -54,7 +86,43 @@
         <searchable/>
     </cache>
     
+    <cache name="TOTPMACOABTCOA"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+    
+    <cache name="TOTPMACOABTCOATF"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+    
      <cache name="FLUJPMDCOA"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+    
+    <cache name="FLUJPMDCOABTCOA"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable/>
+    </cache>
+    
+    <cache name="FLUJPMDCOABTCOATF"
            maxEntriesLocalHeap="10000000"
            eternal="true"
            memoryStoreEvictionPolicy="LFU"
@@ -83,6 +151,69 @@
         <searchable>
            <searchAttribute name="kpoliza" expression="value.getPoliza()"/>
            <searchAttribute name="ksubpoliza" expression="value.getSubpoliza()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="TAB35013"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+        	<searchAttribute name="kmodalidad" expression="value.getKmodalidad()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="TAB35014"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+        	<searchAttribute name="kgarantia" expression="value.getKgarantia()"/>
+        	<searchAttribute name="kprestacion" expression="value.getKprestacion()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="TAB35015"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+        	<searchAttribute name="kmodalidad" expression="value.getKmodalidad()"/>
+           <searchAttribute name="kgarantia" expression="value.getKgarantia()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="DATOSESPECIFIC"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpol()"/>
+           <searchAttribute name="kcerti" expression="value.getKcerti()"/>
+           <searchAttribute name="nsuscri" expression="value.getNsuscri()"/>
+        </searchable>
+    </cache>
+    
+    <cache name="PAGOSPLAN"
+           maxEntriesLocalHeap="10000000"
+           eternal="true"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <searchable>
+           <searchAttribute name="kpoliza" expression="value.getKpoliza()"/>
+           <searchAttribute name="ksubpoliza" expression="value.getKsubpol()"/>
+           <searchAttribute name="kcerti" expression="value.getKcerti()"/>
+           <searchAttribute name="nsuscri" expression="value.getNsuscri()"/>
         </searchable>
     </cache>
     

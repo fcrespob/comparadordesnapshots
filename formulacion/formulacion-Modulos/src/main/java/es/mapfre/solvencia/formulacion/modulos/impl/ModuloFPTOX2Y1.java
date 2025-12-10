@@ -223,7 +223,10 @@ public class ModuloFPTOX2Y1 implements Modulo {
 						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIFF17OCI))
 						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN))
 						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17IF))
-						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17CLIR))){
+						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17CLIR))
+						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE))
+						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN))
+						&& (!btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO))){
 					if (btcUmic.getTablasConversionAsegurado() == null
 							|| btcUmic.getTablasConversionAsegurado().isEmpty()) {
 						throw Solvencia2ExcepcionHelper.crearExcepcion(ConstantsFunciones.CTE_COD_ERROR_AC,

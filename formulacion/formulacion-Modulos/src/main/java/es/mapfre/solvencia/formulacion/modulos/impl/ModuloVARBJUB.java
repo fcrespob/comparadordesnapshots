@@ -193,7 +193,7 @@ public class ModuloVARBJUB implements Modulo {
 			varUmicCopia = (Umic) mapVariables.get(CLAVE_VAR_UMIC_COPIA);
 		}
 
-		if (btcUmic.getBaseTec().equalsIgnoreCase("NIIF17") || mapVariables.get(CLAVE_VAR_BTCUMIC_COPIA) == null) {
+		if (btcUmic.getBaseTec().equalsIgnoreCase("NIIF17") || btcUmic.getBaseTec().equalsIgnoreCase("BEL") || mapVariables.get(CLAVE_VAR_BTCUMIC_COPIA) == null) {
 			try {
 				PropertyUtils.copyProperties(varbtcUmicCopia, btcUmic);
 			} catch (IllegalAccessException e) {
@@ -441,6 +441,7 @@ public class ModuloVARBJUB implements Modulo {
 					UtilModulos.fSobreescribirAsegurado(varUmicCopia, varbtcUmicCopia, tablaOrigen, varIndAsegOrigen,
 							fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
 				}
+				varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 				
 				varProyVZC2 = proyUmic;
 				moduloVZC2 = FactoriaModulos.getModulo(ConstantsFactorias.MODULO_VZC);
@@ -509,6 +510,7 @@ public class ModuloVARBJUB implements Modulo {
 							fNacAsegOrigen, sexAsegOrigen, edadAsegOrigen);
 				}
 				
+				varbtcUmicCopia.setTablaBaseExpList(btcUmic.getTablaBaseExpList());
 				varProyVZC2 = proyUmic;
 				moduloVZC2 = FactoriaModulos.getModulo(ConstantsFactorias.MODULO_VZC);
 				varVzc2 = (BigDecimal) moduloVZC2.execute(varProyVZC2, bloqueCorriente, iteracion, fcalc, varUmicCopia,

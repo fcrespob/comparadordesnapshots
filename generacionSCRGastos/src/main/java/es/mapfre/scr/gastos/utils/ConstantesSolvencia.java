@@ -13,9 +13,10 @@ public class ConstantesSolvencia {
 	public static final String RUTA_BASE = "CATALOGOS";
 	public static final String LOG_FICHASGRE = "FICHAS/FICHASPEND/LOGFICHAGENSCRGRE.TXT";
 	public static final String LOG_FICHASIPC = "FICHAS/FICHASPEND/LOGFICHAGENSCRIPC.TXT";
+	public static final String LOG_FICHASGRE_NIIF17 = "FICHAS/FICHASPEND/LOGFICHAGENNF17GRE.TXT";
 
-	public static final String LOG_REG_GEN = "Número de registros generados: ";
-	public static final String LOG_INCI_DET = "Número de incidencias detectadas: ";
+	public static final String LOG_REG_GEN = "Nï¿½mero de registros generados: ";
+	public static final String LOG_INCI_DET = "Nï¿½mero de incidencias detectadas: ";
 	public static final String LOG_INI = "Hora Inicio: ";
 	public static final String LOG_FIN = "Hora Fin: ";
 	
@@ -26,6 +27,8 @@ public class ConstantesSolvencia {
 	public static final String CTE_GTO_UMIC = "GTO_UMIC";
 	public static final String BASETEC_GTO = "SCRGTO";
 	public static final String BASETEC_BEL = "BEL";
+	public static final String BASETEC_GTO_NIIF17 = "NF17GTO";
+	public static final String CTE_GTO_UMIC_NIIF17 = "GTO_UMIC_NIIF17";
 	
 	/**
 	 * Constantes auxiliares

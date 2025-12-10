@@ -401,6 +401,7 @@ public class ModuloPMRR02 implements Modulo {
 			
 			if (varModProb.equals(ConstantsFactorias.MODULO_VZC412)) {
 				String auxvarModProb = ConstantsFactorias.MODULO_VZREVER2;
+				mapVariables.put("VZREVER2_PMRR", "VZREVER2_PMRR");
 				probVida = FactoriaModulos.getModulo(auxvarModProb);
 				BigDecimal pmrrVida = (BigDecimal) probVida.execute(varProyCopia, proyUmic.get(iteracion-1).getBloqueVida(),iteracion, proyUmic.get(iteracion-1).getFechaDesde(), umic, btcUmic, mapVariables, ConstantsModulos.CTE_PROY_VIDA);
 				BigDecimal auxVzrever2 = (BigDecimal) mapVariables.get("VZCREVER_VYANT" + ConstantsModulos.CTE_PROY_VIDA);
@@ -896,7 +897,10 @@ public class ModuloPMRR02 implements Modulo {
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)){
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO)){
 			modAnu = FactoriaModulos.getModulo(ConstantsFactorias.MODULO_ATC);
 			
 			Timestamp varFecDevengoAux2 = varProyPeriodo.get(iteracion-1).getBloqueVida().getFechaDevengo();

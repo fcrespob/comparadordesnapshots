@@ -298,7 +298,8 @@ public class UmicExecutor implements Runnable {
 									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_BT_NIIF17IF)
 									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_BT_MULTI6)
 									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_VAL_MULTI8)
-									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_VAL_MULTI4NB)) {
+									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_VAL_MULTI4NB)
+									&& !fichaproceso.getCtipobt().equals(ConstantsModulos.CTE_VAL_MULTISN)) {
 								Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
 										ConstantsFunciones.CTE_COD_ERROR_GV,
 										new String[] { umic.getFechas().getFecefecini().toString(),
@@ -410,31 +411,6 @@ public class UmicExecutor implements Runnable {
 							// Si el riesgo es ahorro y la base técnica es de mortalidad catastrófica, sólo
 							// se ejecutará si la
 							// provisión de SCR es mayor que la provisión de BEL
-//							if (umic.getDatosGenerales().getTipoSubriesgo().equals(ConstantsModulos.CTE_RIES_AHOR)) {
-//								if (bt.equals(ConstantsModulos.CTE_VAL_SCRMCF) && varEjecSCRLFE) {
-//									Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-//											ConstantsFunciones.CTE_COD_ERROR_IM,
-//											new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-//													fichaproceso.getFcalc().toString() },
-//											ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-//											datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-//											datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-//									almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-//									continue bucleBT;
-//								}
-//								if ((bt.equals(ConstantsModulos.CTE_VAL_SCRMCI)
-//										|| bt.equals(ConstantsModulos.CTE_VAL_SCRVM)) && varEjecSCRLMI) {
-//									Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-//											ConstantsFunciones.CTE_COD_ERROR_IN,
-//											new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-//													fichaproceso.getFcalc().toString() },
-//											ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-//											datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-//											datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-//									almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-//									continue bucleBT;
-//								}
-//							}
 
 							// Si la base técnica es estrés de mortalidad, se ejecutará si el riesgo es
 							// fallecimiento o
@@ -524,17 +500,6 @@ public class UmicExecutor implements Runnable {
 									almacenarDatos.almacenarValoresFLUJOSTOTP(umic, detalleBaseTecnica,
 											detallesCorriente, fichaproceso, totales);
 							}
-//								if (detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIIF17)
-//										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_N17CLIR)
-//										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIF17LIR)
-//										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_N17LIRIN)
-//										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIFF17OCI)
-//										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIIF17IF)) {
-//									TotalesFlujos totales = servicio.recuperarTotalesFlujos(umic, detalleBaseTecnica);	
-//										if (totales != null) {
-//											almacenarDatos.almacenarValoresFLUJOSTN17(umic, detalleBaseTecnica, detallesCorriente, fichaproceso, totales);
-//										}									
-//								}
 
 							// Si la base técnica es estrés de mortalidad y el riesgo es ahorro, comparamos
 							// la BEL estresada y
@@ -578,69 +543,6 @@ public class UmicExecutor implements Runnable {
 									for (DetalleCorriente dc : detallesCorriente) {
 										almacenarDatos.eliminarProyeccion(dc);
 									}
-//									//BORRA BRL
-//									DetalleBaseTecnica detalleBaseTecnicaBEL = detalleBaseTecnica;
-//									detalleBaseTecnicaBEL.setBt("BEL");
-//									TotalesFlujos totalesBEL = servicio.recuperarTotalesFlujos(umic, detalleBtBEL);
-//									almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnicaBEL);
-//									almacenarDatos.eliminarTotalesFlujos(totalesBEL);
-//									for (DetalleCorriente dc : detalleCorrienteBEL) {
-//										almacenarDatos.eliminarProyeccion(dc);
-//									}
-//									//BORRAR DETALE CORREINTE ENTREGABLE BEL
-////									DetalleCorrienteEntregables DetalleEntregableBEL = servicio.recuperarTotalesFlujos(umic, detalleBtBEL);
-////									almacenarDatos.almacenarDetalleCorrienteEntregables(umic, detalleBaseTecnica,
-////											detallesCorriente, fichaproceso);
-//									
-//									UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//											detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//											detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//											detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//											detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//											detalleCorrienteBEL.get(0).getNsuscri());
-//									
-//									for (DetalleCorriente dc : detalleCorrienteBEL) {
-//										DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//										Timestamp fdesde = dc.getFechaDesde();
-//										LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//										int dia = dt.getDayOfMonth();
-//										detalleEntregableBt.setDia(dia);
-//										fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//										
-//										detalleEntregableBt.setBt("BEL");
-//										detalleEntregableBt.setFcierre(dc.getFcierre());
-//										detalleEntregableBt.setUmicKey(umickeyBEL);
-//										detalleEntregableBt.setFechadesde(fdesde);
-//										
-//										almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//										//almacenarDatos.eliminarProyeccion(dc);
-//									}
-//									List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//											umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//									
-//									UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//											detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//											detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//											detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//											detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//											detalleCorrienteBEL.get(0).getNsuscri());
-//									
-//									for (DetalleCorriente dc : varProyC2S) {
-//										DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//										Timestamp fdesde = dc.getFechaDesde();
-//										LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//										int dia = dt.getDayOfMonth();
-//										detalleEntregableBt.setDia(dia);
-//										fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//										
-//										detalleEntregableBt.setBt("BEL");
-//										detalleEntregableBt.setFcierre(dc.getFcierre());
-//										detalleEntregableBt.setUmicKey(umickeyBEL);
-//										detalleEntregableBt.setFechadesde(fdesde);
-//										
-//										almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//										//almacenarDatos.eliminarProyeccion(dc);
-//									}
 									
 									Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
 											ConstantsFunciones.CTE_COD_ERROR_IP,
@@ -654,7 +556,7 @@ public class UmicExecutor implements Runnable {
 									continue bucleBT;
 								}
 							}
-//							
+						
 							if (bt.equals(ConstantsModulos.CTE_VAL_SCRAEP) || bt.equals(ConstantsModulos.CTE_VAL_SCRAEN)
 									|| bt.equals(ConstantsModulos.CTE_VAL_SCRANM)
 									|| bt.equals(ConstantsModulos.CTE_VAL_SCRAIP)
@@ -666,52 +568,16 @@ public class UmicExecutor implements Runnable {
 									for (DetalleCorriente dc : detallesCorriente) {
 										almacenarDatos.eliminarProyeccion(dc);
 									}
-//									if (bt.equals(ConstantsModulos.CTE_VAL_SCRAEN)){
-//									List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//											umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//									
-//									UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//											detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//											detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//											detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//											detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//											detalleCorrienteBEL.get(0).getNsuscri());
-//									
-//									for (DetalleCorriente dc : varProyC2S) {
-//										DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//										Timestamp fdesde = dc.getFechaDesde();
-//										LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//										int dia = dt.getDayOfMonth();
-//										detalleEntregableBt.setDia(dia);
-//										fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//										
-//										detalleEntregableBt.setBt("BEL");
-//										detalleEntregableBt.setFcierre(dc.getFcierre());
-//										detalleEntregableBt.setUmicKey(umickeyBEL);
-//										detalleEntregableBt.setFechadesde(fdesde);
-//										
-//										almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//										//almacenarDatos.eliminarProyeccion(dc);
-//									}
-//									Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-//											ConstantsFunciones.CTE_COD_ERROR_II,
-//											new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-//													fichaproceso.getFcalc().toString() },
-//											ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-//											datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-//											datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-//									almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-//									break bucleBT;
-//									}else{
-										Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-												ConstantsFunciones.CTE_COD_ERROR_II,
-												new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-														fichaproceso.getFcalc().toString() },
-												ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-												datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-												datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-										almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-										continue bucleBT;	
+
+									Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
+											ConstantsFunciones.CTE_COD_ERROR_II,
+											new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
+													fichaproceso.getFcalc().toString() },
+											ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
+											datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
+											datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
+									almacenarDatos.almacenarIncidencias(excep.getIncidencia());
+									continue bucleBT;	
 									//}
 									//CAMBIOANUL
 								} else {
@@ -723,13 +589,26 @@ public class UmicExecutor implements Runnable {
 									}
 									// Recuperamos la provisión total de la base técnica que estamos ejecutando
 									TotalesFlujos totalesSCR = servicio.recuperarTotalesFlujos(umic, detalleBaseTecnica);
-									//if (totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)
-//									if(null == totalesSCR.getTotprovision()){
-//										System.out.println(umic.getDatosGenerales().getKpoliza() + ";" + umic.getDatosGenerales().getKgarantia() + ";" + bt + ";" + "0,00");
-//									}else{
-//										System.out.println(umic.getDatosGenerales().getKpoliza() + ";" + umic.getDatosGenerales().getKgarantia() + ";" + bt + ";" + totalesSCR.getTotprovision());
-//									}
+
 									if (bt.equals(ConstantsModulos.CTE_VAL_SCRANM) && !(totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)){
+										almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
+										almacenarDatos.eliminarTotalesFlujos(totalesSCR);
+										for (DetalleCorriente dc : detallesCorriente) {
+											almacenarDatos.eliminarProyeccion(dc);
+										}
+										Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
+												ConstantsFunciones.CTE_COD_ERROR_IQ,
+												new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
+														fichaproceso.getFcalc().toString() },
+												ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
+												datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
+												datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
+										almacenarDatos.almacenarIncidencias(excep.getIncidencia());
+										continue bucleBT;
+									}
+									
+									if(bt.equals(ConstantsModulos.CTE_VAL_SCRAEP) && !(totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)){
+										
 										almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
 										almacenarDatos.eliminarTotalesFlujos(totalesSCR);
 										for (DetalleCorriente dc : detallesCorriente) {
@@ -743,138 +622,11 @@ public class UmicExecutor implements Runnable {
 												datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
 												datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
 										almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-										calculaSCRNM = false;
 										continue bucleBT;
-									}else if(bt.equals(ConstantsModulos.CTE_VAL_SCRAEP)){
+									}
+									
+									if(bt.equals(ConstantsModulos.CTE_VAL_SCRAEN) && !(totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)){
 										
-										if(null != totalesSCRANM){
-											varTotProvisionScranm = totalesSCRANM.getTotprovision();
-										}else{
-											varTotProvisionScranm = BigDecimal.ZERO;
-										}
-										
-										if (!(totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)) {
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCR);
-											for (DetalleCorriente dc : detallesCorriente) {
-												almacenarDatos.eliminarProyeccion(dc);
-											}
-											
-//												List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//														umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//												
-//												UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//														detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//														detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//														detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//														detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//														detalleCorrienteBEL.get(0).getNsuscri());
-//												
-//												for (DetalleCorriente dc : varProyC2S) {
-//													DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//													Timestamp fdesde = dc.getFechaDesde();
-//													LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//													int dia = dt.getDayOfMonth();
-//													detalleEntregableBt.setDia(dia);
-//													fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//													
-//													detalleEntregableBt.setBt("BEL");
-//													detalleEntregableBt.setFcierre(dc.getFcierre());
-//													detalleEntregableBt.setUmicKey(umickeyBEL);
-//													detalleEntregableBt.setFechadesde(fdesde);
-//													
-//													almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//													//almacenarDatos.eliminarProyeccion(dc);
-//												}
-											
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IJ,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-											calculaSCRAEP = false;
-											continue bucleBT;
-										}else if(!(totalesSCR.getTotprovision().compareTo(varTotProvisionScranm) == 1)){
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCR);
-											for (DetalleCorriente dc : detallesCorriente) {
-												almacenarDatos.eliminarProyeccion(dc);
-											}
-//											List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//													umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//											
-//											UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//													detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//													detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//													detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//													detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//													detalleCorrienteBEL.get(0).getNsuscri());
-//											
-//											for (DetalleCorriente dc : varProyC2S) {
-//												DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//												Timestamp fdesde = dc.getFechaDesde();
-//												LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//												int dia = dt.getDayOfMonth();
-//												detalleEntregableBt.setDia(dia);
-//												fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//												
-//												detalleEntregableBt.setBt("BEL");
-//												detalleEntregableBt.setFcierre(dc.getFcierre());
-//												detalleEntregableBt.setUmicKey(umickeyBEL);
-//												detalleEntregableBt.setFechadesde(fdesde);
-//												
-//												almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//												//almacenarDatos.eliminarProyeccion(dc);
-//											}
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IJ,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-											calculaSCRAEP = false;
-											continue bucleBT;
-										}
-									}else if(bt.equals(ConstantsModulos.CTE_VAL_SCRAEN)){
-										
-										if(null != totalesSCRANM){
-											varTotProvisionScranm = totalesSCRANM.getTotprovision();
-										}else{
-											varTotProvisionScranm = BigDecimal.ZERO;
-										}
-										
-										if (bt.equals(ConstantsModulos.CTE_VAL_SCRAEN) && !(totalesSCR.getTotprovision().compareTo(varTotProvision) == 1)) {
-//											List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//													umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//											
-//											UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//													detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//													detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//													detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//													detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//													detalleCorrienteBEL.get(0).getNsuscri());
-//											
-//											for (DetalleCorriente dc : varProyC2S) {
-//												DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//												Timestamp fdesde = dc.getFechaDesde();
-//												LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//												int dia = dt.getDayOfMonth();
-//												detalleEntregableBt.setDia(dia);
-//												fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//												
-//												detalleEntregableBt.setBt("BEL");
-//												detalleEntregableBt.setFcierre(dc.getFcierre());
-//												detalleEntregableBt.setUmicKey(umickeyBEL);
-//												detalleEntregableBt.setFechadesde(fdesde);
-//												
-//												almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//												//almacenarDatos.eliminarProyeccion(dc);
-//											}
 											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
 											almacenarDatos.eliminarTotalesFlujos(totalesSCR);
 											for (DetalleCorriente dc : detallesCorriente) {
@@ -889,150 +641,11 @@ public class UmicExecutor implements Runnable {
 													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
 											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
 											continue bucleBT;
-										}else if(!(totalesSCR.getTotprovision().compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRANM)) == 1)){
-											
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCR);
-											for (DetalleCorriente dc : detallesCorriente) {
-												almacenarDatos.eliminarProyeccion(dc);
-											}
-//											List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//													umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//											
-//											UmicKey umickeyBEL = new UmicKey(detalleCorrienteBEL.get(0).getCtipoaport(),
-//													detalleCorrienteBEL.get(0).getKajuste(), detalleCorrienteBEL.get(0).getKcertificado(),
-//													detalleCorrienteBEL.get(0).getKgarantia(), detalleCorrienteBEL.get(0).getKmodalidad(),
-//													detalleCorrienteBEL.get(0).getKpoliza(), detalleCorrienteBEL.get(0).getKprestacion(),
-//													detalleCorrienteBEL.get(0).getKsubpoliza(), detalleCorrienteBEL.get(0).getNorden(),
-//													detalleCorrienteBEL.get(0).getNsuscri());
-//											
-//											for (DetalleCorriente dc : varProyC2S) {
-//												DetalleCorrienteEntregables detalleEntregableBt = new DetalleCorrienteEntregables();
-//												Timestamp fdesde = dc.getFechaDesde();
-//												LocalDateTime dt = new LocalDateTime(fdesde.getTime());
-//												int dia = dt.getDayOfMonth();
-//												detalleEntregableBt.setDia(dia);
-//												fdesde = new Timestamp(dt.minusDays(dia - 1).toDateTime().getMillis());
-//												
-//												detalleEntregableBt.setBt("BEL");
-//												detalleEntregableBt.setFcierre(dc.getFcierre());
-//												detalleEntregableBt.setUmicKey(umickeyBEL);
-//												detalleEntregableBt.setFechadesde(fdesde);
-//												
-//												almacenarDatos.eliminarDetalleCorrienteEntregables(detalleEntregableBt);
-//												//almacenarDatos.eliminarProyeccion(dc);
-//											}
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IJ,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-											continue bucleBT;
-										}else if(!(totalesSCR.getTotprovision().compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEP)) == 1)){
-											
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnica);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCR);
-
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IJ,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, bt.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-											continue bucleBT;
-											
-										}
-										
-										if(calculaSCRNM && !(provisionBt.get(ConstantsModulos.CTE_VAL_SCRANM).compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEN)) == 1)){
-											//Se borra SCRANM
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnicaSCRNM);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCRANM);
-											for (DetalleCorriente dc : detalleCorrienteSCRANM) {
-												almacenarDatos.eliminarProyeccion(dc);
-											}
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IK,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, ConstantsModulos.CTE_VAL_SCRANM.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());	
-											
-										}
-										
-										if(calculaSCRNM && !(provisionBt.get(ConstantsModulos.CTE_VAL_SCRANM).compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEP)) == 1)){
-											//Se borra SCRANM
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnicaSCRNM);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCRANM);
-											for (DetalleCorriente dc : detalleCorrienteSCRANM) {
-												almacenarDatos.eliminarProyeccion(dc);
-											}
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IK,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, ConstantsModulos.CTE_VAL_SCRANM.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());										
-											
-										}
-										
-										if(calculaSCRAEP &&!(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEP).compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEN)) == 1)){
-											//Se borra SCRAEP
-											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnicaSCRAEP);
-											almacenarDatos.eliminarTotalesFlujos(totalesSCRAEP);
-
-											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-													ConstantsFunciones.CTE_COD_ERROR_IJ,
-													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-															fichaproceso.getFcalc().toString() },
-													ConstantesSolvencia.CTE_PROYECCION, ConstantsModulos.CTE_VAL_SCRAEP.trim(), fichaproceso.getCcanal(),
-													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-											continue bucleBT;
-										}
-										
-//										if(calculaSCRNM && !((provisionBt.get(ConstantsModulos.CTE_VAL_SCRANM).compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEP))) == 1) && 
-//											!((provisionBt.get(ConstantsModulos.CTE_VAL_SCRANM).compareTo(provisionBt.get(ConstantsModulos.CTE_VAL_SCRAEN))) == 1)){
-//											almacenarDatos.eliminarDetalleBaseTecnica(detalleBaseTecnicaSCRNM);
-//											almacenarDatos.eliminarTotalesFlujos(totalesSCRANM);
-//											for (DetalleCorriente dc : detalleCorrienteSCRANM) {
-//												almacenarDatos.eliminarProyeccion(dc);
-//											}
-//											Solvencia2Excepcion excep = Solvencia2ExcepcionHelper.crearExcepcion(
-//													ConstantsFunciones.CTE_COD_ERROR_IK,
-//													new String[] { nMeses.toString(), umic.getFechas().getFecefecini().toString(),
-//															fichaproceso.getFcalc().toString() },
-//													ConstantesSolvencia.CTE_PROYECCION, ConstantsModulos.CTE_VAL_SCRANM.trim(), fichaproceso.getCcanal(),
-//													datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),
-//													datosGeneralesUmic.getFecCierre(), datosGeneralesUmic.getCnegocio(), null);
-//											almacenarDatos.almacenarIncidencias(excep.getIncidencia());
-//										}
 									}
 									
 								}
-//									//Recuperamos la provisión total de BEL
-//									TotalesFlujos totFlujosBEL = servicio.recuperarTotalesFlujos(umic, detalleBtBEL);
-//									if (umic.getRescates().getIndicrescate().equals(ConstantsModulos.CTE_N) || 	
-//											((bt.equals(ConstantsModulos.CTE_VAL_SCRAEP) || bt.equals(ConstantsModulos.CTE_VAL_SCRAIP) || bt.equals(ConstantsModulos.CTE_VAL_SCRANM)) &&
-//													totFlujosBEL.getTotfactrte().compareTo(totFlujosBEL.getTotprovision()) == -1) ||
-//											((bt.equals(ConstantsModulos.CTE_VAL_SCRAEN) || bt.equals(ConstantsModulos.CTE_VAL_SCRAIN)) && 
-//													totFlujosBEL.getTotfactrte().compareTo(totFlujosBEL.getTotprovision()) != -1)){
-//										continue bucleBT;
-//									}
-							}
 
-//								if (umic.getBti().getSwcasadoI1().equals("S")) {
-//									detallesCorriente=ModificarDetallesCorriente(detallesCorriente, umic);
-//								}
+							}
 
 							if((umic.getDatosGenerales().getCnegocio().equalsIgnoreCase("I") || (umic.getDatosGenerales().getCnegocio().equalsIgnoreCase("C") && umic.getDatosGenerales().getKramo().equalsIgnoreCase("114")))
 									&& (bt.equalsIgnoreCase(ConstantsModulos.CTE_VAL_SCRMFE) || bt.equalsIgnoreCase(ConstantsModulos.CTE_VAL_SCRLFE))){
@@ -1170,7 +783,10 @@ public class UmicExecutor implements Runnable {
 										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIF17LIR)
 										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_N17LIRIN)
 										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIFF17OCI)
-										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIIF17IF)) {
+										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_BT_NIIF17IF)
+										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+										|| detalleBaseTecnica.getBt().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
 									TotalesFlujos tot = servicio.recuperarTotalesFlujos(umic, detalleBaseTecnica);
 									if (totales != null) {
 										almacenarDatos.almacenarValoresFLUJOSTN17(umic, detalleBaseTecnica,
@@ -1231,32 +847,8 @@ public class UmicExecutor implements Runnable {
 										fichaproceso, totales);
 							}
 							
-//								if (bt.equals(ConstantsModulos.CTE_VAL_SCRMFE) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRMCF) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRLFE) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRTIU) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRTID) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRGTO) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRAEP) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRAEN) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRANM) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRINC) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRMMI) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRMCI) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRVM) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRLMI) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRAIP) ||
-//									bt.equals(ConstantsModulos.CTE_VAL_SCRAIN)) {
-//									
-//								List<DetalleCorriente> varProyC2S = obtenerDatos.recuperarProyeccionCualquierNodo(ConstantsModulos.CTE_VAL_BASE_BEL,
-//										umic.getDatosGenerales().getFecCierre(), umic.getKey());
-//								
-//								if (null != varProyC2S && varProyC2S.size() > ConstantsFunciones.CTE_0) {
-//									almacenarDatos.almacenarEntregablesFlujInfSCR(umic, detalleBaseTecnica,
-//											detallesCorriente, varProyC2S);
-//								}	
-//							}						
-							}
+						
+						}
 					} catch (Solvencia2Excepcion s2e) {
 						Solvencia2ExcepcionHelper.checkIncidencia(bt, fichaproceso.getCcanal(),
 								datosGeneralesUmic.getCcartera(), datosGeneralesUmic.getKey(),

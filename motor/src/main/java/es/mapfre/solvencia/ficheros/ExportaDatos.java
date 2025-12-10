@@ -126,6 +126,16 @@ public class ExportaDatos {
 					if (fileDescriptor.getStreamName().equals("incidenciasmaestro")) {
 						resumableTasks.add(new ExportaDatosDistribuido(ficha, rutaBase, fileDescriptor.getFilePath(), fileDescriptor.getStreamName(), fileDescriptor.getBeanioConfigXml(), btUtils.getBts(ficha.getCtipobt()), btUtils.getFormatoSalidaFichero(), ConstantsFunciones.CTE_5, mapEntregables));
 					}
+					
+					if (fileDescriptor.getStreamName().equals("totpmacoa")) {
+						resumableTasks.add(new ExportaDatosDistribuido(ficha, rutaBase, ConstantesSolvencia.CTE_PATH_TOTPMACOAM, ConstantesSolvencia.CTE_TOTPMACOAM, fileDescriptor.getBeanioConfigXml(), btUtils.getBts(ficha.getCtipobt()), btUtils.getFormatoSalidaFichero(), fileDescriptor.getType(), mapEntregables));
+					}
+					if (fileDescriptor.getStreamName().equals("flujpmacoa")) {
+						resumableTasks.add(new ExportaDatosDistribuido(ficha, rutaBase, ConstantesSolvencia.CTE_PATH_FLUJPMACOAM, ConstantesSolvencia.CTE_FLUJPMACOAM, fileDescriptor.getBeanioConfigXml(), btUtils.getBts(ficha.getCtipobt()), btUtils.getFormatoSalidaFichero(), fileDescriptor.getType(), mapEntregables));
+					}
+					if (fileDescriptor.getStreamName().equals("flujpmdcoa")) {
+						resumableTasks.add(new ExportaDatosDistribuido(ficha, rutaBase, ConstantesSolvencia.CTE_PATH_FLUJPMDCOAM, ConstantesSolvencia.CTE_FLUJPMDCOAM, fileDescriptor.getBeanioConfigXml(), btUtils.getBts(ficha.getCtipobt()), btUtils.getFormatoSalidaFichero(), fileDescriptor.getType(), mapEntregables));
+					}
 				}
 			} else {
 				// No extraemos los detalles de corriente aquí, sino de forma distribuida

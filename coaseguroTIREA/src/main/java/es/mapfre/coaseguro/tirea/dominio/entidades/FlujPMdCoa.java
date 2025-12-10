@@ -87,7 +87,19 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 	public static final int IND_PRIESGO = 76;
 	public static final int IND_GVALOR = 77;
 	public static final int IND_FDIADEPAGO = 78;
-	
+	public static final int IND_FECINISUS = 79;
+	public static final int IND_RENTINI = 80;
+	public static final int IND_PGASTGESEX1I = 81;
+	public static final int IND_PGASTGESEX2I = 82;
+	public static final int IND_TOTFACTGTO = 83;
+	public static final int IND_CFORMAREVPRIM = 84;
+	public static final int IND_PREVPRIMA = 85;
+	public static final int IND_CFORMPAGO = 86;
+	public static final int IND_FECINIPAGPRIM = 87;
+	public static final int IND_FECFINPAGPRIM = 88;
+	public static final int IND_GEDADMAX = 89;
+	public static final int IND_PB = 90;
+	public static final int IND_TIPOPB = 91;
 
 	private Integer kmodalidad;
 	private Integer kgarantia;
@@ -168,6 +180,19 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 	private java.math.BigDecimal priesgo;
 	private String gvalor;
 	private Integer fdiadepago;
+	private Timestamp fecinisus;
+	private java.math.BigDecimal rentini;
+	private java.math.BigDecimal pgastgesex1I;
+	private java.math.BigDecimal pgastgesex2I;
+	private java.math.BigDecimal totfactgto;
+	private java.math.BigDecimal prevprima;
+	private String cformarevprim;
+	private String cformpago;
+	private Timestamp fecinipagprim;
+	private Timestamp fecfinpagprim;
+	private Integer gedadmax;
+	private String pb;
+	private String tipopb;
 
 	public Integer getKmodalidad() {
 		return kmodalidad;
@@ -801,6 +826,110 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		this.fdiadepago = fdiadepago;
 	}
 
+	public Timestamp getFecinisus() {
+		return fecinisus;
+	}
+
+	public void setFecinisus(Timestamp fecinisus) {
+		this.fecinisus = fecinisus;
+	}
+
+	public java.math.BigDecimal getRentini() {
+		return rentini;
+	}
+
+	public void setRentini(java.math.BigDecimal rentini) {
+		this.rentini = rentini;
+	}
+
+	public java.math.BigDecimal getPgastgesex1I() {
+		return pgastgesex1I;
+	}
+
+	public void setPgastgesex1I(java.math.BigDecimal pgastgesex1i) {
+		pgastgesex1I = pgastgesex1i;
+	}
+
+	public java.math.BigDecimal getPgastgesex2I() {
+		return pgastgesex2I;
+	}
+
+	public void setPgastgesex2I(java.math.BigDecimal pgastgesex2i) {
+		pgastgesex2I = pgastgesex2i;
+	}
+
+	public java.math.BigDecimal getTotfactgto() {
+		return totfactgto;
+	}
+
+	public void setTotfactgto(java.math.BigDecimal totfactgto) {
+		this.totfactgto = totfactgto;
+	}
+
+	public java.math.BigDecimal getPrevprima() {
+		return prevprima;
+	}
+
+	public void setPrevprima(java.math.BigDecimal prevprima) {
+		this.prevprima = prevprima;
+	}
+
+	public String getCformarevprim() {
+		return cformarevprim;
+	}
+
+	public void setCformarevprim(String cformarevprim) {
+		this.cformarevprim = cformarevprim;
+	}
+
+	public String getCformpago() {
+		return cformpago;
+	}
+
+	public void setCformpago(String cformpago) {
+		this.cformpago = cformpago;
+	}
+
+	public Timestamp getFecinipagprim() {
+		return fecinipagprim;
+	}
+
+	public void setFecinipagprim(Timestamp fecinipagprim) {
+		this.fecinipagprim = fecinipagprim;
+	}
+
+	public Timestamp getFecfinpagprim() {
+		return fecfinpagprim;
+	}
+
+	public void setFecfinpagprim(Timestamp fecfinpagprim) {
+		this.fecfinpagprim = fecfinpagprim;
+	}
+
+	public Integer getGedadmax() {
+		return gedadmax;
+	}
+
+	public void setGedadmax(Integer gedadmax) {
+		this.gedadmax = gedadmax;
+	}
+
+	public String getPb() {
+		return pb;
+	}
+
+	public void setPb(String pb) {
+		this.pb = pb;
+	}
+
+	public String getTipopb() {
+		return tipopb;
+	}
+
+	public void setTipopb(String tipopb) {
+		this.tipopb = tipopb;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -812,6 +941,8 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		result = prime * result + ((cestadoAseg4 == null) ? 0 : cestadoAseg4.hashCode());
 		result = prime * result + ((cestadoAseg5 == null) ? 0 : cestadoAseg5.hashCode());
 		result = prime * result + ((cformaRevrenta == null) ? 0 : cformaRevrenta.hashCode());
+		result = prime * result + ((cformarevprim == null) ? 0 : cformarevprim.hashCode());
+		result = prime * result + ((cformpago == null) ? 0 : cformpago.hashCode());
 		result = prime * result + ((cpagrenta == null) ? 0 : cpagrenta.hashCode());
 		result = prime * result + ((csexAseg1 == null) ? 0 : csexAseg1.hashCode());
 		result = prime * result + ((csexAseg2 == null) ? 0 : csexAseg2.hashCode());
@@ -822,12 +953,14 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		result = prime * result + ((fcierre == null) ? 0 : fcierre.hashCode());
 		result = prime * result + ((fdiadepago == null) ? 0 : fdiadepago.hashCode());
 		result = prime * result + ((fecFin == null) ? 0 : fecFin.hashCode());
+		result = prime * result + ((fecfinpagprim == null) ? 0 : fecfinpagprim.hashCode());
 		result = prime * result + ((fecFinTramo1 == null) ? 0 : fecFinTramo1.hashCode());
 		result = prime * result + ((fecFinTramo2 == null) ? 0 : fecFinTramo2.hashCode());
 		result = prime * result + ((fecFinTramo3 == null) ? 0 : fecFinTramo3.hashCode());
 		result = prime * result + ((fecFinTramo4 == null) ? 0 : fecFinTramo4.hashCode());
 		result = prime * result + ((fecFinTramo5 == null) ? 0 : fecFinTramo5.hashCode());
 		result = prime * result + ((fecIni == null) ? 0 : fecIni.hashCode());
+		result = prime * result + ((fecinipagprim == null) ? 0 : fecinipagprim.hashCode());
 		result = prime * result + ((fecIniTramo1 == null) ? 0 : fecIniTramo1.hashCode());
 		result = prime * result + ((fecIniTramo2 == null) ? 0 : fecIniTramo2.hashCode());
 		result = prime * result + ((fecIniTramo3 == null) ? 0 : fecIniTramo3.hashCode());
@@ -835,12 +968,14 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		result = prime * result + ((fecIniTramo5 == null) ? 0 : fecIniTramo5.hashCode());
 		result = prime * result + ((fecefecfin == null) ? 0 : fecefecfin.hashCode());
 		result = prime * result + ((fecefecini == null) ? 0 : fecefecini.hashCode());
+		result = prime * result + ((fecinisus == null) ? 0 : fecinisus.hashCode());
 		result = prime * result + ((fnacAseg1 == null) ? 0 : fnacAseg1.hashCode());
 		result = prime * result + ((fnacAseg2 == null) ? 0 : fnacAseg2.hashCode());
 		result = prime * result + ((fnacAseg3 == null) ? 0 : fnacAseg3.hashCode());
 		result = prime * result + ((fnacAseg4 == null) ? 0 : fnacAseg4.hashCode());
 		result = prime * result + ((fnacAseg5 == null) ? 0 : fnacAseg5.hashCode());
 		result = prime * result + ((forpagrent == null) ? 0 : forpagrent.hashCode());
+		result = prime * result + ((gedadmax == null) ? 0 : gedadmax.hashCode());
 		result = prime * result + ((gtorosspCap == null) ? 0 : gtorosspCap.hashCode());
 		result = prime * result + ((gtorosspPrima == null) ? 0 : gtorosspPrima.hashCode());
 		result = prime * result + ((gtorosspProv == null) ? 0 : gtorosspProv.hashCode());
@@ -869,6 +1004,9 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		result = prime * result + ((ndurrenta == null) ? 0 : ndurrenta.hashCode());
 		result = prime * result + ((npergaran == null) ? 0 : npergaran.hashCode());
 		result = prime * result + ((nsuscri == null) ? 0 : nsuscri.hashCode());
+		result = prime * result + ((pb == null) ? 0 : pb.hashCode());
+		result = prime * result + ((pgastgesex1I == null) ? 0 : pgastgesex1I.hashCode());
+		result = prime * result + ((pgastgesex2I == null) ? 0 : pgastgesex2I.hashCode());
 		result = prime * result + ((pgastgesin1I == null) ? 0 : pgastgesin1I.hashCode());
 		result = prime * result + ((pgastgesin2I == null) ? 0 : pgastgesin2I.hashCode());
 		result = prime * result + ((pgastgesin3I == null) ? 0 : pgastgesin3I.hashCode());
@@ -878,11 +1016,15 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 		result = prime * result + ((pintertecnI4 == null) ? 0 : pintertecnI4.hashCode());
 		result = prime * result + ((pintertecnI5 == null) ? 0 : pintertecnI5.hashCode());
 		result = prime * result + ((preversion == null) ? 0 : preversion.hashCode());
+		result = prime * result + ((prevprima == null) ? 0 : prevprima.hashCode());
 		result = prime * result + ((prevrenta == null) ? 0 : prevrenta.hashCode());
 		result = prime * result + ((priesgo == null) ? 0 : priesgo.hashCode());
 		result = prime * result + ((psobremort == null) ? 0 : psobremort.hashCode());
+		result = prime * result + ((rentini == null) ? 0 : rentini.hashCode());
 		result = prime * result + ((tablacalc1aseg1 == null) ? 0 : tablacalc1aseg1.hashCode());
 		result = prime * result + ((tempVit == null) ? 0 : tempVit.hashCode());
+		result = prime * result + ((tipopb == null) ? 0 : tipopb.hashCode());
+		result = prime * result + ((totfactgto == null) ? 0 : totfactgto.hashCode());
 		result = prime * result + ((totprovision == null) ? 0 : totprovision.hashCode());
 		return result;
 	}
@@ -930,6 +1072,16 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 			if (other.cformaRevrenta != null)
 				return false;
 		} else if (!cformaRevrenta.equals(other.cformaRevrenta))
+			return false;
+		if (cformarevprim == null) {
+			if (other.cformarevprim != null)
+				return false;
+		} else if (!cformarevprim.equals(other.cformarevprim))
+			return false;
+		if (cformpago == null) {
+			if (other.cformpago != null)
+				return false;
+		} else if (!cformpago.equals(other.cformpago))
 			return false;
 		if (cpagrenta == null) {
 			if (other.cpagrenta != null)
@@ -981,6 +1133,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				return false;
 		} else if (!fecFin.equals(other.fecFin))
 			return false;
+		if (fecfinpagprim == null) {
+			if (other.fecfinpagprim != null)
+				return false;
+		} else if (!fecfinpagprim.equals(other.fecfinpagprim))
+			return false;
 		if (fecFinTramo1 == null) {
 			if (other.fecFinTramo1 != null)
 				return false;
@@ -1010,6 +1167,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 			if (other.fecIni != null)
 				return false;
 		} else if (!fecIni.equals(other.fecIni))
+			return false;
+		if (fecinipagprim == null) {
+			if (other.fecinipagprim != null)
+				return false;
+		} else if (!fecinipagprim.equals(other.fecinipagprim))
 			return false;
 		if (fecIniTramo1 == null) {
 			if (other.fecIniTramo1 != null)
@@ -1046,6 +1208,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				return false;
 		} else if (!fecefecini.equals(other.fecefecini))
 			return false;
+		if (fecinisus == null) {
+			if (other.fecinisus != null)
+				return false;
+		} else if (!fecinisus.equals(other.fecinisus))
+			return false;
 		if (fnacAseg1 == null) {
 			if (other.fnacAseg1 != null)
 				return false;
@@ -1075,6 +1242,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 			if (other.forpagrent != null)
 				return false;
 		} else if (!forpagrent.equals(other.forpagrent))
+			return false;
+		if (gedadmax == null) {
+			if (other.gedadmax != null)
+				return false;
+		} else if (!gedadmax.equals(other.gedadmax))
 			return false;
 		if (gtorosspCap == null) {
 			if (other.gtorosspCap != null)
@@ -1216,6 +1388,21 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				return false;
 		} else if (!nsuscri.equals(other.nsuscri))
 			return false;
+		if (pb == null) {
+			if (other.pb != null)
+				return false;
+		} else if (!pb.equals(other.pb))
+			return false;
+		if (pgastgesex1I == null) {
+			if (other.pgastgesex1I != null)
+				return false;
+		} else if (!pgastgesex1I.equals(other.pgastgesex1I))
+			return false;
+		if (pgastgesex2I == null) {
+			if (other.pgastgesex2I != null)
+				return false;
+		} else if (!pgastgesex2I.equals(other.pgastgesex2I))
+			return false;
 		if (pgastgesin1I == null) {
 			if (other.pgastgesin1I != null)
 				return false;
@@ -1261,6 +1448,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				return false;
 		} else if (!preversion.equals(other.preversion))
 			return false;
+		if (prevprima == null) {
+			if (other.prevprima != null)
+				return false;
+		} else if (!prevprima.equals(other.prevprima))
+			return false;
 		if (prevrenta == null) {
 			if (other.prevrenta != null)
 				return false;
@@ -1276,6 +1468,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				return false;
 		} else if (!psobremort.equals(other.psobremort))
 			return false;
+		if (rentini == null) {
+			if (other.rentini != null)
+				return false;
+		} else if (!rentini.equals(other.rentini))
+			return false;
 		if (tablacalc1aseg1 == null) {
 			if (other.tablacalc1aseg1 != null)
 				return false;
@@ -1285,6 +1482,16 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 			if (other.tempVit != null)
 				return false;
 		} else if (!tempVit.equals(other.tempVit))
+			return false;
+		if (tipopb == null) {
+			if (other.tipopb != null)
+				return false;
+		} else if (!tipopb.equals(other.tipopb))
+			return false;
+		if (totfactgto == null) {
+			if (other.totfactgto != null)
+				return false;
+		} else if (!totfactgto.equals(other.totfactgto))
 			return false;
 		if (totprovision == null) {
 			if (other.totprovision != null)
@@ -1320,7 +1527,11 @@ public class FlujPMdCoa implements EntidadBase<FlujPMdCoaKey> {
 				+ npergaran + ", nadifer=" + nadifer + ", forpagrent=" + forpagrent + ", cpagrenta=" + cpagrenta
 				+ ", ctipoRevrenta=" + ctipoRevrenta + ", cformaRevrenta=" + cformaRevrenta + ", ndurrenta=" + ndurrenta
 				+ ", kajuste=" + kajuste + ", psobremort=" + psobremort + ", priesgo=" + priesgo + ", gvalor=" + gvalor
-				+ ", fdiadepago=" + fdiadepago + "]";
+				+ ", fdiadepago=" + fdiadepago + ", fecinisus=" + fecinisus + ", rentini=" + rentini + ", pgastgesex1I="
+				+ pgastgesex1I + ", pgastgesex2I=" + pgastgesex2I + ", totfactgto=" + totfactgto + ", prevprima="
+				+ prevprima + ", cformarevprim=" + cformarevprim + ", cformpago=" + cformpago + ", fecIniPagPrim="
+				+ fecinipagprim + ", fecFinPagPrim=" + fecfinpagprim + ", gedadmax=" + gedadmax + ", pb=" + pb
+				+ ", tipopb=" + tipopb + "]";
 	}
 
 	@Override

@@ -423,4 +423,19 @@
 		<record name="tabOGA" template="tabOGA"
 			class="es.mapfre.solvencia.dominio.parametrizacionGeneral.TabOGA" />
 	</stream>
+	
+	<stream name="NF17MFE0" format="fixedlength">
+		<record name="tablasExperienciaReales" template="tablasExperienciaReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.TablasExperienciaReales" />
+	</stream>
+	
+	<stream name="NF17AEN0" format="fixedlength">
+		<record name="valoresAnulacion" template="valoresAnulacion"
+			class="es.mapfre.solvencia.dominio.conversionesBel.ValoresAnulacion" />
+	</stream>
+	
+	<stream name="NF17GRE0" format="fixedlength">
+		<record name="gastosReales" template="gastosReales"
+			class="es.mapfre.solvencia.dominio.conversionesBel.GastosReales" />
+	</stream>
 </beanio>

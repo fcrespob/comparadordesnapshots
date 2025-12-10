@@ -171,6 +171,9 @@ public final class ConstantesSolvencia {
 	public static final String BASE_ROSSPGA = "ROSSPGA";
 	public static final String BTCOA = "BTCOA";
 	public static final String BTCOATF = "BTCOATF";
+	public static final String BASE_NF17GTO = "NF17GTO";
+	public static final String BASE_NF17MFE = "NF17MFE";
+	public static final String BASE_NF17AEN = "NF17AEN";
 
 	/**
 	 * Apoyo SCR
@@ -198,6 +201,7 @@ public final class ConstantesSolvencia {
 	public static final String UMICS_BLOQUE = "umics.bloque";
 	public static final String REGEX_FILES = "[.]*[0-9].*";
 	public static final String RUTA_BOTES = "ruta.botes";
+	public static final String CATALOGOS_MULTISN = "catalogos-multisn";
 
 	/**
 	 * Constante de inclusión en los filtros
@@ -321,12 +325,20 @@ public static final Set<Integer> MODALIDADES_RENTAS_2C = new HashSet<Integer>();
 	public static final String STREAM_FLUJTCAS = "flujtcas";
 	public static final String STREAM_FLUJPMACOA = "flujpmacoa";
 	public static final String STREAM_FLUJPMDCOA = "flujpmdcoa";
+	// Constantes entregables TIREA
+	public static final String CTE_TOTPMACOAM = "totpmacoam";
+	public static final String CTE_FLUJPMACOAM = "flujpmacoam";
+	public static final String CTE_FLUJPMDCOAM = "flujpmdcoam";
+	public static final String CTE_PATH_TOTPMACOAM = "TOTPMACOAM";
+	public static final String CTE_PATH_FLUJPMACOAM = "FLUJPMACOAM";
+	public static final String CTE_PATH_FLUJPMDCOAM = "FLUJPMDCOAM";
 	
 	public static final String MULTI2A = "MULTI2A";
 
 	public static final String MULTI2M = "MULTI2M";
 
 	public static final String MULTI2G = "MULTI2G";
- 
+	
+	public static final String MULTISN = "MULTISN";
 	
 }

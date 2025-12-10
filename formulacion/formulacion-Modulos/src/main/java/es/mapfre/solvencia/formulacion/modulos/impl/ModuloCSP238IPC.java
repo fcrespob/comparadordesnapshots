@@ -225,6 +225,14 @@ public class ModuloCSP238IPC implements Modulo {
 		} 
 		
 		impPago = proyUmic.get(iteracion - 1).getImpPago();
+		if ((UtilFechas.getAnio(bloqueCorriente.getFechaDevengo()) < UtilFechas.getAnio(fecIni))
+				|| ((UtilFechas.getAnio(bloqueCorriente.getFechaDevengo()) == UtilFechas.getAnio(fecIni))
+						&& (UtilFechas.getMes(bloqueCorriente.getFechaDevengo()) < UtilFechas.getMes(fecIni)))
+				|| ((UtilFechas.getAnio(bloqueCorriente.getFechaDevengo()) == UtilFechas.getAnio(fecIni))
+						&& (UtilFechas.getMes(bloqueCorriente.getFechaDevengo()) == UtilFechas.getMes(fecIni))
+						&& (UtilFechas.getDia(bloqueCorriente.getFechaDevengo()) < UtilFechas.getDia(fecIni)))) {
+			salida = true;
+		}
 
 		if ( null != impPago ) {
 			aux_impPago = (BigDecimal) mapVariables.get("P_IMPAGO_CSP238IPC");

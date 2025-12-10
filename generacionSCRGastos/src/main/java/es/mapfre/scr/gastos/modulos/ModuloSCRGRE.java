@@ -31,7 +31,7 @@ public class ModuloSCRGRE {
 	
 	public void execute(String fecha) {
 		
-		// Se obtiene la fecha del día
+		// Se obtiene la fecha del dï¿½a
 		GestorIncidencias gi = GestorIncidencias.getInstance(ConstantesSolvencia.CTE_GTO_UMIC);
 		GestorFicheroSalida gfs = GestorFicheroSalida.getInstance(ConstantesSolvencia.CTE_GTO_UMIC);
 		
@@ -72,9 +72,9 @@ public class ModuloSCRGRE {
 				inci.setBt(ConstantesSolvencia.BASETEC_GTO);
 				inci.setFecCierre(fecha);
 				inci.setCodigoRetorno("09");
-				inci.setInfAmpliada("No existen datos de estrés de gastos para la fecha de cierre indicada.");
+				inci.setInfAmpliada("No existen datos de estrÃ©s de gastos para la fecha de cierre indicada.");
 				gi.write(inci);	
-				throw new Solvencia2Excepcion("No existen datos de estrés de gastos para la fecha de cierre indicada." , inci);
+				throw new Solvencia2Excepcion("No existen datos de estrÃ©s de gastos para la fecha de cierre indicada." , inci);
 			}
 			Iterator<GastosReales> i = gastosList.iterator();
 			while (i.hasNext()){
@@ -95,9 +95,9 @@ public class ModuloSCRGRE {
 			inci.setFecCierre(fecha);
 			inci.setBt(ConstantesSolvencia.BASETEC_GTO);
 			inci.setCodigoRetorno("02");
-			inci.setInfAmpliada("Error genérico en la conversión de gastos.");
+			inci.setInfAmpliada("Error genï¿½rico en la conversiï¿½n de gastos.");
 			gi.write(inci);	
-			throw new Solvencia2Excepcion("Error genérico en la conversión de gastos." , inci);
+			throw new Solvencia2Excepcion("Error genÃ©rico en la conversiÃ³n de gastos." , inci);
 		}
 	}
 
@@ -118,6 +118,7 @@ public class ModuloSCRGRE {
 		elementoSalida.setKmodalidad(gre.getKmodalidad());
 		elementoSalida.setKramo(gre.getKramo());
 		elementoSalida.setKtipobt(ConstantesSolvencia.BASETEC_GTO);
+		elementoSalida.setMatching(gre.getMatching());
 		
 		resultado =  gre.getPctGastoProv().multiply(BigDecimal.ONE.add(valEstres.multiply(ConstantesSolvencia.CTE_OPER_0_PUNTO_01)));
 		

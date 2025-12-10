@@ -9,13 +9,14 @@ public class GastosRealesKey {
 	private Integer kmodalidad;
 	private String kramo;
 	private String ktipobt;
+	private String matching;
 
 	public GastosRealesKey() {
 		super();
 	}
 
 	public GastosRealesKey(Integer ccanal, String cnegocio, String fecDesde,
-			String fecHasta, Integer kmodalidad, String kramo, String ktipobt) {
+			String fecHasta, Integer kmodalidad, String kramo, String ktipobt, String matching) {
 
 		super();
 		this.ccanal = ccanal;
@@ -25,87 +26,73 @@ public class GastosRealesKey {
 		this.kmodalidad = kmodalidad;
 		this.kramo = kramo;
 		this.ktipobt = ktipobt;
+		this.matching = matching;
 	}
 
-	@Override //NOSONAR
-	public int hashCode() { //NOSONAR
+	@Override
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((ccanal == null) ? 0 : ccanal.hashCode());
-		result = prime * result
-				+ ((cnegocio == null) ? 0 : cnegocio.hashCode());
-		result = prime * result
-				+ ((fecDesde == null) ? 0 : fecDesde.hashCode());
-		result = prime * result
-				+ ((fecHasta == null) ? 0 : fecHasta.hashCode());
-		result = prime * result
-				+ ((kmodalidad == null) ? 0 : kmodalidad.hashCode());
+		result = prime * result + ((cnegocio == null) ? 0 : cnegocio.hashCode());
+		result = prime * result + ((fecDesde == null) ? 0 : fecDesde.hashCode());
+		result = prime * result + ((fecHasta == null) ? 0 : fecHasta.hashCode());
+		result = prime * result + ((kmodalidad == null) ? 0 : kmodalidad.hashCode());
 		result = prime * result + ((kramo == null) ? 0 : kramo.hashCode());
 		result = prime * result + ((ktipobt == null) ? 0 : ktipobt.hashCode());
+		result = prime * result + ((matching == null) ? 0 : matching.hashCode());
 		return result;
 	}
 
-	@Override //NOSONAR
-	public boolean equals(Object obj) { //NOSONAR
-		if (this == obj) {
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		}
-		if (obj == null) {
+		if (obj == null)
 			return false;
-		}
-		if (getClass() != obj.getClass()) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
 		GastosRealesKey other = (GastosRealesKey) obj;
 		if (ccanal == null) {
-			if (other.ccanal != null) {
+			if (other.ccanal != null)
 				return false;
-			}
-		} else if (!ccanal.equals(other.ccanal)) {
+		} else if (!ccanal.equals(other.ccanal))
 			return false;
-		}
 		if (cnegocio == null) {
-			if (other.cnegocio != null) {
+			if (other.cnegocio != null)
 				return false;
-			}
-		} else if (!cnegocio.equals(other.cnegocio)) {
+		} else if (!cnegocio.equals(other.cnegocio))
 			return false;
-		}
 		if (fecDesde == null) {
-			if (other.fecDesde != null) {
+			if (other.fecDesde != null)
 				return false;
-			}
-		} else if (!fecDesde.equals(other.fecDesde)) {
+		} else if (!fecDesde.equals(other.fecDesde))
 			return false;
-		}
 		if (fecHasta == null) {
-			if (other.fecHasta != null) {
+			if (other.fecHasta != null)
 				return false;
-			}
-		} else if (!fecHasta.equals(other.fecHasta)) {
+		} else if (!fecHasta.equals(other.fecHasta))
 			return false;
-		}
 		if (kmodalidad == null) {
-			if (other.kmodalidad != null) {
+			if (other.kmodalidad != null)
 				return false;
-			}
-		} else if (!kmodalidad.equals(other.kmodalidad)) {
+		} else if (!kmodalidad.equals(other.kmodalidad))
 			return false;
-		}
 		if (kramo == null) {
-			if (other.kramo != null) {
+			if (other.kramo != null)
 				return false;
-			}
-		} else if (!kramo.equals(other.kramo)) {
+		} else if (!kramo.equals(other.kramo))
 			return false;
-		}
 		if (ktipobt == null) {
-			if (other.ktipobt != null) {
+			if (other.ktipobt != null)
 				return false;
-			}
-		} else if (!ktipobt.equals(other.ktipobt)) {
+		} else if (!ktipobt.equals(other.ktipobt))
 			return false;
-		}
+		if (matching == null) {
+			if (other.matching != null)
+				return false;
+		} else if (!matching.equals(other.matching))
+			return false;
 		return true;
 	}
 
@@ -163,6 +150,14 @@ public class GastosRealesKey {
 
 	public void setKtipobt(String ktipobt) {
 		this.ktipobt = ktipobt;
+	}
+
+	public String getMatching() {
+		return matching;
+	}
+
+	public void setMatching(String matching) {
+		this.matching = matching;
 	}
 
 }

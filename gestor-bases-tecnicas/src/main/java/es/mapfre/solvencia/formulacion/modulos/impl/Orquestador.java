@@ -452,6 +452,8 @@ public class Orquestador implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)) {
 
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
+		} else if (bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
+			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_NIIF17);
 		} else {
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, bt);
 		}
@@ -473,7 +475,9 @@ public class Orquestador implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 				|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 			keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 					ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -486,7 +490,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 			}else{
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI);
@@ -505,7 +511,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fall.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -530,7 +538,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				vida.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -555,7 +565,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				anul.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -580,7 +592,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				comi.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -606,7 +620,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				gast.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -632,7 +648,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				inv.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -658,7 +676,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				prim.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -679,7 +699,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 
 			}else{
@@ -693,7 +715,9 @@ public class Orquestador implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -838,7 +862,10 @@ public class Orquestador implements Modulo {
 				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO)
+				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| detalleBT.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE)) {
 			// Se obtiene el proceso BASE_TEC de NIIF17
 			dps = dpDao.obtenerDisenoProcesos(PROCESO, umic.getDatosGenerales().getCcanal(),
 					ConstantsModulos.CTE_BT_NIIF17);

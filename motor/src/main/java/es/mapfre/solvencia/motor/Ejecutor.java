@@ -106,7 +106,10 @@ public class Ejecutor {
 				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE)
+				|| detalleBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO)) {
 			disenoProceso = gestionarProceso.obtenerDisenoProceso(proceso, dg.getCcanal(), dg.getKramo(),
 					dg.getKmodalidad(), dg.getKgarantia(), ConstantesSolvencia.BASE_NIIF17, kclaveadic);
 

@@ -1750,7 +1750,6 @@
 			typeHandler="dateOutHandler" justify="right" />
 		<field name="fecefecfin" length="8" format="yyyyMMdd"
 			typeHandler="dateOutHandler" justify="right" />
-
 		<field name="totprovision" type="bigdecimal" length="1"
 			typeHandler="bigDecimalSignOutHandler" required="true" />
 		<field name="totprovision" type="bigdecimal" length="15" justify="right"
@@ -1870,6 +1869,276 @@
 			justify="right" format="000.##" />
 		<field name="gvalor" type="string" length="2" justify="left" />
 		<field name="fdiadepago" length="2" type="int" padding="0" justify="right" format="00"/>
+		<field name="fecinisus" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="rentini" type="bigdecimal" length="1"
+			typeHandler="bigDecimalSignOutHandler" required="true" />
+		<field name="rentini" length="14" type="bigdecimal" justify="right" 
+			typeHandler="bigDecimalAbsOutHandler" format="00000000000.##" />
+		<field name="pgastgesex1I" length="5" type="bigdecimal"
+			justify="right" typeHandler="bigDecimalHostHandler" format="##0.00" />	
+		<field name="pgastgesex2I" length="5" type="bigdecimal"
+			justify="right" typeHandler="bigDecimalHostHandler" format="##0.00" />	
+		<field name="totfactgto" type="bigdecimal" length="1"
+			typeHandler="bigDecimalSignOutHandler" required="true" />
+		<field name="totfactgto" type="bigdecimal" length="15" justify="right"
+			format="###########0.00" typeHandler="bigDecimalAbsOutHandler" />
+		<field name="cformarevprim" length="1" type="string" />
+		<field name="prevprima" length="5" type="bigdecimal" padding="0"
+			justify="right" typeHandler="bigDecimalHostHandler" format="000.##" />
+		<field name="cformpago" length="1" type="string" />
+		<field name="fecinipagprim" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="fecfinpagprim" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="gedadmax" length="3" type="int" padding="0" justify="right" format="000"/>
+		<field name="pb" length="1" type="string" />
+		<field name="tipopb" length="1" type="string" />
+	</template>
+	
+	<template name="totpmacoam">
+		<field name="bt" type="string" length="8" justify="left" />
+		<field name="fcierre" length="8" format="yyyyMMdd" typeHandler="dateOutHandler" />
+		<field name="kpoliza" type="long" length="10" padding="0" justify="right" format="0000000000" />
+		<field name="ksubpoliza" type="int" length="4" padding="0" justify="right" format="0000"/>
+		<field name="nsuscri" type="int" length="7" justify="right" format="0000000"/>
+		<field name="kcoase1" type="string" length="4" justify="right" />
+		<field name="kcoase2" type="string" length="4" justify="right" />
+		<field name="kcoase3" type="string" length="4" justify="right" />
+		<field name="kcoase4" type="string" length="4" justify="right" />
+		<field name="kcoase5" type="string" length="4" justify="right" />
+		<field name="kcoase6" type="string" length="4" justify="right" />
+		<field name="fecefecini" length="8" format="yyyyMMdd" typeHandler="dateOutHandler" />
+		<field name="fecefecfin" length="8" format="yyyyMMdd" typeHandler="dateOutHandler" />
+		<field name="totprovision" length="15" type="string" justify="right" />
+		<field name="tablacalc1aseg1" length="5" type="string" justify="right" />
+		<field name="factor1" type="bigDecimal" length="6" justify="right"
+			typeHandler="bigDecimalHostHandler" format="000.###" />
+		<field name="fecIniTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI1" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI2" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI3" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI4" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI5" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesin1I" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesin2I" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesex1I" length="5" type="string" justify="right" />
+		<field name="pgastgesex2I" length="5" type="string" justify="right" />	
+		<field name="totfactgto" length="15" type="string" justify="right" />
+	</template>
+	
+	<template name="flujpmacoam">
+		<field name="bt" type="string" length="8" justify="left" />
+		<field name="fcierre" length="8" format="yyyyMMdd" typeHandler="dateOutHandler"/>
+		<field name="kpoliza" type="long" length="10" justify="right" required="true" format="0000000000" />
+		<field name="ksubpoliza" type="int" length="4" justify="right" required="true" format="0000"/>
+		<field name="nsuscri" type="int" length="7" justify="right"
+			required="true" format="0000000" />
+		<field name="fdesde" length="6" format="MMyyyy" typeHandler="dateOutHandler"
+			justify="right" />
+		<field name="kcoase1" type="string" length="4" justify="right" />
+		<field name="kcoase2" type="string" length="4" justify="right" />
+		<field name="kcoase3" type="string" length="4" justify="right" />
+		<field name="kcoase4" type="string" length="4" justify="right" />
+		<field name="kcoase5" type="string" length="4" justify="right" />
+		<field name="kcoase6" type="string" length="4" justify="right" />
+		<field name="fecefecini" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />	
+		<field name="totflujoprobsingastos" length="13" type="string" justify="right" />		
+		<field name="totflujoprobdegastos" length="13" type="string" justify="right" />
+		<field name="fecIniTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI1" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI2" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI3" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI4" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI5" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+	</template>
+	
+	<template name="flujpmdcoam">
+		<field name="bt" type="string" length="8" justify="left" />
+		<field name="fcierre" length="8" format="yyyyMMdd" typeHandler="dateOutHandler"/>
+		<field name="kmodalidad" type="int" length="5" justify="right" />
+		<field name="kgarantia" type="int" length="5" justify="right"
+			required="true" />
+		<field name="kprestacion" type="string" length="6" justify="left"
+			required="true" />
+		<field name="kpoliza" type="long" length="10" justify="right" required="true" format="0000000000" />
+		<field name="ksubpoliza" type="int" length="4" justify="right" required="true" format="0000"/>
+		<field name="kcertificado" type="int"  length="6" justify="right" required="true" format="000000"/>
+		<field name="nsuscri" type="int" length="7" justify="right"
+			required="true" format="0000000" />
+		<field name="kcoase1" type="string" length="4" justify="right" />
+		<field name="kcoase2" type="string" length="4" justify="right" />
+		<field name="kcoase3" type="string" length="4" justify="right" />
+		<field name="kcoase4" type="string" length="4" justify="right" />
+		<field name="kcoase5" type="string" length="4" justify="right" />
+		<field name="kcoase6" type="string" length="4" justify="right" />
+		<field name="fecefecini" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="fecefecfin" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="totprovision" length="15" type="string" justify="right" />
+		<field name="tablacalc1aseg1" length="5" type="string" justify="left" />
+		<field name="itcalc" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />	
+		<field name="fecIniTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI1" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI2" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI3" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI4" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="fecIniTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFinTramo5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="pintertecnI5" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesin1I" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesin2I" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="pgastgesin3I" length="7" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.####" />
+		<field name="gtorosspCap" length="8" type="string" justify="right" />
+		<field name="gtorosspPrima" length="8" type="string" justify="right" />
+		<field name="gtorosspProv" length="8" type="string" justify="right" />	
+		<field name="fnacAseg1" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fnacAseg2" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fnacAseg3" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fnacAseg4" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fnacAseg5" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="csexAseg1" length="1" type="string" />
+		<field name="csexAseg2" length="1" type="string" />
+		<field name="csexAseg3" length="1" type="string" />
+		<field name="csexAseg4" length="1" type="string" />
+		<field name="csexAseg5" length="1" type="string" />	
+		<field name="cestadoAseg1" required="false" length="1" type="string"/>
+		<field name="cestadoAseg2" required="false" length="1" type="string"/>
+		<field name="cestadoAseg3" required="false" length="1" type="string"/>
+		<field name="cestadoAseg4" required="false" length="1" type="string"/>
+		<field name="cestadoAseg5" required="false" length="1" type="string"/>
+		<field name="iprimanetaini" length="14" type="string" justify="right" />
+		<field name="iprimanetaact" length="14" type="string" justify="right" />
+		<field name="iprimatarada" length="14" type="string" justify="right" />
+		<field name="icapini" length="14" type="string" justify="right" />
+		<field name="icapact" length="14" type="string" justify="right" />
+		<field name="isaldo" length="15" type="string" justify="right" />
+		<field name="fecIni" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="fecFin" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" />
+		<field name="tempVit" length="1" type="string" />
+		<field name="prevrenta" length="5" type="bigdecimal" padding="0"
+			justify="right" typeHandler="bigDecimalHostHandler" format="000.##" />
+		<field name="preversion" length="5" type="bigdecimal" padding="0"
+			justify="right" typeHandler="bigDecimalHostHandler" format="000.##" />
+		<field name="npergaran" length="3" type="int" padding="0"
+			justify="right" />
+		<field name="nadifer" length="3" type="int" padding="0" justify="right" />
+		<field name="forpagrent" length="2" type="int" padding="0"
+			justify="right" />
+		<field name="cpagrenta" length="1" type="string" />
+		<field name="ctipoRevrenta" length="1" type="string" />
+		<field name="cformaRevrenta" length="1" type="string" />
+		<field name="ndurrenta" length="2" type="int" padding="0"
+			justify="right" />
+		<field name="kajuste" length="7" type="int" padding="0" justify="right" format="0000000"/>
+		<field name="psobremort" length="5" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.##" />
+		<field name="priesgo" length="5" type="bigdecimal" typeHandler="bigDecimalHostHandler" padding="0"
+			justify="right" format="000.##" />
+		<field name="gvalor" type="string" length="2" justify="left" />
+		<field name="fdiadepago" length="2" type="int" padding="0" justify="right" format="00"/>
+		<field name="fecinisus" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="rentini" length="15" type="string" justify="right" />
+		<field name="pgastgesex1I" length="5" type="string" justify="right" />
+		<field name="pgastgesex2I" length="5" type="string" justify="right" />
+		<field name="totfactgto" length="15" type="string" justify="right" />
+		<field name="cformarevprim" length="1" type="string" />
+		<field name="prevprima" length="5" type="bigdecimal" padding="0"
+			justify="right" typeHandler="bigDecimalHostHandler" format="000.##" />
+		<field name="cformpago" length="1" type="string" />
+		<field name="fecinipagprim" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="fecfinpagprim" length="8" format="yyyyMMdd"
+			typeHandler="dateOutHandler" justify="right" />
+		<field name="gedadmax" length="3" type="int" padding="0" justify="right" format="000"/>
+		<field name="pb" length="1" type="string" />
+		<field name="tipopb" length="1" type="string" />
 	</template>
 	
 	<template name="contcerti">

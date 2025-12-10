@@ -322,6 +322,15 @@ public class ModuloCOM002 implements Modulo {
 					} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
 						lstDetaCor = UtilModulos.getVarLstProyeccion(mapVariables, CLAVE_LST_PRI,
 								ConstantsModulos.CTE_VAL_SCRANM, btcUmic.getFecCierre(), umic.getKey());
+					} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)) {
+						lstDetaCor = UtilModulos.getVarLstProyeccion(mapVariables, CLAVE_LST_PRI,
+								ConstantsModulos.CTE_VAL_NF17AEN, btcUmic.getFecCierre(), umic.getKey());
+					} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
+						lstDetaCor = UtilModulos.getVarLstProyeccion(mapVariables, CLAVE_LST_PRI,
+								ConstantsModulos.CTE_VAL_NF17MFE, btcUmic.getFecCierre(), umic.getKey());
+					} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
+						lstDetaCor = UtilModulos.getVarLstProyeccion(mapVariables, CLAVE_LST_PRI,
+								ConstantsModulos.CTE_VAL_NF17GTO, btcUmic.getFecCierre(), umic.getKey());
 					}
 					
 					final BloqueCorriente bloquePrima = lstDetaCor.get(iteracion - 1)

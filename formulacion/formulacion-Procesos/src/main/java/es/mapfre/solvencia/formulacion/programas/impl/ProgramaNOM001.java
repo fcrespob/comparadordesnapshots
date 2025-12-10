@@ -209,6 +209,12 @@ public class ProgramaNOM001 extends ProgramaFlujo {
 				detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
 			varProyBTI = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_BEL, detalleBT.getFecCierre(), umic.getKey());
 			copiarNominalProyBTI(subProcesoActual, lstDetalleCorrien, varProyBTI);	
+		} else if ((detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)) ||
+				(detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO) &&
+						!subProcesoActual.equals(ConstantsModulos.CTE_PROY_GTOS)) ||
+					detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)) {
+				varProyBTI = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_NIIF17, detalleBT.getFecCierre(), umic.getKey());
+				copiarNominalProyBTI(subProcesoActual, lstDetalleCorrien, varProyBTI);	
 		}
 		
 		/**

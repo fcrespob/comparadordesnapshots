@@ -198,6 +198,9 @@ public class ProgramaPRB001 extends ProgramaFlujo {
 			//Para el estrés de volatilidad de mortalidad recuperaremos los valores de BEL
 			varProyBTI = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_BEL, detalleBT.getFecCierre(), umic.getKey());
 			copiarProbableProyBTI(subProcesoActual,  lstDetalleCorrien, varProyBTI);
+		} else if (detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)) {
+			varProyNIIF17 = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_NIIF17, detalleBT.getFecCierre(), umic.getKey());
+			copiarProbableProyBTI(subProcesoActual,  lstDetalleCorrien, varProyNIIF17);
 		} 
 
 		/**

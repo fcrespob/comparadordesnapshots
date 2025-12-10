@@ -7,15 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {    
-    "basesTecnicas",
-    "gastos"
+    "basesTecnicas"
 })
 @XmlRootElement(name = "DatosPMA")
 public class DatosPMA {
 	
 	private BasesTecnicas BasesTecnicas;
-
-	private Gastos Gastos;
 	
 	public DatosPMA() {
 		super();
@@ -29,15 +26,4 @@ public class DatosPMA {
 	public void setBasesTecnicas(BasesTecnicas basesTecnicas) {
 		BasesTecnicas = basesTecnicas;
 	}
-
-	public Gastos getGastos() {
-		return Gastos;
-	}
-
-	@XmlElement(name = "Gastos")
-	public void setGastos(Gastos gastos) {
-		Gastos = gastos;
-	}
-
-
 }

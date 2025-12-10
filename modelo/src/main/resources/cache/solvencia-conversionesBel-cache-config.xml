@@ -215,7 +215,43 @@
 					<param-value>1MB</param-value>
 				</init-param>
 			</init-params>
-		</cache-mapping>		
+		</cache-mapping>
+		
+		<cache-mapping>
+			<cache-name>NF17AEN0</cache-name>
+			<scheme-name>replicated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<!-- 159120 * 2  -->
+					<param-value>12MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>
+		
+		<cache-mapping>
+			<cache-name>NF17GRE0</cache-name>
+			<scheme-name>replicated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<!-- 159120 * 2  -->
+					<param-value>12MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>
+		
+		<cache-mapping>
+			<cache-name>NF17MFE0</cache-name>
+			<scheme-name>replicated-scheme</scheme-name>
+			<init-params>
+				<init-param>
+					<param-name>back-size-limit</param-name>
+					<!-- 159120 * 2  -->
+					<param-value>1518MB</param-value>
+				</init-param>
+			</init-params>
+		</cache-mapping>	
 	
 	</caching-scheme-mapping>
 

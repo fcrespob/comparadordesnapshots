@@ -3,6 +3,8 @@ package es.mapfre.solvencia.dao.impl.scr;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +15,7 @@ import com.tangosol.util.Filter;
 import com.tangosol.util.ValueExtractor;
 import com.tangosol.util.filter.AllFilter;
 import com.tangosol.util.filter.EqualsFilter;
+import com.tangosol.util.filter.LessEqualsFilter;
 
 import es.mapfre.solvencia.coherence.keys.scr.ValoresEstresKey;
 import es.mapfre.solvencia.dao.DaoBase;
@@ -91,7 +94,7 @@ public class ValoresEstresDao extends DaoBase implements Map<ValoresEstresKey, V
 
 	public List<ValoresEstres> obtenerValoresEstres(Timestamp lfEfec, String bt){
 		
-		Filter fecCierreFilter = new EqualsFilter(fecCierreExtractor, lfEfec.getTime());
+		Filter fecCierreFilter = new LessEqualsFilter(fecCierreExtractor, lfEfec.getTime());
 		Filter btFilter = new EqualsFilter(btExtractor, bt);
 		Filter allFilter = new AllFilter(new Filter[] {fecCierreFilter,btFilter});
 		
@@ -104,6 +107,14 @@ public class ValoresEstresDao extends DaoBase implements Map<ValoresEstresKey, V
 			Map.Entry entry = (Map.Entry) iter.next();
 			valoresEstres.add((ValoresEstres) entry.getValue());
 		}
+		
+		//ordenamos por fecha
+		Collections.sort(valoresEstres, Collections.reverseOrder(new Comparator<ValoresEstres>(){
+			@Override
+			public int compare(ValoresEstres o1, ValoresEstres o2) {
+				return o1.getFeccierre().compareTo(o2.getFeccierre());
+			}
+		}));
 		
 		return valoresEstres;
 	}

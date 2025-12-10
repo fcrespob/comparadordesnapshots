@@ -705,7 +705,8 @@ public class J880GBT006TiposInteresROSSP implements Modulo {
 		if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM)){
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals(ConstantesSolvencia.BASE_NF17AEN) 
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)  || bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 			 keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 						ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -718,7 +719,8 @@ public class J880GBT006TiposInteresROSSP implements Modulo {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM)){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals(ConstantesSolvencia.BASE_NF17AEN) 
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)  || bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 			}else{
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI);
@@ -830,7 +832,8 @@ public class J880GBT006TiposInteresROSSP implements Modulo {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR) 
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM)){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals(ConstantesSolvencia.BASE_NF17AEN) 
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)  || bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 
 			}else{
@@ -844,7 +847,8 @@ public class J880GBT006TiposInteresROSSP implements Modulo {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM)){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals(ConstantesSolvencia.BASE_NF17AEN) 
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)  || bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);

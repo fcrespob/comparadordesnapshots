@@ -36,7 +36,11 @@ public class Tab35012Dao extends DaoBase{
 		if (!(key instanceof Tab35012Key)) {
 			return null;
 		} else {
-			return (Tab35012) this.getCache().get(key).getObjectValue();
+			if(null != this.getCache().get(key)){
+				return (Tab35012) this.getCache().get(key).getObjectValue();
+			}else{
+				return null;
+			}
 		}
 	}
 

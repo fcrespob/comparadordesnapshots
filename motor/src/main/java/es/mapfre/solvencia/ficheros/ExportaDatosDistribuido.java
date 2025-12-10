@@ -148,7 +148,10 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 									this.nombref.contains(ConstantsFactorias.ENTREGABLE_FPSL)) &&
 									(!bt.equals(ConstantesSolvencia.BASE_NIIF17) &&
 											!bt.equals(ConstantesSolvencia.BASE_N17LIRIN) &&
-											!bt.equals(ConstantesSolvencia.BASE_NIIF17IF)))) {
+											!bt.equals(ConstantesSolvencia.BASE_NIIF17IF) &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17AEN)  &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17MFE)  &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17GTO)))) {
 						continue;
 					}
 					
@@ -175,7 +178,10 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 											!bt.equals(ConstantesSolvencia.BASE_SCRAIN)&& 
 											!bt.equals(ConstantesSolvencia.BASE_SCRAIP) && 
 											!bt.equals(ConstantesSolvencia.BASE_SCRANM)&& 
-											!bt.equals(ConstantesSolvencia.BASE_SCR)))) {
+											!bt.equals(ConstantesSolvencia.BASE_SCR) &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17AEN) &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17MFE) &&
+											!bt.equals(ConstantesSolvencia.BASE_NF17GTO)))) {
 						continue;
 					}
 					
@@ -216,6 +222,20 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 						totalpath = rutaBase.concat(File.separator).concat("CONTAB");
 					}
 					/*FIN-TAR00302248*/
+					
+					// Nuevos entregables mapeados para Tirea
+					if (streamName.equals("totpmacoam")) {
+						nombreFichero = bt + "_" + "TOTPMACOA.TXT";
+						//totalpath = rutaBase.concat(File.separator).concat("TIREA");
+					}
+					if (streamName.equals("flujpmacoam")) {
+						nombreFichero = bt + "_" + "FLUJPMACOA.TXT";
+						//totalpath = rutaBase.concat(File.separator).concat("TIREA");
+					}
+					if (streamName.equals("flujpmdcoam")) {
+						nombreFichero = bt + "_" + "FLUJPMDCOA.TXT";
+						//totalpath = rutaBase.concat(File.separator).concat("TIREA");
+					}
 
 					new File(totalpath).mkdirs();
 					new File(totalpath + File.separator + nombreFichero);
@@ -236,7 +256,10 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 								this.nombref.contains(ConstantsFactorias.ENTREGABLE_FPSL)) &&
 								(!bt.equals(ConstantesSolvencia.BASE_NIIF17) &&
 										!bt.equals(ConstantesSolvencia.BASE_N17LIRIN) &&
-										!bt.equals(ConstantesSolvencia.BASE_NIIF17IF)))) {
+										!bt.equals(ConstantesSolvencia.BASE_NIIF17IF) &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17AEN)  &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17MFE)  &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17GTO)))) {
 					continue;
 				}
 				
@@ -263,7 +286,10 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 										!bt.equals(ConstantesSolvencia.BASE_SCRAIN)&& 
 										!bt.equals(ConstantesSolvencia.BASE_SCRAIP) && 
 										!bt.equals(ConstantesSolvencia.BASE_SCRANM)&& 
-										!bt.equals(ConstantesSolvencia.BASE_SCR)))) {
+										!bt.equals(ConstantesSolvencia.BASE_SCR) &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17AEN) &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17MFE) &&
+										!bt.equals(ConstantesSolvencia.BASE_NF17GTO)))) {
 					continue;
 				}
 				outs.get(bt).flush();
@@ -347,6 +373,9 @@ public class ExportaDatosDistribuido implements TareaDistribuida {
 			.append(String.format("%05d", ficha.getCcanal())).append(GUION_BAJO)
 			.append(ficha.getCnegocio()).append(GUION_BAJO)
 			.append(nombref).append("CargaUMICS"); 
+		} else if (tipo == ConstantsFunciones.CTE_6) { // ENTREGABLE TIREA MAPEADOS
+			nombreFicheroSB.append(bt).append(GUION_BAJO)
+			.append(nombref); 
 		}
 		
 		nombreFicheroSB.append(".").append(formatoFichero);

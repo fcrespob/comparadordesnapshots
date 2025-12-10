@@ -260,7 +260,10 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 		// int meses = Integer.parseInt(mesesCierre);
 
 		if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17)
-				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN)) {
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
 			result = dao.obtenerCurvaTipoCINIIF17(ConstantsModulos.CTE_BT_NIIF17, umic.getDatosNiif17().getuoa(),
 					umic.getDatosNiif17().getkcarinv17());
 		} else if (btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIF17LIR)
@@ -315,7 +318,7 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 			String bt) {
 		FlujosProbablesKey key;
 
-		// Para las bases técnicas de SCR, se recuperan los flujos probables de
+		// Para las bases tï¿½cnicas de SCR, se recuperan los flujos probables de
 		// BEL
 		if (bt.equals(ConstantesSolvencia.BASE_SCRMFE) || bt.equals(ConstantesSolvencia.BASE_SCRMMI)
 				|| bt.equals(ConstantesSolvencia.BASE_SCRVM) || bt.equals(ConstantesSolvencia.BASE_SCRMCF)
@@ -329,7 +332,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
 		} else if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BTIPROY);
 		} else {
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, bt);
@@ -349,7 +354,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BEL);
 			} else if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BTIPROY);
 			} else {
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, bt);
@@ -367,7 +374,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 		FlujosProbablesKey keyBti = new FlujosProbablesKey();
 		if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)){
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 			keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 					ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -379,7 +388,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 		if (null == fpBti) {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)){
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 			}else{
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI);
@@ -402,7 +413,7 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 			vida.setActualizado(ConstantsProcesos.CTE_ERROR_BT_ACT);
 		}
 		vida.setProvi(fpBti.getVida().getProvi());
-		// Anulación
+		// Anulaciï¿½n
 		BloqueFlujosProbables anul = fp.getAnul();
 		if (null == fpBti.getAnul().getNominal()) {
 			anul.setActualizado(fpBti.getAnul().getActualizado());
@@ -448,7 +459,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 		} else {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)){
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -459,7 +472,9 @@ public class J880GBT012CurvasCINIIF17 implements Modulo {
 		} else {
 			if (bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)){
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);

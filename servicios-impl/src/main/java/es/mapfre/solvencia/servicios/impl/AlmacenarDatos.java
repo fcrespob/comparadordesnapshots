@@ -21,6 +21,8 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 
 import com.tangosol.net.CacheFactory;
@@ -45,7 +47,9 @@ import es.mapfre.solvencia.coherence.keys.entregables.FlujInf3Key;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujInf4Key;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujInfSCRKey;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujPMaCoaKey;
+import es.mapfre.solvencia.coherence.keys.entregables.FlujPMaCoaMKey;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujPMdCoaKey;
+import es.mapfre.solvencia.coherence.keys.entregables.FlujPMdCoaMKey;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujSuscriKey;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujTcasKey;
 import es.mapfre.solvencia.coherence.keys.entregables.FlujoTotPVKey;
@@ -83,7 +87,9 @@ import es.mapfre.solvencia.dao.impl.entregables.FlujInf3Dao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujInf4Dao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujInfSCRDao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujPMaCoaDao;
+import es.mapfre.solvencia.dao.impl.entregables.FlujPMaCoaMDao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujPMdCoaDao;
+import es.mapfre.solvencia.dao.impl.entregables.FlujPMdCoaMDao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujSuscriDao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujTcasDao;
 import es.mapfre.solvencia.dao.impl.entregables.FlujoTotPVDao;
@@ -130,7 +136,9 @@ import es.mapfre.solvencia.dominio.entregables.FlujInf3;
 import es.mapfre.solvencia.dominio.entregables.FlujInf4;
 import es.mapfre.solvencia.dominio.entregables.FlujInfSCR;
 import es.mapfre.solvencia.dominio.entregables.FlujPMaCoa;
+import es.mapfre.solvencia.dominio.entregables.FlujPMaCoaM;
 import es.mapfre.solvencia.dominio.entregables.FlujPMdCoa;
+import es.mapfre.solvencia.dominio.entregables.FlujPMdCoaM;
 import es.mapfre.solvencia.dominio.entregables.FlujSuscri;
 import es.mapfre.solvencia.dominio.entregables.FlujTcas;
 import es.mapfre.solvencia.dominio.entregables.FlujoTotPV;
@@ -174,10 +182,13 @@ import es.mapfre.solvencia.coherence.keys.entregables.FPSLKey;
 import es.mapfre.solvencia.dominio.entregables.SwCobroCom;
 import es.mapfre.solvencia.dominio.entregables.SwCobroComCsv;
 import es.mapfre.solvencia.dominio.entregables.TotPMaCoa;
+import es.mapfre.solvencia.dominio.entregables.TotPMaCoaM;
 import es.mapfre.solvencia.dao.impl.entregables.SwCobroComDao;
 import es.mapfre.solvencia.dao.impl.entregables.TotPMaCoaDao;
+import es.mapfre.solvencia.dao.impl.entregables.TotPMaCoaMDao;
 import es.mapfre.solvencia.coherence.keys.entregables.SwCobroComKey;
 import es.mapfre.solvencia.coherence.keys.entregables.TotPMaCoaKey;
+import es.mapfre.solvencia.coherence.keys.entregables.TotPMaCoaMKey;
 
 public class AlmacenarDatos implements IAlmacenarDatos {
 
@@ -225,6 +236,9 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 	private FlujPMdCoaDao flujPMdCoaDao  = new FlujPMdCoaDao();
 	private IncidenciasMaestroDao incidenciasMaestroDao = new IncidenciasMaestroDao();
 	private ConteoCertificadoDao conteoCert = new ConteoCertificadoDao();
+	private TotPMaCoaMDao totPMaCoaMDao  = new TotPMaCoaMDao();
+	private FlujPMaCoaMDao flujPMaCoaMDao  = new FlujPMaCoaMDao();
+	private FlujPMdCoaMDao flujPMdCoaMDao  = new FlujPMdCoaMDao();
 	private FlujInfSCRDao flujInfSCRDao = new FlujInfSCRDao();
 	private FlujSuscriDao flujSuscriDao = new FlujSuscriDao();
 	private ContabilidadCertificadoDao contabilidadCertificadoDao = new ContabilidadCertificadoDao();
@@ -798,7 +812,22 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 
 				
 				//FPSL
-				if((fichaproceso.getCtipobt().equals("MULTI4NB") || fichaproceso.getCtipobt().equals("MULTI2") || fichaproceso.getCtipobt().equals("MULTI4C") || fichaproceso.getCtipobt().equals("MULTI5") || fichaproceso.getCtipobt().equals("NIIF17IF") || fichaproceso.getCtipobt().equals("MULTI6") || fichaproceso.getCtipobt().equals("MULTI8") || fichaproceso.getCtipobt().equals("MULTI8NB")) && !detalleBaseTecnica.getBt().equals("BTI") && !detalleBaseTecnica.getBt().equals("ROSSP") && !detalleBaseTecnica.getBt().equals("ROSSPCSM")  && !detalleBaseTecnica.getBt().equals("ROSSPTE") && !detalleBaseTecnica.getBt().equals("ROSSPTI") && !detalleBaseTecnica.getBt().equals("ROSSPGA") && !detalleBaseTecnica.getBt().equals("BTIPROY") ){
+				if((fichaproceso.getCtipobt().equals("MULTI4NB") 
+						|| fichaproceso.getCtipobt().equals("MULTI2") 
+						|| fichaproceso.getCtipobt().equals("MULTI4C") 
+						|| fichaproceso.getCtipobt().equals("MULTI5") 
+						|| fichaproceso.getCtipobt().equals("NIIF17IF") 
+						|| fichaproceso.getCtipobt().equals("MULTI6") 
+						|| fichaproceso.getCtipobt().equals("MULTI8") 
+						|| fichaproceso.getCtipobt().equals("MULTI8NB")
+						|| fichaproceso.getCtipobt().equals("MULTISN")) 
+						&& !detalleBaseTecnica.getBt().equals("BTI") 
+						&& !detalleBaseTecnica.getBt().equals("ROSSP") 
+						&& !detalleBaseTecnica.getBt().equals("ROSSPCSM")  
+						&& !detalleBaseTecnica.getBt().equals("ROSSPTE") 
+						&& !detalleBaseTecnica.getBt().equals("ROSSPTI") 
+						&& !detalleBaseTecnica.getBt().equals("ROSSPGA") 
+						&& !detalleBaseTecnica.getBt().equals("BTIPROY") ){
 					
 					if(fichaproceso.getCtipobt().equals("MULTI8NB") 
 							&& detalle.getOga() != null
@@ -1015,8 +1044,13 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 //							//Si el formato no es el esperado se lanza excepción.
 //							throw Solvencia2ExcepcionHelper.crearExcepcion("AP", new String[]{fecha, "yyyy/MM/dd"});
 //						}
-					}else if(fichaproceso.getCtipobt().equals("MULTI4C") || fichaproceso.getCtipobt().equals("MULTI8")){
-						if(detalleBaseTecnica.getBt().equals("NIIF17") || detalleBaseTecnica.getBt().equals("NIIF17LIR") || detalleBaseTecnica.getBt().equals("N17CLIR")){
+					}else if(fichaproceso.getCtipobt().equals("MULTI4C") || fichaproceso.getCtipobt().equals("MULTI8") || fichaproceso.getCtipobt().equals("MULTISN")){
+						if(detalleBaseTecnica.getBt().equals("NIIF17") 
+								|| detalleBaseTecnica.getBt().equals("NIIF17LIR") 
+								|| detalleBaseTecnica.getBt().equals("N17CLIR")
+								|| detalleBaseTecnica.getBt().equals("NF17MFE")
+								|| detalleBaseTecnica.getBt().equals("NF17GTO")
+								|| detalleBaseTecnica.getBt().equals("NF17AEN")){
 							entry.setTextraccion("02_00");
 						}else if(detalleBaseTecnica.getBt().equals("NIIF17OCI")){
 							entry.setTextraccion("03_00");
@@ -1699,6 +1733,39 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 	}
 	
 	@Override
+	public void almacenarEntregableTotPMaCoaM(List<TotPMaCoaM> totPMaCoaM) {
+		if (totPMaCoaM != null && !totPMaCoaM.isEmpty()) {
+			Map<TotPMaCoaMKey, TotPMaCoaM> mapa = new HashMap<TotPMaCoaMKey, TotPMaCoaM>();
+			for (TotPMaCoaM entry : totPMaCoaM) {
+				mapa.put(entry.getKey(), entry);
+			}
+			totPMaCoaMDao.putAll(mapa);
+		}
+	}
+	
+	@Override
+	public void almacenarEntregableFlujPMaCoaM(List<FlujPMaCoaM> flujPMaCoaM) {
+		if (flujPMaCoaM != null && !flujPMaCoaM.isEmpty()) {
+			Map<FlujPMaCoaMKey, FlujPMaCoaM> mapa = new HashMap<FlujPMaCoaMKey, FlujPMaCoaM>();
+			for (FlujPMaCoaM entry : flujPMaCoaM) {
+				mapa.put(entry.getKey(), entry);
+			}
+			flujPMaCoaMDao.putAll(mapa);
+		}
+	}
+	
+	@Override
+	public void almacenarEntregableFlujPMdCoaM(List<FlujPMdCoaM> flujPMdCoaM) {
+		if (flujPMdCoaM != null && !flujPMdCoaM.isEmpty()) {
+			Map<FlujPMdCoaMKey, FlujPMdCoaM> mapa = new HashMap<FlujPMdCoaMKey, FlujPMdCoaM>();
+			for (FlujPMdCoaM entry : flujPMdCoaM) {
+				mapa.put(entry.getKey(), entry);
+			}
+			flujPMdCoaMDao.putAll(mapa);
+		}
+	}
+	
+	@Override
 	public void almacenarEntregablesCoaseguro(Umic umic, DetalleBaseTecnica detalleBaseTecnica,
 			List<DetalleCorriente> detallesCorriente, FichaProceso fichaproceso, TotalesFlujos totales) {
 		FlujCoaSeg flujos = new FlujCoaSeg();
@@ -2317,7 +2384,12 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 				flujpmdcoa.setIcapact(umic.getCapitales().getIcapact());
 				flujpmdcoa.setIsaldo(umic.getCapitales().getIsaldo());
 				flujpmdcoa.setFecIni(umic.getRentas().getFecIni());
-				flujpmdcoa.setFecFin(umic.getRentas().getFecFin());
+				if (umic.getRentas().getFecFin() == null) {
+					Timestamp fecFin = new Timestamp(new LocalDate(9999, 12, 31).toDate().getTime());
+					flujpmdcoa.setFecFin(fecFin);
+				} else {
+					flujpmdcoa.setFecFin(umic.getRentas().getFecFin());
+				}
 				flujpmdcoa.setTempVit(umic.getRentas().getTempVit());
 				flujpmdcoa.setPrevrenta(umic.getRentas().getPrevrenta());
 				flujpmdcoa.setPreversion(umic.getRentas().getPreversion());
@@ -2336,6 +2408,18 @@ public class AlmacenarDatos implements IAlmacenarDatos {
 						detalleBaseTecnica.getBaseTec(), "ID-CRITERIO");
 				flujpmdcoa.setGvalor(gvalor.substring(0,1));
 				flujpmdcoa.setFdiadepago(umic.getPrimas().getFdiadepago());
+				flujpmdcoa.setFecinisus(umic.getFechas().getFecinisus());
+				flujpmdcoa.setRentini(umic.getRentas().getRentini());
+				flujpmdcoa.setPgastgesex1I(umic.getBti().getPgastgesex1I());
+				flujpmdcoa.setPgastgesex2I(umic.getBti().getPgastgesex2I());
+				flujpmdcoa.setCformarevprim(umic.getPrimas().getCformarevprim());
+				flujpmdcoa.setPrevprima(umic.getPrimas().getPrevprima());
+				flujpmdcoa.setCformpago(umic.getPrimas().getCformpago());
+				flujpmdcoa.setFecinipagprim(umic.getFechas().getFecinipagprim());
+				flujpmdcoa.setFecfinpagprim(umic.getFechas().getFecfinpagprim());
+				flujpmdcoa.setGedadmax(umic.getAsegurados().getGedadMax());
+				flujpmdcoa.setPb(umic.getDatosGenerales().getPb());
+				flujpmdcoa.setTipopb(umic.getDatosGenerales().getTipoPb());
 			//}
 
 			flujpmdcoas.add(flujpmdcoa);

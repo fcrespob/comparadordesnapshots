@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
     "tipoTablaExperiencia",
     "importeProvision",
     "tablas",
-    "tiposInteres"
+    "tiposInteres",
+    "gastos"
 })
 @XmlRootElement(name = "BaseTecnica")
 public class BaseTecnica {
@@ -19,6 +20,7 @@ public class BaseTecnica {
 	private String ImporteProvision;
 	private Tablas Tablas;
 	private TiposInteres TiposInteres;
+	private Gastos Gastos;
 	
 	public BaseTecnica() {
 		super();
@@ -55,5 +57,14 @@ public class BaseTecnica {
 	@XmlElement(name = "TiposInteres")
 	public void setTiposInteres(TiposInteres tiposInteres) {
 		TiposInteres = tiposInteres;
+	}
+	
+	public Gastos getGastos() {
+		return Gastos;
+	}
+
+	@XmlElement(name = "Gastos")
+	public void setGastos(Gastos gastos) {
+		Gastos = gastos;
 	}
 }

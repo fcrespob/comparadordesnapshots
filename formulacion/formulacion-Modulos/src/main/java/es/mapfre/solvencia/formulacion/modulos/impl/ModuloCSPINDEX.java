@@ -262,7 +262,7 @@ public class ModuloCSPINDEX implements Modulo {
 		if (umic.getDatosGenerales().getCsitupol().equals("RE")) {
 			varFechaEfecto = umic.getFechas().getFecefecred();
 			if (umic.getFechas().getFecefecred().equals(null)
-					& umic.getDatosGenerales().getCnegocio().equals("C")) {
+					&& umic.getDatosGenerales().getCnegocio().equals("C")) {
 				varFechaEfecto = umic.getFechas().getFecfinpagprim();
 			}
 		}

@@ -86,6 +86,7 @@ public class EntregableFLUJPMDCOA extends EntregableGenerico {
 		// Construcción de los agregadores
 		InvocableMap.EntryAggregator[] values = new InvocableMap.EntryAggregator[] {
 				new BigDecimalSum(new PofExtractor(BigDecimal.class, DetalleCorrienteEntregables.IND_TOTALFLUJOPROYECCION_SUMPROVISION)),
+				new BigDecimalSum(new PofExtractor(BigDecimal.class, DetalleCorrienteEntregables.IND_BLOQUEGTO_IMPFLUJOACTUALIZADO)),
 		};
 
 		// Create Values Aggregator
@@ -144,6 +145,7 @@ public class EntregableFLUJPMDCOA extends EntregableGenerico {
 		List key = (List) entry.getKey();
 		List values = (List) entry.getValue();
 		FlujPMdCoa.setTotprovision((BigDecimal) values.get(ConstantsFunciones.CTE_0));
+		FlujPMdCoa.setTotfactgto((BigDecimal) values.get(ConstantsFunciones.CTE_1));
 		
 		return FlujPMdCoa;
 	}

@@ -50,10 +50,10 @@ public class ModuloTExpSCR {
 		return "ModuloTExpSCR";
 	}
 
-	/** Ejecución del proceso de creación de tablas de experiencia reales */
+	/** Ejecuciï¿½n del proceso de creaciï¿½n de tablas de experiencia reales */
 	public final void execute(String feccierre, String bt) {
 		
-		// Se obtiene la fecha del día
+		// Se obtiene la fecha del dï¿½a
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		Date currentDate = new Date();
 		this.strCurrentDate = sdf.format(currentDate);
@@ -80,14 +80,14 @@ public class ModuloTExpSCR {
 					inci.setBt(bt);
 					inci.setFecCierre(feccierre);
 					inci.setCodigoRetorno("01");
-					inci.setInfAmpliada("No se han encontrado valores de estrés.");
+					inci.setInfAmpliada("No se han encontrado valores de estrï¿½s.");
 					gi.write(inci);
 				} else if (valoresEstres.size()>1){
 					Incidencia inci = new Incidencia();
 					inci.setBt(bt);
 					inci.setFecCierre(feccierre);
 					inci.setCodigoRetorno("02");
-					inci.setInfAmpliada("Se ha encontrado más de un valor de estrés.");
+					inci.setInfAmpliada("Se ha encontrado mï¿½s de un valor de estrï¿½s.");
 					gi.write(inci);
 				} else {
 					valEstres = valoresEstres.get(0).getValor();
@@ -156,10 +156,16 @@ public class ModuloTExpSCR {
 								try{
 									if (i.getKriesgo().equals(ConstantesSolvencia.CTE_AHOR) ||
 											(i.getKriesgo().equals(ConstantesSolvencia.CTE_LONG) && 
-													(bt.equals(ConstantesSolvencia.BT_SCRLFE) || bt.equals(ConstantesSolvencia.BT_SCRMFE) || bt.equals(ConstantesSolvencia.BT_SCRLMI))) ||
+													(bt.equals(ConstantesSolvencia.BT_SCRLFE) 
+															|| bt.equals(ConstantesSolvencia.BT_SCRMFE) 
+															|| bt.equals(ConstantesSolvencia.BT_SCRLMI)
+															|| bt.equals(ConstantesSolvencia.BT_NF17MFE))) ||
 											(i.getKriesgo().equals(ConstantesSolvencia.CTE_FALL) && 
-													(bt.equals(ConstantesSolvencia.BT_SCRMCF) || bt.equals(ConstantesSolvencia.BT_SCRMCI) ||
-													 bt.equals(ConstantesSolvencia.BT_SCRMFE) || bt.equals(ConstantesSolvencia.BT_SCRMMI) ))) {
+													(bt.equals(ConstantesSolvencia.BT_SCRMCF)
+															|| bt.equals(ConstantesSolvencia.BT_SCRMCI) 
+															|| bt.equals(ConstantesSolvencia.BT_SCRMFE) 
+															|| bt.equals(ConstantesSolvencia.BT_SCRMMI)
+															|| bt.equals(ConstantesSolvencia.BT_NF17MFE)))) {
 										
 										CabeceraTablaExperiencia elementoCabecera = comprobarCabeceraTXP(i.getCtabbase());
 										convertirValoresCTM(i, elementoCabecera, feccierre, bt);
@@ -196,7 +202,7 @@ public class ModuloTExpSCR {
 									inci.setFhasta(i.getFhasta());
 									inci.setCtabbase(i.getCtabbase());
 									inci.setCodigoerror("02");
-									inci.setDescerror("Error genérico en la conversión de la tabla de experiencia.");
+									inci.setDescerror("Error genï¿½rico en la conversiï¿½n de la tabla de experiencia.");
 									gi.write(inci);	
 								}
 							}
@@ -214,11 +220,11 @@ public class ModuloTExpSCR {
 			ModuloTExpSCR.LOG.error(e.getMessage(), e);
 			Incidencia inci = new Incidencia();
 			inci.setTipoError("Error");
-			inci.setInfAmpliada("Error genérico en la conversión de Tablas de Experiencia Real");
+			inci.setInfAmpliada("Error genï¿½rico en la conversiï¿½n de Tablas de Experiencia Real");
 			inci.setCodigoRetorno("01");
 			inci.setGeneradorError("ModuloTExpSCR");
 			gi.write(inci);
-			throw new Solvencia2Excepcion("Error genérico en la conversión de Tablas de Experiencia Real" , inci);
+			throw new Solvencia2Excepcion("Error genï¿½rico en la conversiï¿½n de Tablas de Experiencia Real" , inci);
 		}
 	}
 
@@ -276,7 +282,7 @@ public class ModuloTExpSCR {
 			Incidencia inci = new Incidencia();
 			inci.setCodigoRetorno("05");
 			inci.setGeneradorError("ModuloTExpSCR");
-			inci.setInfAmpliada("El proceso de generación de tablas de experiencia reales no ha generado ningún registro.");
+			inci.setInfAmpliada("El proceso de generaciï¿½n de tablas de experiencia reales no ha generado ningï¿½n registro.");
 			throw new Solvencia2Excepcion(inci);
 		}
 		return cte;
@@ -351,7 +357,7 @@ public class ModuloTExpSCR {
 		//elementoSalida.setFechaalta(elementCTE.getFalta());
 		elementoSalida.setFechaalta(strCurrentDate);
 
-		if (bt.equals(ConstantesSolvencia.BT_SCRMFE) || bt.equals(ConstantesSolvencia.BT_SCRMMI)){
+		if (bt.equals(ConstantesSolvencia.BT_SCRMFE) || bt.equals(ConstantesSolvencia.BT_SCRMMI) || bt.equals(ConstantesSolvencia.BT_NF17MFE)){
 			valorIncr = BigDecimal.ONE.add(valEstres.multiply(ConstantesSolvencia.CTE_OPER_0_PUNTO_01));
 			valorCat = BigDecimal.ZERO;
 		} else if (bt.equals(ConstantesSolvencia.BT_SCRLFE)){

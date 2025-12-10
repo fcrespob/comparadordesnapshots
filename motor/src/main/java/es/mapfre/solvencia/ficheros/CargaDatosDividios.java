@@ -82,6 +82,7 @@ public class CargaDatosDividios {
 		Boolean realizarCargaFicheros = Boolean.valueOf(System.getProperty("solvencia.motor.cargar.ficheros", "true"));
 		boolean multi2 = false;
 		boolean multi3 = false;
+		boolean multisn = false;
 		String catalogos = ConstantesSolvencia.CATALOGOS;
 		
 		// carga de fichas de proceso
@@ -129,6 +130,8 @@ public class CargaDatosDividios {
 					|| fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTI2A)
 					|| fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTI2G)){
 				multi2 = true;
+			} else if (fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTISN)){
+				multisn = true;
 			}
 		}
 
@@ -151,6 +154,8 @@ public class CargaDatosDividios {
 				catalogos = ConstantesSolvencia.CATALOGOS_MULTI2;
 			} else if (multi3){
 				catalogos = ConstantesSolvencia.CATALOGOS_MULTI3;
+			} else if (multisn){
+				catalogos = ConstantesSolvencia.CATALOGOS_MULTISN;
 			}
 			
 			submissionOutcomes.addAll(cargaDatosGeneralDistribuido(Boolean.TRUE, catalogos, "", rutaBase));

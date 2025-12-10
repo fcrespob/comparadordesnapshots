@@ -152,7 +152,7 @@
 		<field name="feccierre" type="string" justify="left" length="8"/>
 		<field name="bt" length="8" type="string" justify="left"/>
 		<field name="variable" type="string" length="10" justify="left" />
-		<field name="valor" type="bigdecimal" length="8" padding="0" justify="right" format="+000.####;-000.####" typeHandler="bigDecimalHostHandler" />
+		<field name="valor" type="bigdecimal" length="7" padding="0" justify="right" format="+000.###;-000.###" typeHandler="bigDecimalHostHandler" />
 	</template>
 	
 </beanio>

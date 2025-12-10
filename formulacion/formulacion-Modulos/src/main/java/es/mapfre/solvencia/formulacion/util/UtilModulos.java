@@ -866,7 +866,7 @@ public final class UtilModulos {
 	 * @param fcalc fecha de cálculo
 	 */
 	public static void calcularFechasPagoDevengo(final DetalleCorriente detalle, final String criterioFechaPago, final String criterioFecDev, final String subProcesoActual, final Umic umic, final List<PlanPagos> lstPlanPagos, 
-			final List<PagosPlanificados> lstPagosPlani, final Integer numPeriodos, final Integer iteracion, final Map<String, Object> mapVariables, final Timestamp fcalc) {
+			final List<PagosPlanificados> lstPagosPlani, final Integer numPeriodos, final Integer iteracion, final Map<String, Object> mapVariables, final Timestamp fcalc, final boolean inipg) {
 
 		if (UtilModulos.LOG.isTraceEnabled()) {
 			UtilModulos.LOG.trace("Inicio funcion calcularFechasPagoDevengo >> de la clase UtilModulos, para la entrada criterioFechaPago = {} , criterioFechaDevengo = {}, subProcesoActual = {} e iteracion = {}", criterioFechaPago, criterioFecDev, subProcesoActual, iteracion);
@@ -876,9 +876,9 @@ public final class UtilModulos {
 		if ((!criterioFechaPago.equals(ConstantsModulos.CTE_VAL_FINIR) && !criterioFechaPago.equals(ConstantsModulos.CTE_VAL_MITIR)) || (umic.getRentas().getFecIni() != null && !umic.getRentas().getFecIni().before(detalle.getFechaDesde()))) {
 			//establecemos la fecha de pago
 			if (ConstantsModulos.CTE_PROY_PRV.equals(subProcesoActual)) {
-				detalle.getTotalFlujoProyeccion().setFechaPago(UtilModulos.establecerFechaPagoDevengo(criterioFechaPago, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_PAGO, fcalc));
+				detalle.getTotalFlujoProyeccion().setFechaPago(UtilModulos.establecerFechaPagoDevengo(criterioFechaPago, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_PAGO, fcalc, inipg));
 			} else {
-				detalle.getBloqueBySubproceso(subProcesoActual).setFechaPago(UtilModulos.establecerFechaPagoDevengo(criterioFechaPago, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_PAGO, fcalc));
+				detalle.getBloqueBySubproceso(subProcesoActual).setFechaPago(UtilModulos.establecerFechaPagoDevengo(criterioFechaPago, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_PAGO, fcalc, inipg));
 			}
 		}
 		
@@ -886,9 +886,9 @@ public final class UtilModulos {
 		if ((!criterioFecDev.equals(ConstantsModulos.CTE_VAL_FINIR) && !criterioFecDev.equals(ConstantsModulos.CTE_VAL_MITIR)) || (umic.getRentas().getFecIni() != null && !umic.getRentas().getFecIni().before(detalle.getFechaDesde()))) {
 			//establecemos la fecha de devengo
 			if (ConstantsModulos.CTE_PROY_PRV.equals(subProcesoActual)) {
-				detalle.getTotalFlujoProyeccion().setFechaDevengo(UtilModulos.establecerFechaPagoDevengo(criterioFecDev, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_DEVENGO, fcalc));
+				detalle.getTotalFlujoProyeccion().setFechaDevengo(UtilModulos.establecerFechaPagoDevengo(criterioFecDev, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_DEVENGO, fcalc, inipg));
 			} else {
-				detalle.getBloqueBySubproceso(subProcesoActual).setFechaDevengo(UtilModulos.establecerFechaPagoDevengo(criterioFecDev, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_DEVENGO, fcalc));
+				detalle.getBloqueBySubproceso(subProcesoActual).setFechaDevengo(UtilModulos.establecerFechaPagoDevengo(criterioFecDev, detalle, lstPlanPagos, lstPagosPlani, umic, numPeriodos, iteracion, mapVariables, subProcesoActual, ConstantsFunciones.VAR_FECHA_DEVENGO, fcalc, inipg));
 			}
 		}
 		
@@ -913,7 +913,7 @@ public final class UtilModulos {
 	 * @return fechaPago
 	 */
 	public static Timestamp establecerFechaPagoDevengo(final String criFecPagoDeve, final DetalleCorriente detalleActual, final List<PlanPagos> lstPlanPagos, 
-			final List<PagosPlanificados> lstPagosPlani, final Umic umic, final Integer totalPeriodos, final Integer iteracion, final Map<String, Object> mapVariables, final String subProcesoActual, final String varibleMemoria, final Timestamp fcalc) {
+			final List<PagosPlanificados> lstPagosPlani, final Umic umic, final Integer totalPeriodos, final Integer iteracion, final Map<String, Object> mapVariables, final String subProcesoActual, final String varibleMemoria, final Timestamp fcalc, final boolean inipg) {
 		//Variables locales
 		Timestamp fechaPago = null;
 		int diaPago;
@@ -956,7 +956,7 @@ public final class UtilModulos {
 					fechaPago = detalleActual.getFechaHasta();
 				}
 			} else if (ConstantsModulos.CTE_VAL_PLANI.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PVIDA.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PLANB.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_EFTEC.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PLAIN.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_EFTIN.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PLANC.equals(criFecPagoDeve)) {
-				fechaPago = obtenerFechaPagoDevengoCriterioPLANI(umic, detalleActual, lstPlanPagos, lstPagosPlani, iteracion, subProcesoActual, criFecPagoDeve);
+				fechaPago = obtenerFechaPagoDevengoCriterioPLANI(umic, detalleActual, lstPlanPagos, lstPagosPlani, iteracion, subProcesoActual, criFecPagoDeve, inipg);
 			} else if (ConstantsModulos.CTE_VAL_RENOV.equals(criFecPagoDeve)) {
 				fechaPago = obtenerFechaPagoDevengoCasoEfectoRenovacion(detalleActual, umic, iteracion, mapVariables, varibleMemoria, fcalc);
 			}else if (ConstantsModulos.CTE_VAL_IIDIR.equals(criFecPagoDeve)){
@@ -1177,6 +1177,8 @@ public final class UtilModulos {
     				}
 				}
 				
+			} else if (ConstantsModulos.CTE_VAL_INIPG.equals(criFecPagoDeve)) {
+				fechaPago = obtenerFechaPagoDevengoCriterioINIPG(iteracion, fcalc, detalleActual.getFechaDesde(), umic.getFechas().getFecefecini());
 			}
 		}
 		
@@ -1195,7 +1197,7 @@ public final class UtilModulos {
 	 * @return fechaPagoDev
 	 */
 	public static Timestamp obtenerFechaPagoDevengoCriterioPLANI(final Umic umic, final DetalleCorriente detalleActual, final List<PlanPagos> lstPlanPagos, 
-			final List<PagosPlanificados> lstPagosPlani , final Integer iteracion, final String subProcesoActual, final String criFecPagoDeve) {
+			final List<PagosPlanificados> lstPagosPlani , final Integer iteracion, final String subProcesoActual, final String criFecPagoDeve, final boolean inipg) {
 		//Variables locales
 		Timestamp fechaPagoDev = null;
 		//Fin variables locales
@@ -1231,7 +1233,9 @@ public final class UtilModulos {
 		 */
 		
 		if (ConstantsModulos.CTE_TIPO_PRES_VIT.equals(umic.getRentas().getTempVit()) || (ConstantsModulos.CTE_TIPO_PRES_TEM.equals(umic.getRentas().getTempVit()) && (null == lstPagosPlani || lstPagosPlani.isEmpty())) ) {
-			detalleActual.setImpPago(BigDecimal.ZERO);
+			if (!inipg) {
+				detalleActual.setImpPago(BigDecimal.ZERO);
+			}
 			int index = -1;
 			if ((ConstantsModulos.CTE_VAL_PLANI.equals(criFecPagoDeve)  || ConstantsModulos.CTE_VAL_PVIDA.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PLANB.equals(criFecPagoDeve) || ConstantsModulos.CTE_VAL_PLAIN.equals(criFecPagoDeve)) && !lstPlanPagos.isEmpty()) {
 				// Para PLANI se deja la fecha de pago en la fecha que esté y NO se lleva la fecha de pago al ultimo dia de mes
@@ -3547,7 +3551,10 @@ public final class UtilModulos {
 					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) || 
 					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
 					btc.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR) || 
-					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17)) 
+					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17)  ||
+					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN) ||
+					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE) ||
+					btc.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO))
 				&& !tipoValores.equals(ConstantesSolvencia.CTE_TABMORT_I)) {
 				
 				Timestamp fechaEfecto = null;
@@ -4833,7 +4840,10 @@ public final class UtilModulos {
 				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)) 
 				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF))
 				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) 
-				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17))){
+				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17))
+				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE))
+				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO))
+				&& (!btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN))){
 			if (btcUmic.getTablasConversionAsegurado() == null || btcUmic.getTablasConversionAsegurado().isEmpty()){
 				throw Solvencia2ExcepcionHelper.crearExcepcion(ConstantsFunciones.CTE_COD_ERROR_AC, new String[]{null, "tablasConversionAsegurado"});
 			}
@@ -4846,6 +4856,9 @@ public final class UtilModulos {
 			List<Integer> tablaBaseExp = new ArrayList<Integer>();
 			tablaBaseExp.add(btcUmic.getTablaBaseExp().get(1));
 			varBtcUmic2.setTablaBaseExp(tablaBaseExp);
+			List<List<Integer>> tablaBaseExpList = new ArrayList<List<Integer>>();
+			tablaBaseExpList.add(btcUmic.getTablaBaseExpList().get(1));
+			varBtcUmic2.setTablaBaseExpList(tablaBaseExpList);
 		}
 		
 		
@@ -6291,7 +6304,10 @@ public final class UtilModulos {
 				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAEN)  
 				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAIP)  
 				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRAIN)  
-				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)) {
+				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)
+				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+				&& !btcUmicCopia.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
 			if (btcUmicCopia.getTablasConversionAsegurado() == null
 					|| btcUmicCopia.getTablasConversionAsegurado().isEmpty()) {
 				throw Solvencia2ExcepcionHelper.crearExcepcion(ConstantsFunciones.CTE_COD_ERROR_AC,
@@ -6305,6 +6321,9 @@ public final class UtilModulos {
 			List<Integer> tablaBaseExp = new ArrayList<Integer>();
 			tablaBaseExp.add(btcUmicCopia.getTablaBaseExp().get(indAsegOrigen - 1));
 			btcUmicCopia.setTablaBaseExp(tablaBaseExp);
+			List<List<Integer>> tablaBaseExpList = new ArrayList<List<Integer>>();
+			tablaBaseExpList.add(btcUmicCopia.getTablaBaseExpList().get(indAsegOrigen - 1));
+			btcUmicCopia.setTablaBaseExpList(tablaBaseExpList);
 		}
 	}
 	
@@ -6685,5 +6704,23 @@ public final class UtilModulos {
 		}
 
 		return salida;
+	}
+	
+	/** Función encargada de obtener la fecha con el criterio INIPB
+	 * 
+	 * @param iteracion
+	 * @param fcalc
+	 * @param fechaDesde
+	 * @param fecinisus
+	 * @return resultado
+	 */
+	public static Timestamp obtenerFechaPagoDevengoCriterioINIPG(final Integer iteracion, final Timestamp fcalc, final Timestamp fechaDesde, final Timestamp fecefecini) {
+		//Variables locales
+		Timestamp fechaPago;
+		//Fin variables locales
+		
+		fechaPago = fechaDesde;
+		
+		return fechaPago;
 	}
 }

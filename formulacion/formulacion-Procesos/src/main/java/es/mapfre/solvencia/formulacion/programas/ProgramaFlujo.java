@@ -55,9 +55,12 @@ public abstract class ProgramaFlujo extends ProgramaGenerico {
 		if(detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17) ||
 				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIF17LIR) ||
 				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
-				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
+				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)||
 				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)){
+				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)  || 
+				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN)  ||
+				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE)  ||
+				detBaseTecnica.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO)){
 			varModuloCalc  = obtConf.recuperarModulo(umic.getDatosGenerales().getKmodalidad(), umic.getDatosGenerales().getKgarantia(), 
 					umic.getDatosAdicionales().getPrestCal(), ConstantesSolvencia.BASE_NIIF17, subProcesoActual, getTipoElemento());
 			

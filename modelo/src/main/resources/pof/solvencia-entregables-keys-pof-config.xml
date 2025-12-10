@@ -162,19 +162,34 @@
 			<type-id>1681</type-id>
 			<class-name> es.mapfre.solvencia.coherence.keys.entregables.ConteoCertificadoKey
 			</class-name>
-		</user-type>	
+		</user-type>
 		<user-type>
 			<type-id>1682</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.TotPMaCoaMKey
+			</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1683</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FlujPMaCoaMKey
+			</class-name>
+		</user-type>	
+		<user-type>
+			<type-id>1684</type-id>
+			<class-name> es.mapfre.solvencia.coherence.keys.entregables.FlujPMdCoaMKey
+			</class-name>
+		</user-type>
+		<user-type>
+			<type-id>1685</type-id>
 			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujSuscriKey
 			</class-name>
 		</user-type>
 		<user-type>
-			<type-id>1683</type-id>
+			<type-id>1686</type-id>
 			<class-name>es.mapfre.solvencia.coherence.keys.entregables.FlujInfSCRKey
 			</class-name>
 		</user-type>
 		<user-type>
-			<type-id>1684</type-id>
+			<type-id>1687</type-id>
 			<class-name>es.mapfre.solvencia.coherence.keys.entregables.ContabilidadCertificadoKey
 			</class-name>
 		</user-type>

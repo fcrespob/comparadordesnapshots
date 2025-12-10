@@ -74,11 +74,11 @@ public class Tab35012 implements EntidadBase<Tab35012Key>{
 		this.sobreRiesgo = sobreRiesgo;
 	}
 
-	public String getDescripcionTabla() {
+	public String getdescripcionTabla() {
 		return descripcionTabla;
 	}
 
-	public void setDescripcionTabla(String descripcionTabla) {
+	public void setdescripcionTabla(String descripcionTabla) {
 		this.descripcionTabla = descripcionTabla;
 	}
 
@@ -175,7 +175,7 @@ public class Tab35012 implements EntidadBase<Tab35012Key>{
 	@Override
 	public String toString() {
 		return "Tab35012 [tablaMapfre=" + tablaMapfre + ", tablaTirea=" + tablaTirea + ", porcentajeTabla=" + porcentajeTabla + ", factorCorrector=" + factorCorrector
-				+ ", sobreMortalidad=" + sobreMortalidad + ", sobreRiesgo=" + sobreRiesgo + ", descripci�nTabla=" + descripcionTabla
+				+ ", sobreMortalidad=" + sobreMortalidad + ", sobreRiesgo=" + sobreRiesgo + ", descripcionTabla=" + descripcionTabla
 				+ "]";
 	}
 

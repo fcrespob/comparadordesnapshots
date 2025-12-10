@@ -168,6 +168,7 @@ public final class ConstantsModulos {
 	public static final String CTE_VAL_MULTI4C = "MULTI4C";
 	public static final String CTE_VAL_MULTI8 = "MULTI8";
 	public static final String CTE_VAL_MULTI8NB = "MULTI8NB";
+	public static final String CTE_VAL_MULTISN = "MULTISN";
 	
 	/**
 	 * Cte validacion base tenica NIIF17IF.
@@ -298,7 +299,10 @@ public final class ConstantsModulos {
 	public static final String CTE_VAL_SCRAEN = "SCRAEN";
 	public static final String CTE_VAL_SCRAIP = "SCRAIP";
 	public static final String CTE_VAL_SCRAIN = "SCRAIN";
-	public static final String CTE_VAL_SCRVM  = "SCRVM" ;	
+	public static final String CTE_VAL_SCRVM  = "SCRVM" ;
+	public static final String CTE_VAL_NF17MFE = "NF17MFE";
+	public static final String CTE_VAL_NF17AEN = "NF17AEN";
+	public static final String CTE_VAL_NF17GTO = "NF17GTO";
 	/**
 	 * Cte validacion criterios periodos BTI.
 	 */
@@ -899,6 +903,7 @@ public final class ConstantsModulos {
 	public static final String CTE_VAR_TAB923 ="varTab923";
 	public static final String CTE_VAR_LIZC = "varLizc";
 	public static final String CTE_VAR_KCURVA =  "varKCurva";
+	public static final String CTE_VAR_ESTRESES = "varValoresEstreses";
 										   
 	
 	/**
@@ -1029,6 +1034,7 @@ public final class ConstantsModulos {
 	public static final String CTE_VAL_RENO2 = "RENO2";
 	public static final String CTE_VAL_FIJUB = "FIJUB";
 	public static final String CTE_VAL_MIJUB = "MIJUB";
+	public static final String CTE_VAL_INIPG = "INIPG";
 	
 	/**
 	 * Cte tipo de tablas de experiencia: realista (R), tradicional (T).
@@ -1240,6 +1246,7 @@ public final class ConstantsModulos {
 		TIPO_FEC_PAG_DEV.put(CTE_VAL_RENO2, CTE_VAL_RENO2);
 		TIPO_FEC_PAG_DEV.put(CTE_VAL_FIJUB, CTE_VAL_FIJUB);
 		TIPO_FEC_PAG_DEV.put(CTE_VAL_MIJUB, CTE_VAL_MIJUB);
+		TIPO_FEC_PAG_DEV.put(CTE_VAL_INIPG, CTE_VAL_INIPG);
 	}
 	
 	/**

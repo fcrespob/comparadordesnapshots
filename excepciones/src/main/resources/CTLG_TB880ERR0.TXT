@@ -153,6 +153,7 @@
 880          INIIUmic exlcuida: Ejecución de SCRMCI-SCRVM y tiposubriesgo es AHOR                TipoSubRiesgo == AHOR         000000000
 880          IOIIUmic exlcuida: Ejecución de SCRMMI-SCRMCI-SCRMCF-SCRVM y tiposubriesgo LONG-INCATipoSubRiesgo == LONG o INCA  000000000
 880          IPIIUmic exlcuida: Ejecución de SCR y eliminamos totales y detalle corriente        Eliminamos totales y detalle  000000000
+880          IQIIUmic exlcuida: Ejecución de SCRANM menor que Prov BEL                           TotNomRte < TotProvision      000000000
 880          S1XXError en el arranque de instancias Amazon.                                      Error en arranque instancias  000000000
 880          S2XXError en el arranque aplicacion Solvencia en Amazon.                            Error en arranque Solvencia   000000000
 880          S3XXError en la ejecución de los calculos de Solvencia en Amazon.                   Error en ejecucion calculos   000000000

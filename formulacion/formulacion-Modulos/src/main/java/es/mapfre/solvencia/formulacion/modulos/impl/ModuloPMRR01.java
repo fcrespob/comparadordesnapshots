@@ -241,10 +241,15 @@ public class ModuloPMRR01 implements Modulo {
 				btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_SCRANM)){
 			varModAct = ConstantsFactorias.MODULO_ACTBEL2;
 			varModAnu = ConstantsFactorias.MODULO_ATC;
-		}else if(btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17) || btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIF17LIR)
+		}else if(btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17) 
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIF17LIR)
 				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17LIRIN)
 				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_N17CLIR)
-				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17IF) || btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIFF17OCI)){
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIIF17IF) 
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_BT_NIFF17OCI)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN) 
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+				|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)){
 			varModAct = ConstantsFactorias.MODULO_ACTNIIF17;
 			varModAnu = ConstantsFactorias.MODULO_APTOTC;
 		}
@@ -541,7 +546,10 @@ public class ModuloPMRR01 implements Modulo {
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)){
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)  ||
+				btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)  ||
+				btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)  ||
+				btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)){
 			
 			modAnu = FactoriaModulos.getModulo(ConstantsFactorias.MODULO_APTOTC);
 			

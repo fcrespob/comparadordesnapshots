@@ -8,85 +8,63 @@ public class ConstantesSolvencia {
 	public static final String STREAM_ENTRADA = "REA0";
 	public static final String STREAM_SALIDA = "REASAL0";
 	public static final String STREAM_INCIDENCIAS = "INC0";
-	public static final String STREAM_PESOS_COL = "PESCOL0";
-	public static final String STREAM_PESOS_COL_CERT = "PESCOLCERT0";
-	public static final String STREAM_PESOS_IND = "PESIND0";
 	public static final String STREAM_FICHA = "FIC0";
 	
 	public static final String STREAM_TOTPMACOA = "TOTPMACOA";
 	public static final String STREAM_FLUJPMACOA = "FLUJPMACOA";
 	public static final String STREAM_FLUJPMDCOA = "FLUJPMDCOA";
+	
+	public static final String STREAM_TOTPMACOABTCOA = "TOTPMACOABTCOA";
+	public static final String STREAM_TOTPMACOABTCOATF = "TOTPMACOABTCOATF";
+	
+	public static final String STREAM_FLUJPMACOABTCOA = "FLUJPMACOABTCOA";
+	public static final String STREAM_FLUJPMACOABTCOATF = "FLUJPMACOABTCOATF";
+	
 	public static final String STREAM_DATOSCOA = "DATOSCOA";
 	public static final String STREAM_TAB35012 = "TAB35012";
+	
+	public static final String STREAM_FLUJPMDCOABTCOA = "FLUJPMDCOABTCOA";
+	public static final String STREAM_FLUJPMDCOABTCOATF = "FLUJPMDCOABTCOATF";
+	public static final String STREAM_TAB35013 = "TAB35013";
+	public static final String STREAM_TAB35014 = "TAB35014";
+	public static final String STREAM_TAB35015 = "TAB35015";
+	public static final String STREAM_DATOSESPECIFIC = "DATOSESPECIFIC";
+	public static final String STREAM_PAGOSPLAN = "PAGOSPLAN";
 
-	public static final String PROXY = "PROXY";
-	public static final String CATALOGO_PESOS = "PES0";
-	public static final String CATALOGO_PESOS_CERT = "PESCERT0";
 	public static final String CATALOGO_FICHA = "FIC0";
 	public static final String TIREA = "TIREA";
 	public static final String CATALOGO_TOTPMACOA = "TOTPMACOA";
 	public static final String CATALOGO_TOTPMACOABTI = "TOTPMACOABTI";
-	public static final String CATALOGO_TOTPMACOAROSSP = "TOTPMACOAROSSP";
+	public static final String CATALOGO_TOTPMACOABTCOA = "TOTPMACOABTCOA";
 	public static final String CATALOGO_TOTPMACOABTCOATF = "TOTPMACOABTCOATF";
 	
 	public static final String CATALOGO_FLUJPMACOABTI = "FLUJPMACOABTI";
-	public static final String CATALOGO_FLUJPMACOAROSSP = "FLUJPMACOAROSSP";
+	public static final String CATALOGO_FLUJPMACOABTCOA = "FLUJPMACOABTCOA";
 	public static final String CATALOGO_FLUJPMACOABTCOATF = "FLUJPMACOABTCOATF";
+	
+	public static final String CATALOGO_FLUJPMDCOABTI = "FLUJPMDCOABTI";
+	public static final String CATALOGO_FLUJPMDCOABTCOA = "FLUJPMDCOABTCOA";
+	public static final String CATALOGO_FLUJPMDCOABTCOATF = "FLUJPMDCOABTCOATF";
 	
 	public static final String CATALOGO_FLUJPMACOA = "FLUJPMACOA";
 	public static final String CATALOGO_FLUJPMDCOA = "FLUJPMDCOA";
 	public static final String CATALOGO_DATOSCOA = "DATOSCOA";
 	public static final String CATALOGO_TAB35012 = "TAB35012";
+	public static final String CATALOGO_TAB35013 = "TAB35013";
+	public static final String CATALOGO_TAB35014 = "TAB35014";
+	public static final String CATALOGO_TAB35015 = "TAB35015";
+	public static final String CATALOGO_DATOSESPECIFIC = "DATOSESPECIFIC";
+	public static final String CATALOGO_PAGOSPLAN = "PAGOSPLAN";
 	
-	public static final String CATALOGO_GESINTRO_BT = "GESINTRO_BT";
-	public static final String CATALOGO_GESINTRO = "GESINTRO";
-	public static final String CATALOGO_INC_GESINTRO = "INC_GESINTRO";
-	public static final String CATALOGO_RTEVTOMAN_BT = "RTEVTOMAN_BT";
-	public static final String CATALOGO_RTEVTOMAN = "RTEVTOMAN";
-	public static final String CATALOGO_INC_RTEVTOMAN = "INC_RTEVTOMAN";
-	public static final String CATALOGO_RTEIND_BT = "RTEIND_BT";
-	public static final String CATALOGO_RTEIND = "RTEIND";
-	public static final String CATALOGO_INC_RTEIND = "INC_RTEIND";
-	public static final String CATALOGO_VTOIND_BT = "VTOIND_BT";
-	public static final String CATALOGO_VTOIND = "VTOIND";
-	public static final String CATALOGO_INC_VTOIND = "INC_VTOIND";
-	public static final String CATALOGO_RTEVTOCOL_BT = "RTEVTOCOL_BT";
-	public static final String CATALOGO_RTEVTOCOL = "RTEVTOCOL";
-	public static final String CATALOGO_INC_RTEVTOCOL = "INC_RTEVTOCOL";
-	public static final String CATALOGO_ANTIND_BT = "ANTIND_BT";
-	public static final String CATALOGO_ANTIND = "ANTIND";
-	public static final String CATALOGO_INC_ANTIND = "INC_ANTIND";
-	public static final String CATALOGO_ASEVAL_BT = "ASEVAL_BT";
-	public static final String CATALOGO_ASEVAL = "ASEVAL";
-	public static final String CATALOGO_INC_ASEVAL = "INC_ASEVAL";
-	public static final String CATALOGO_AS400_BT = "AS400_BT";
-	public static final String CATALOGO_AS400 = "AS400";
-	public static final String CATALOGO_INC_AS400 = "INC_AS400";
-	public static final String CATALOGO_RTANEO_BT = "RTANEO_BT";
-	public static final String CATALOGO_RTANEO = "RTANEO";
-	public static final String CATALOGO_INC_RTANEO = "INC_RTANEO";
-	public static final String CATALOGO_MOVNEO_BT = "MOVNEO_BT";
-	public static final String CATALOGO_MOVNEO = "MOVNEO";
-	public static final String CATALOGO_INC_MOVNEO = "INC_MOVNEO";
-	public static final String CATALOGO_PREONS_BT = "PREONS_BT";
-	public static final String CATALOGO_PREONS = "PREONS";
-	public static final String CATALOGO_INC_PREONS = "INC_PREONS";
 	public static final String CATALOGO_INC = "TIREA_INC";
-	public static final String CATALOGO_RTAIND_TRAD_BT = "RTAINDTRAD_BT";
-	public static final String CATALOGO_RTAIND_TRAD = "RTAINDTRAD";
-	public static final String CATALOGO_INC_RTAIND_TRAD = "INC_RTAINDTRAD";
-	public static final String CATALOGO_RTACOL_BT = "RTACOL_BT";
-	public static final String CATALOGO_RTACOL = "RTACOL";
-	public static final String CATALOGO_INC_RTACOL = "INC_RTACOL";
-	
 	public static final String CATALOGO_LOG = "LOG0";
-	public static final String RUTA_BASE = "PROXYVIDA" + File.separator + "CIERRES" + File.separator;
-	public static final String LOG_FICHAS = "FICHAS" + File.separator + "FICHASPEND" + File.separator + "LOGFICHAPROXY.TXT";
-	public static final String LOG_FICHAS_RESU = "FICHAS" + File.separator + "FICHASPEND" + File.separator + "RESUMEN_LOGFICHAPROXY.TXT";
+	public static final String RUTA_BASE = "TIREA" + File.separator + "CIERRES";
+	public static final String LOG_FICHAS = "FICHAS" + File.separator + "FICHASPEND" + File.separator + "LOGFICHATIREA.TXT";
+	public static final String LOG_FICHAS_RESU = "FICHAS" + File.separator + "FICHASPEND" + File.separator + "RESUMEN_LOGFICHATIREA.TXT";
 	public static final String RUTA_FICHAS = "FICHAS" + File.separator + "FICHASPEND"  + File.separator;
 
-	public static final String LOG_REG_GEN = "Número de registros generados: ";
-	public static final String LOG_INCI_DET = "Número de incidencias detectadas: ";
+	public static final String LOG_REG_GEN = "Numero de registros generados: ";
+	public static final String LOG_INCI_DET = "Numero de incidencias detectadas: ";
 	public static final String LOG_INFO = "INFO";
 	public static final String LOG_ERROR = "ERROR";
 	
@@ -116,37 +94,13 @@ public class ConstantesSolvencia {
 	public static final String INDIVIDUAL = "I";
 	public static final String COLECTIVOS = "C";
 	
-	// Sistema
-	public static final String GESINTRO = "GESINTRO";
-	public static final String RTE_VTO_MAN = "RTEVTOMAN";
-	public static final String RTE_IND = "RTEIND";
-	public static final String VTO_IND = "VTOIND";
-	public static final String RTE_VTO_COL = "RTEVTOCOL";
-	public static final String ANT_IND = "ANTIND";
-	public static final String ASEVAL = "ASEVAL";
-	public static final String AS400 = "AS400";
-	public static final String RTA_NEO = "RTANEO";
-	public static final String MOV_NEO = "MOVNEO";
-	public static final String PRE_ONS = "PREONS";
-	public static final String RTA_IND_TRAD = "RTAINDTRAD";
-	public static final String RTA_COL = "RTACOL";
-	
-	// Carpetas
-	public static final String RUTA_GESINTRO = "SINIESTROS";
-	public static final String RUTA_RTE_VTO_MAN = "RTE_VTO_MANUAL";
-	public static final String RUTA_RTE_IND = "RTE_IND";
-	public static final String RUTA_VTO_IND = "VTO_IND";
-	public static final String RUTA_RTE_VTO_COL = "RTE_VTO_COL";
-	public static final String RUTA_ANT_IND = "ANT_IND";
-	public static final String RUTA_ASEVAL = "ASEVAL";
-	public static final String RUTA_AS400 = "AS400";
-	public static final String RUTA_RTA_NEO = "RTA_NEO";
-	public static final String RUTA_MOV_NEO = "MOV_NEO";
-	public static final String RUTA_PRE_ONS = "PRE_ONS";
-	public static final String RUTA_RTA_IND_TRAD = "RTA_IND_TRAD";
-	public static final String RUTA_RTA_COL = "RTA_COL";
-	public static final String RUTA_RAIZ_SSAA = "raizSSAA";
 	public static final String RUTA_EXPORTA_XML = "exportXml";
 	
-	public static final String STR_MOV_MES = "_MOV_MES_"; 
+	// TEMPVIT
+	public static final String T = "RENTA-T";
+	public static final String RENTA_T = "Seguros de rentas: Rentas Temporales";
+	public static final String V = "RENTA-V";
+	public static final String RENTA_V = "Seguros de rentas: Rentas Vitalicias";
+	public static final String L = "RENTA-L";
+	public static final String RENTA_L = "Seguros de rentas: Rentas Locas";
 }

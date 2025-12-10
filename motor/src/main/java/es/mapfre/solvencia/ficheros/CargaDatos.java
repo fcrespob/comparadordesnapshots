@@ -74,6 +74,7 @@ public class CargaDatos {
 
 		boolean multi2 = false;
 		boolean multi3 = false;
+		boolean multisn = false;
 		String catalogos = ConstantesSolvencia.CATALOGOS;
 		// carga de fichas de proceso
 		// carga botes is hay fichas de proceso
@@ -106,6 +107,8 @@ public class CargaDatos {
 					|| fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTI2A)
 					|| fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTI2G)){
 				multi2 = true;
+			} else if (fichaProceso.getCtipobt().equals(ConstantesSolvencia.MULTISN)){
+				multisn = true;
 			}
 		}
 
@@ -121,6 +124,8 @@ public class CargaDatos {
 			catalogos = ConstantesSolvencia.CATALOGOS_MULTI2;
 		} else if (multi3){
 			catalogos = ConstantesSolvencia.CATALOGOS_MULTI3;
+		} else if(multisn) {
+			catalogos = ConstantesSolvencia.CATALOGOS_MULTISN;
 		}
 		
 		submissionOutcomes.addAll(cargaDatosGeneralDistribuido(catalogos, "", rutaBase));

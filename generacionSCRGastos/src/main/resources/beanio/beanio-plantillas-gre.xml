@@ -12,6 +12,7 @@
 		<field name="fecHasta" length="8" type="string" justify="left"/>
 		<field name="gastoPorUmic" type="bigdecimal" length="7" padding="0" justify="right" format="00000.##" typeHandler="bigDecimalHostHandler" />
 		<field name="pctGastoProv" type="bigdecimal" length="7" padding="0" justify="right" format="00.#####" typeHandler="bigDecimalHostHandler" />
+		<field name="matching" type="string" length="1" justify="left" />
 	</template>
 	
 	<template name="salidaGRE">
@@ -24,5 +25,6 @@
 		<field name="fecHasta" length="8" type="string" justify="left"/>
 		<field name="gastoPorUmic" type="string" length="7" justify="left"/>
 		<field name="pctGastoProv" type="string" length="7" justify="left"/>
+		<field name="matching" type="string" length="1" justify="left" />
 	</template>
 </beanio>

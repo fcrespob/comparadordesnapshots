@@ -113,6 +113,7 @@ public class ModuloCalculoFechasPagoYDevengo implements Modulo {
 		Integer varTc = 0;
 		Integer nPeriComi3 = ConstantsFunciones.CTE_0;
 		String varCalcFechas = ConstantsModulos.CTE_S;
+		boolean inipg = false;
 		// Fin variables locales
 
 		if (ModuloCalculoFechasPagoYDevengo.LOG.isTraceEnabled()) {
@@ -202,6 +203,10 @@ public class ModuloCalculoFechasPagoYDevengo implements Modulo {
 			// Validamos el criterio de la fecha de pago y la fecha devengo
 			criterioFecPago = criterioFechas.getFecPago();
 			criterioFecDev = criterioFechas.getFecDevengo();
+			
+			if (criterioFecPago.equals(ConstantsModulos.CTE_VAL_INIPG) || criterioFecDev.equals(ConstantsModulos.CTE_VAL_INIPG)) {
+				inipg = true;
+			}
 
 			ValidacionesComunesModulos.validarCriterioFechaPagoDevengo(criterioFecPago, criterioFecDev,
 					subProcesoActual);
@@ -339,7 +344,7 @@ public class ModuloCalculoFechasPagoYDevengo implements Modulo {
 
 				UtilModulos.calcularFechasPagoDevengo(detallesCorriente.get(i), criterioFecPago, criterioFecDev,
 						subProcesoActual, umic, lstPlanPagos, lstPagosPlani, numPeriodos, iteracion, mapVariables,
-						fichaProceso.getFcalc());
+						fichaProceso.getFcalc(), inipg);
 
 				iteracion++;
 			}

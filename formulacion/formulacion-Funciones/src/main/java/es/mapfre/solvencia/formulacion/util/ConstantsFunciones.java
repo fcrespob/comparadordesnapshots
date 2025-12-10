@@ -676,6 +676,7 @@ public final class ConstantsFunciones {
 	public static final String CTE_COD_ERROR_IN = "IN";
 	public static final String CTE_COD_ERROR_IO = "IO";
 	public static final String CTE_COD_ERROR_IP = "IP";
+	public static final String CTE_COD_ERROR_IQ = "IQ";
 												  
 	
 	

@@ -270,7 +270,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
 		} else {
@@ -289,7 +291,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BEL);
 			} else {
@@ -310,7 +314,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 				|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")) {
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 			keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 					ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -324,7 +330,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")) {
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 			}else{
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI);
@@ -436,7 +444,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -449,7 +459,9 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -519,7 +531,10 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
 
 				result = dao.obtenerCurvaTipo(ConstantsModulos.CTE_BT_BEL, umic.getDatosGenerales().getTipoSubriesgo(),
 						umic.getRescates().getRiesgrescI(), pagoU, umic.getDatosGenerales().getKcarterainv(),
@@ -576,7 +591,10 @@ public class J880GBT009CurvasInteresBEL implements Modulo {
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR))))
+											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE))))
 							&& result.get(i).getKriesgo().equals(umic.getDatosGenerales().getTipoSubriesgo())
 							&& result.get(i).getKriesgorescate().equals(umic.getRescates().getRiesgrescI())
 							&& result.get(i).getKpagounico().equals(pagoU)

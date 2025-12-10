@@ -3,6 +3,8 @@ package es.mapfre.coaseguro.tirea.dominio.entidades;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import org.apache.commons.lang3.builder.CompareToBuilder;
+
 import es.mapfre.coaseguro.tirea.dominio.EntidadBase;
 import es.mapfre.coaseguro.tirea.dominio.keys.FlujPMaCoaKey;
 
@@ -44,7 +46,7 @@ public class FlujPMaCoa implements EntidadBase<FlujPMaCoaKey> {
 	
 
 	private Timestamp fcierre;
-	private Timestamp fdesde;
+	private String fdesde;
 	private String bt;
 	private Long kpoliza;
 	private Integer ksubpoliza;
@@ -84,11 +86,11 @@ public class FlujPMaCoa implements EntidadBase<FlujPMaCoaKey> {
 		this.fcierre = fcierre;
 	}
 
-	public Timestamp getFdesde() {
+	public String getFdesde() {
 		return fdesde;
 	}
 
-	public void setFdesde(Timestamp fdesde) {
+	public void setFdesde(String fdesde) {
 		this.fdesde = fdesde;
 	}
 
@@ -561,6 +563,17 @@ public class FlujPMaCoa implements EntidadBase<FlujPMaCoaKey> {
 	@Override
 	public FlujPMaCoaKey getKey() {
 		return new FlujPMaCoaKey(kpoliza, ksubpoliza, nsuscri, bt, fcierre, fdesde);
+	}
+	
+	public int compareTo(FlujPMaCoa o) {
+		CompareToBuilder compareToBuilder = new CompareToBuilder();
+		
+		compareToBuilder.append(this.kpoliza, o.kpoliza);
+		compareToBuilder.append(this.ksubpoliza, o.ksubpoliza);
+		compareToBuilder.append(this.nsuscri, o.nsuscri);
+		compareToBuilder.append(this.fdesde, o.fdesde);
+
+		return compareToBuilder.toComparison();
 	}
 
 }

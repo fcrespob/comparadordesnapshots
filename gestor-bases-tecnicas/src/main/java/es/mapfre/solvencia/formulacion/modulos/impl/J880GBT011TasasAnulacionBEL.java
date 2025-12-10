@@ -132,7 +132,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
 		} else {
@@ -152,7 +154,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BEL);
 			} else {
@@ -174,7 +178,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 				|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 			keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 					ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -188,7 +194,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 
 			}else{
@@ -303,7 +311,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -316,7 +326,9 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO) || bt.equals(ConstantesSolvencia.BASE_NF17AEN)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17MFE)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -370,10 +382,10 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRAEN) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRAIP)
 				|| baseTec.equals(ConstantsModulos.CTE_VAL_SCRAIN) || baseTec.equals(ConstantsModulos.CTE_VAL_SCRANM)
 				|| baseTec.equals(ConstantesSolvencia.BASE_NIIF17) || baseTec.equals(ConstantesSolvencia.BASE_NIF17LIR)
-				|| baseTec.equals(ConstantesSolvencia.BASE_N17LIRIN)
-				|| baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| baseTec.equals(ConstantesSolvencia.BASE_NIIF17IF)
-				|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| baseTec.equals(ConstantesSolvencia.BASE_N17LIRIN) || baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI)
+				|| baseTec.equals(ConstantesSolvencia.BASE_NIIF17IF) || baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| baseTec.equals(ConstantesSolvencia.BASE_NF17GTO) || baseTec.equals(ConstantesSolvencia.BASE_NF17AEN)
+				|| baseTec.equals(ConstantesSolvencia.BASE_NF17MFE)) {
 
 			ata = ataDao.obtenerTasasAnul(ConstantsModulos.CTE_BT_BEL, compania, negocio, ramo, porcentaje, modalidad,
 					fchCierre);
@@ -405,7 +417,10 @@ public class J880GBT011TasasAnulacionBEL implements Modulo {
 					|| baseTec.equals(ConstantesSolvencia.BASE_N17LIRIN)
 					|| baseTec.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| baseTec.equals(ConstantesSolvencia.BASE_NIIF17IF)
-					|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| baseTec.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17AEN) 
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17GTO)
+					|| baseTec.equals(ConstantsModulos.CTE_VAL_NF17MFE)) {
 
 				ata = ataDao.obtenerTasasAnul(ConstantsModulos.CTE_BT_BEL, compania, negocio, ramo, porcentaje, 0,
 						fchCierre);

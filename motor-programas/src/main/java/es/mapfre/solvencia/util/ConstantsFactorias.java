@@ -354,6 +354,9 @@ public final class ConstantsFactorias {
 	public static final String ENTREGABLE_TOTPMACOA = "TOTPMACOA";
 	public static final String ENTREGABLE_FLUJPMACOA = "FLUJPMACOA";
 	public static final String ENTREGABLE_FLUJPMDCOA = "FLUJPMDCOA";
+	public static final String ENTREGABLE_TOTPMACOAM = "TOTPMACOAM";
+	public static final String ENTREGABLE_FLUJPMACOAM = "FLUJPMACOAM";
+	public static final String ENTREGABLE_FLUJPMDCOAM = "FLUJPMDCOAM";
 	public static final String ENTREGABLE_CONTEOCERTIF = "CONTCERTI";
 	public static final String ENTREGABLE_FLUJSUSCRI = "FLUJSUSCRI";
 	

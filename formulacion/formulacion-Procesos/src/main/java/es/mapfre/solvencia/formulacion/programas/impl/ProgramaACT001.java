@@ -96,6 +96,7 @@ public class ProgramaACT001 extends ProgramaFlujo {
 		BigDecimal importeActualizado = BigDecimal.ZERO;
 		boolean calcularCadaProyeccion = true;
 		boolean varSCR = false;
+		boolean varNF17SCR = false;
 		//Fin variables locales
 		
 		if (ProgramaACT001.LOG.isTraceEnabled()) {
@@ -209,6 +210,16 @@ public class ProgramaACT001 extends ProgramaFlujo {
 				varProyBTI = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_BEL, detalleBT.getFecCierre(), umic.getKey());
 				varSCR = true;
 			}
+			
+			if (detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE) ||
+					detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO) ||
+					detalleBT.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)) {
+					
+					//Recuperamos el factor para BEL
+					varProyBTI = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BT_NIIF17, detalleBT.getFecCierre(), umic.getKey());
+					varNF17SCR = true;
+			}
+			
 			/**
 			 * Si codSubproceso = ‘PROY_COMI’ se comproborá previamente si existen fechas de calculo generadas ó  no, para ver si debe invocarse al módulo de cálculo ó no: 
 					•	 Si no existe ninguna  proyección con fecha de cálculo y /ó fecha de devengo <>  null, NO se deberá  invocar al módulo correspondiente como en el resto de casos, sino que se hará: 
@@ -235,7 +246,9 @@ public class ProgramaACT001 extends ProgramaFlujo {
 							varProyBTI  = obtenerDatos.recuperarProyeccion(ConstantsModulos.CTE_BTI_PROY, detalleBT.getFecCierre(), umic.getKey());
 						}
 						factor = varProyBTI.get(i).getBloqueBySubproceso(subProcesoActual).getFpbAtcfin();		
-					}else if (varSCR){
+					} else if (varSCR){
+						factor = varProyBTI.get(iteracion - 1).getBloqueBySubproceso(subProcesoActual).getFpbAtcfin();
+					} else if (varNF17SCR){
 						factor = varProyBTI.get(iteracion - 1).getBloqueBySubproceso(subProcesoActual).getFpbAtcfin();
 					} else {
 						factor = (BigDecimal) modulo.execute(lstDetalleCorrien, lstDetalleCorrien.get(iteracion - 1).getBloqueBySubproceso(subProcesoActual), 

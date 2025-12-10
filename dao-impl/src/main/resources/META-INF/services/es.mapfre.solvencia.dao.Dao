@@ -123,6 +123,10 @@ es.mapfre.solvencia.dao.impl.entregables.TotPMaCoaDao
 es.mapfre.solvencia.dao.impl.entregables.FlujPMaCoaDao
 es.mapfre.solvencia.dao.impl.entregables.FlujPMdCoaDao
 
+es.mapfre.solvencia.dao.impl.entregables.TotPMaCoaMDao
+es.mapfre.solvencia.dao.impl.entregables.FlujPMaCoaMDao
+es.mapfre.solvencia.dao.impl.entregables.FlujPMdCoaMDao
+
 es.mapfre.solvencia.dao.impl.entregables.ConteoCertificadoDao
 
 es.mapfre.solvencia.dao.impl.entregables.FlujInfSCRDao
@@ -130,3 +134,8 @@ es.mapfre.solvencia.dao.impl.entregables.FlujInfSCRDao
 es.mapfre.solvencia.dao.impl.entregables.ContabilidadCertificadoDao
 
 es.mapfre.solvencia.dao.impl.entregables.FlujSuscriDao
+
+#NF17SCR
+es.mapfre.solvencia.dao.impl.scr.ValoresAnulacionNF17AENDao
+es.mapfre.solvencia.dao.impl.scr.TablasExperienciaRealesNF17MFEDao
+es.mapfre.solvencia.dao.impl.scr.GastosRealesNF17GTODao

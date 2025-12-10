@@ -406,7 +406,10 @@ public class ModuloGZC010 implements Modulo {
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+					|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO)) {
 
 				result = dao.obtenerCurvaTipo(ConstantsModulos.CTE_BT_BEL, umic.getDatosGenerales().getTipoSubriesgo(),
 						umic.getRescates().getRiesgrescI(), pagoU, umic.getDatosGenerales().getKcarterainv(),
@@ -463,7 +466,10 @@ public class ModuloGZC010 implements Modulo {
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI)
 											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF)
-											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR))))
+											|| btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17AEN)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17MFE)
+											|| btcUmic.getBaseTec().equals(ConstantsModulos.CTE_VAL_NF17GTO))))
 							&& result.get(i).getKriesgo().equals(umic.getDatosGenerales().getTipoSubriesgo())
 							&& result.get(i).getKriesgorescate().equals(umic.getRescates().getRiesgrescI())
 							&& result.get(i).getKpagounico().equals(pagoU)

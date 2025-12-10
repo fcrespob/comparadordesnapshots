@@ -310,7 +310,10 @@ public class ModuloCOM001 implements Modulo {
 					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)){
+					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR) ||
+					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN) ||
+					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE) ||
+					btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO)){
 					lstDetaCor = UtilModulos.getVarLstProyeccion(mapVariables, CLAVE_LST_PRI, ConstantsModulos.CTE_BTI, btcUmic.getFecCierre(), umic.getKey());
 					
 					if(null == lstDetaCor || lstDetaCor.size() == 0){

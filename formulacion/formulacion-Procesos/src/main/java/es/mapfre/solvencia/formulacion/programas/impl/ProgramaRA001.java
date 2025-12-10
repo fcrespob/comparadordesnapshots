@@ -78,7 +78,10 @@ public class ProgramaRA001 extends ProgramaGenerico {
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_N17CLIR) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17MFE) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17GTO) ||
+				btcUmic.getBaseTec().equals(ConstantesSolvencia.BASE_NF17AEN)) {
 
 			for (int i = 0; i < proyUmic.size(); i++) {
 

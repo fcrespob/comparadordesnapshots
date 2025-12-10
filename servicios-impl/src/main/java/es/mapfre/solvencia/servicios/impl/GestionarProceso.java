@@ -49,7 +49,10 @@ public class GestionarProceso implements IGestionarProceso {
 							kbasetec.equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 							kbasetec.equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 							kbasetec.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-							kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR)) &&
+							kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR) ||
+							kbasetec.equals(ConstantesSolvencia.BASE_NF17MFE) ||
+							kbasetec.equals(ConstantesSolvencia.BASE_NF17AEN) ||
+							kbasetec.equals(ConstantesSolvencia.BASE_NF17GTO)) &&
 							(proceso.equalsIgnoreCase(ConstantesSolvencia.CTE_ENTREGABLES)))
 					|| proceso.equalsIgnoreCase(ConstantesSolvencia.CTE_FLUJOTOT)
 					|| proceso.equalsIgnoreCase(ConstantesSolvencia.CTE_PROVICOA)
@@ -60,7 +63,10 @@ public class GestionarProceso implements IGestionarProceso {
 						kbasetec.equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 						kbasetec.equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 						kbasetec.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-						kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR)){
+						kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17MFE) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17AEN) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17GTO)){
 					disenoProcesos = disenoProcesosDao.obtenerDisenoProcesos(proceso,kcompania, ConstantesSolvencia.BASE_NIIF17);
 				}else{
 					if (kbasetec.equals(ConstantesSolvencia.BASE_ROSSPTE)
@@ -78,7 +84,10 @@ public class GestionarProceso implements IGestionarProceso {
 						kbasetec.equals(ConstantesSolvencia.BASE_N17LIRIN) ||
 						kbasetec.equals(ConstantesSolvencia.BASE_NIFF17OCI) ||
 						kbasetec.equals(ConstantesSolvencia.BASE_NIIF17IF) ||
-						kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR)){
+						kbasetec.equals(ConstantesSolvencia.BASE_N17CLIR) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17MFE) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17AEN) ||
+						kbasetec.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				disenoProcesos = disenoProcesosDao.obtenerDisenoProcesos(proceso,kcompania, kramo, kmodalidad, 
 					kgarantia, ConstantesSolvencia.BASE_NIIF17, kclaveadic);
 				}else{

@@ -80,7 +80,7 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 			bt = "ROSSP";
 		}
 
-		// Para las bases t�cnicas de SCR, se recuperan los flujos probables de BEL
+		// Para las bases tecnicas de SCR, se recuperan los flujos probables de BEL
 		if (bt.equals(ConstantesSolvencia.BASE_SCRMFE) || bt.equals(ConstantesSolvencia.BASE_SCRMMI)
 				|| bt.equals(ConstantesSolvencia.BASE_SCRVM) || bt.equals(ConstantesSolvencia.BASE_SCRMCF)
 				|| bt.equals(ConstantesSolvencia.BASE_SCRMCI) || bt.equals(ConstantesSolvencia.BASE_SCRLFE)
@@ -91,7 +91,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)) {
 
 			key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion, ConstantesSolvencia.BASE_BEL);
 		} else {
@@ -100,7 +102,7 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 
 		FlujosProbables fp = flujosProbablesDao.get(key);
 		if (null == fp) {
-			// Para las bases t�cnicas de SCR, se recuperan los flujos probables de BEL
+			// Para las bases tecnicas de SCR, se recuperan los flujos probables de BEL
 			if (bt.equals(ConstantesSolvencia.BASE_SCRMFE) || bt.equals(ConstantesSolvencia.BASE_SCRMMI)
 					|| bt.equals(ConstantesSolvencia.BASE_SCRVM) || bt.equals(ConstantesSolvencia.BASE_SCRMCF)
 					|| bt.equals(ConstantesSolvencia.BASE_SCRMCI) || bt.equals(ConstantesSolvencia.BASE_SCRLFE)
@@ -111,7 +113,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_SCRAIP) || bt.equals(ConstantesSolvencia.BASE_SCRANM)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17) || bt.equals(ConstantesSolvencia.BASE_NIF17LIR)
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
-					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)) {
+					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)) {
 
 				key = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantesSolvencia.BASE_BEL);
 			} else {
@@ -133,7 +137,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 				|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 				|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 				|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+				|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+				|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+				|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 			 keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacion,
 						ConstantsModulos.CTE_VAL_BTI_PROY);
 		}else{
@@ -147,7 +153,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI_PROY);
 			}else{
 				keyBti = new FlujosProbablesKey(kmodalidad, kgarantia, kprestacionGen, ConstantsModulos.CTE_VAL_BTI);
@@ -167,7 +175,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				fall.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				fall.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -192,7 +202,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				vida.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				vida.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -206,7 +218,7 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 			
 		}
 		vida.setProvi(fpBti.getVida().getProvi());
-		// Anulaci�n
+		// Anulacion
 		BloqueFlujosProbables anul = fp.getAnul();
 		if (null == fpBti.getAnul().getNominal()) {
 			anul.setActualizado(fpBti.getAnul().getActualizado());
@@ -218,7 +230,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				anul.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				anul.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -244,7 +258,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				comi.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				comi.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -269,7 +285,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				gast.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				gast.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -294,7 +312,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				inv.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				inv.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -319,7 +339,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				prim.setActualizado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNoanulado(ConstantsProcesos.CTE_LEIDO_BTIPR);
 				prim.setNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
@@ -341,7 +363,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvNominal(ConstantsProcesos.CTE_LEIDO_BTI);
@@ -354,7 +378,9 @@ public class J880GBT003ModuloTablaRealista implements Modulo {
 					|| bt.equals(ConstantesSolvencia.BASE_N17LIRIN) || bt.equals(ConstantesSolvencia.BASE_NIFF17OCI)
 					|| bt.equals(ConstantesSolvencia.BASE_NIIF17IF) || bt.equals(ConstantesSolvencia.BASE_N17CLIR)
 					|| bt.equals(ConstantesSolvencia.BASE_BEL) || bt.equals(ConstantesSolvencia.BASE_BELCOA)
-					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")){
+					|| bt.equals(ConstantesSolvencia.BASE_ROSSPCSM) || bt.equals("BTCOA")
+					|| bt.equals(ConstantesSolvencia.BASE_NF17AEN) || bt.equals(ConstantesSolvencia.BASE_NF17MFE)
+					|| bt.equals(ConstantesSolvencia.BASE_NF17GTO)){
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTIPR);
 			}else{
 				fp.setProvTerminal(ConstantsProcesos.CTE_LEIDO_BTI);

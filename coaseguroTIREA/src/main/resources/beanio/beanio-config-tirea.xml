@@ -47,14 +47,44 @@
 		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPMaCoa"/>
 	</stream>
 	
+	<stream name="FLUJPMACOABTCOA" format="fixedlength">
+		<record name="flujpmacoabtcoa" template="flujpmacoabtcoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPmaCoaBtcoa"/>
+	</stream>
+	
+	<stream name="FLUJPMACOABTCOATF" format="fixedlength">
+		<record name="flujpmacoabtcoatf" template="flujpmacoabtcoatf"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPmaCoaBtcoatf"/>
+	</stream>
+	
 	<stream name="TOTPMACOA" format="fixedlength">
 		<record name="totpmacoa" template="totpmacoa"	
 		class="es.mapfre.coaseguro.tirea.dominio.entidades.TotPMaCoa"/>
 	</stream>
 	
+	<stream name="TOTPMACOABTCOA" format="fixedlength">
+		<record name="totpmacoabtcoa" template="totpmacoabtcoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.TotPmaCoaBtcoa"/>
+	</stream>
+	
+	<stream name="TOTPMACOABTCOATF" format="fixedlength">
+		<record name="totpmacoabtcoatf" template="totpmacoabtcoatf"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.TotPmaCoaBtcoatf"/>
+	</stream>
+	
 	<stream name="FLUJPMDCOA" format="fixedlength">
 		<record name="flujpmdcoa" template="flujpmdcoa"	
 		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPMdCoa"/>
+	</stream>
+	
+	<stream name="FLUJPMDCOABTCOA" format="fixedlength">
+		<record name="flujpmdcoabtcoa" template="flujpmdcoabtcoa"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPmdCoaBtcoa"/>
+	</stream>
+	
+	<stream name="FLUJPMDCOABTCOATF" format="fixedlength">
+		<record name="flujpmdcoabtcoatf" template="flujpmdcoabtcoatf"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.FlujPmdCoaBtcoatf"/>
 	</stream>
 	
 	<stream name="DATOSCOA" format="fixedlength">
@@ -70,6 +100,31 @@
 	<stream name="LOG0" format="fixedlength">
 		<record name="log" template="log"	
 		class="es.mapfre.coaseguro.tirea.dominio.entidades.FichaResultado"/>
+	</stream>
+	
+	<stream name="TAB35013" format="fixedlength">
+		<record name="tablaMapfreTirea" template="tablaMapfreTirea"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.Tab35013"/>
+	</stream>
+	
+	<stream name="TAB35014" format="fixedlength">
+		<record name="tablaPrestacionTirea" template="tablaPrestacionTirea"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.Tab35014"/>
+	</stream>
+	
+	<stream name="TAB35015" format="fixedlength">
+		<record name="tablaGarantiaTirea" template="tablaGarantiaTirea"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.Tab35015"/>
+	</stream>
+	
+	<stream name="DATOSESPECIFIC" format="fixedlength">
+		<record name="datosEspecific" template="datosEspecific"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.DatosEspecific"/>
+	</stream>
+	
+	<stream name="PAGOSPLAN" format="fixedlength">
+		<record name="pagosPlan" template="pagosPlan"	
+		class="es.mapfre.coaseguro.tirea.dominio.entidades.PagosPlan"/>
 	</stream>
 	
 </beanio>

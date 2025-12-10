@@ -13,6 +13,7 @@ public class ConstantesSolvencia {
 	public static final String LOG_FICHASAEN = "FICHAS/FICHASPEND/LOGFICHAGENSCRAEN.TXT";
 	public static final String LOG_FICHASAIP = "FICHAS/FICHASPEND/LOGFICHAGENSCRAIP.TXT";
 	public static final String LOG_FICHASAIN = "FICHAS/FICHASPEND/LOGFICHAGENSCRAIN.TXT";
+	public static final String LOG_FICHASAEN_NIIF17 = "FICHAS/FICHASPEND/LOGFICHAGENNF17AEN.TXT";
 
 	public static final String LOG_REG_ELIM = "Número de registros eliminados de la tabla TB340VMA0: ";
 	public static final String LOG_REG_CONS = "Número de registros conservados de la tabla TB340VMA0: ";
@@ -29,6 +30,7 @@ public class ConstantesSolvencia {
 	public static final String BT_SCRAEN = "SCRAEN";
 	public static final String BT_SCRAIP = "SCRAIP";
 	public static final String BT_SCRAIN = "SCRAIN";
+	public static final String BT_NF17AEN = "NF17AEN";
 	
 	/**
 	 * Volumen de datos a cargar en cada bloque

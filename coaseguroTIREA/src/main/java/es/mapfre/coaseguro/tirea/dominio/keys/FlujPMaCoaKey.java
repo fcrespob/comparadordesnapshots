@@ -11,9 +11,9 @@ public class FlujPMaCoaKey implements Comparable<FlujPMaCoaKey> {
 	private Long kpoliza;
 	private Integer ksubpoliza;
 	private Integer nsuscri;
-	private Timestamp fdesde;
+	private String fdesde;
 	
-	public FlujPMaCoaKey(Long kpoliza, Integer ksubpoliza, Integer nsuscri, String bt, Timestamp fcierre, Timestamp fdesde) {
+	public FlujPMaCoaKey(Long kpoliza, Integer ksubpoliza, Integer nsuscri, String bt, Timestamp fcierre, String fdesde) {
 		this.bt = bt;
 		this.fcierre = fcierre;
 		this.kpoliza = kpoliza;
@@ -89,7 +89,8 @@ public class FlujPMaCoaKey implements Comparable<FlujPMaCoaKey> {
 		compareToBuilder.append(this.kpoliza, o.kpoliza);
 		compareToBuilder.append(this.ksubpoliza, o.ksubpoliza);
 		compareToBuilder.append(this.nsuscri, o.nsuscri);
-		compareToBuilder.append(this.fdesde, o.fdesde);
+		compareToBuilder.append(this.fdesde.substring(2), o.fdesde.substring(2,6));
+		compareToBuilder.append(this.fdesde.substring(0, 2), o.fdesde.substring(0, 2));
 		
 		return compareToBuilder.toComparison();
 	}	
